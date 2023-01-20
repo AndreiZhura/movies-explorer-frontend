@@ -33,3 +33,10 @@
     margin-left: 20px;
 
 }
+
+@media screen and (max-width:1279px) {
+    .footer {
+        width: calc(100vw - 2 * 3.75vw);
+
+    }
+}
