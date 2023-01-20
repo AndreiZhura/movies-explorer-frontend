@@ -3,7 +3,9 @@ import './Login.css'
 
 function Login(props){
     return(
-     <section></section>
+     <section className="login">
+        
+     </section>
     );
 }
 

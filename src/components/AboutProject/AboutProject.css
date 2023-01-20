@@ -75,3 +75,11 @@
     line-height: 17px;
     color: #A0A0A0;
 }
+
+
+@media screen and (max-width:1279px) {
+    .about-project {
+        width: calc(100vw - 2 * 3.75vw);
+
+    }
+}
