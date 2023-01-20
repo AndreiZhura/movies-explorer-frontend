@@ -1,0 +1,25 @@
+.menu{
+    color: black;
+    display: flex;
+    margin-right: 70px;
+}
+
+.menu__item{
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.menu__item:last-child{
+    width: 76px;
+    height: 32px;
+    border-radius: 3px;
+    margin-left: 30px;
+    background-color:#2BE080;
+}
+

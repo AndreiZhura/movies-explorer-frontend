@@ -1,0 +1,33 @@
+.promo {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+    height: 493px;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+    display: grid;
+    justify-content: center;
+}
+
+.promo__title {
+    width: 730px;
+    height: 116px;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 58px;
+    letter-spacing: -2px;
+    text-align: center;
+    margin-top: 160px;
+}
+
+
+
+@media screen and (max-width:1279px) {
+    .promo {
+        width: calc(100vw - 2 * 3.75vw);
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+}

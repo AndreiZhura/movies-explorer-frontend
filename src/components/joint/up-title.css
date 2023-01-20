@@ -1,0 +1,32 @@
+.up-title {
+    border-bottom: 1px solid black;
+}
+
+.up-title_project {
+    margin: 110px 70px 0 70px;
+}
+.up-title_project {
+    margin: 110px 70px 0 70px;
+}
+
+.up-title_tekhnologies {
+    margin: 100px 70px 0 70px;
+}
+
+.up-title__text {
+    margin-top: 0px;
+    margin-bottom: 23px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26.63px;
+    letter-spacing: -1px;
+}
+
+@media screen and (max-width:1279px) {
+    .up-title {
+        width: calc(100vw - 2 * 3.75vw);
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+}
