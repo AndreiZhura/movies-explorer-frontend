@@ -1,15 +1,37 @@
 .portfolio {
-    border: 1px solid green;
     padding-left: 70px;
 }
 .portfolio__title {
     margin-top: 100px;
+    margin-bottom: 50px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    color:#A0A0A0;
+
 }
 .portfolio__lists {
+    list-style-type: none;
+    margin-bottom: 125px;
+    padding-left: 0px; 
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 .portfolio__list {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    width: 1140px;
+    
 }
 .portfolio__link {
+    color: black;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: -1px;
+    text-decoration: none;
 }
 .portfolio__image {
 }
