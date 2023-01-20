@@ -1,3 +1,50 @@
 .tekhnologies {
     background-color: #F5F5F5;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+.tekhnologies__title {
+    text-align: center;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 58px;
+    letter-spacing: -2px;
+    margin-top: 0px;
+    margin-bottom: 26px;
+}
+.tekhnologies__subtitle {
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -1px;
+    width: 460px;
+    align-self: center;
+    margin-top: 0px;
+    margin-bottom: 100px;
+}
+.tekhnologies__lists {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    margin-bottom: 100px;
+    margin-left: 295px;
+    margin-right: 309px;
+    padding-left: 0px;
+    gap: 10px;
+}
+.tekhnologies__list {
+    width: 90px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #E8E8E8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.94px;
+    letter-spacing: -1px;
 }
