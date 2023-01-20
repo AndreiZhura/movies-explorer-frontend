@@ -1,5 +1,6 @@
 .up-title {
     border-bottom: 1px solid black;
+    width: 1140px;
 }
 
 .up-title_project {
@@ -11,6 +12,10 @@
     margin: 0px 70px 90px 70px;
 }
 
+.up-title_about-me {
+    margin: 110px 70px 0 70px;
+}
+
 .up-title__text {
     margin-top: 0px;
     margin-bottom: 23px;
@@ -19,6 +24,10 @@
     line-height: 26.63px;
     letter-spacing: -1px;
 }
+
+
+
+
 
 @media screen and (max-width:1279px) {
     .up-title {
