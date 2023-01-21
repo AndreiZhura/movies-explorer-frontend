@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 function Profile(){
     return(
         <section className="profile">
-           <h1 className="auth__title">Добро пожаловать!</h1>
+           <h1 className="auth__title">Привет Виталий</h1>
         <form className='auth-main__form' >
         <span className="auth-main__title">Имя</span>    
         <input
