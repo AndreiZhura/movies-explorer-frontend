@@ -1,7 +1,7 @@
 import React from "react";
 import './AboutMe.css'
 import '../joint/up-title.css'
-import myImage from '../../images/myImage.jpg'
+import myImage from '../../../images/myImage.jpg'
 
 function AboutMe(){
   return(

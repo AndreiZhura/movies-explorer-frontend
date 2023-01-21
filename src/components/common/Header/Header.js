@@ -3,7 +3,7 @@ import React from "react";
 import './Header.css'
 import Navigation from '../Navigation/Navigation'
 // import { Link, Route, Routes } from "react-router-dom";
-import logo from "../../images/logo.svg";
+import logo from "../../../images/logo.svg";
 
 
 
