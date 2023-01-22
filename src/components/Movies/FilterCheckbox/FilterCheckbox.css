@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    margin-right: 28px;
+    margin-right: 29px;
 }
 
 .checkbox__input {
@@ -11,11 +11,11 @@
 }
 
 .checkbox__label {
-    margin-top: 5px;
+    margin-top: 0px;
     position: relative;
     width: 90%;
     padding-left: 50px;
-    padding-right: 0px;
+    padding-right: 4px;
     font-weight: 400;
     font-size: 13px;
     line-height: 18px;
