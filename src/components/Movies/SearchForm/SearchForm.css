@@ -1,92 +1,54 @@
 .search-form {
-
-    width: 1280;
+    width: 1280px;
+    height: 222px;
+    
 }
 
 .search-form__container {
+    display: flex;
+    justify-content: space-between;
     background-color: #F9F9F9;
     height: 72px;
     border-radius: 9px;
-    margin-top: 70px;
-
-    width: calc(100vw - 10vw);
+    margin-top: 90px;
+    width: 1140px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .search-form__forma {
     display: flex;
-    align-items: center;
-
+    width: 80%;
     height: 100%;
 }
 
-.section-form__input {}
+.section-form__input {
+    flex-grow: 1;
+    border: none;
+    height: 25px;
+    margin-top: 3px;
+    margin-left: 6px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+}
+
+.search-form__icon {
+    width: 35px;
+    height: 35px;
+    margin-top: -1px;
+    margin-left: 17px;
+}
 
 .section-form__button {
     cursor: pointer;
+    background-image: url(../../../images/find.svg);
     background-repeat: no-repeat;
     background-position: center;
     width: 34px;
     height: 34px;
-    border-radius: 48px;
+    margin-right: 25px;
+    border-radius: 20px;
     border: none;
-}
-
-.checbox {
-    width: 100vw;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-
-}
-
-.checkbox__input {
-    appearance: none;
-    position: absolute;
-}
-
-.checkbox__label {
-    position: relative;
-    padding-left: 40px;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 18px;
-}
-
-.checkbox__label::before {
-    content: "";
-    cursor: pointer;
-    display: block;
-    width: 36px;
-    height: 20px;
-    background-color: #2BE080;
-    border-radius: 20px;
-    position: absolute;
-    left: 0px;
-    background-image: url(../../../images/tumb__COLOR_tumbler-on-2.svg);
-    background-repeat: no-repeat;
-    background-position: 150% 25%;
-    z-index: 0;
-}
-
-.checkbox__label::after {
-    content: "";
-    cursor: pointer;
-    display: block;
-    width: 36px;
-    height: 20px;
-    background-color: #2BE080;
-    border-radius: 20px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    background-image: url(../../../images/tumb__COLOR_tumbler-on-2.svg);
-    background-repeat: no-repeat;
-    background-position: -50% 25%;
-    visibility: hidden;
-}
-
-.checkbox__input:checked + .checkbox__label::after{
-    visibility: visible;
 }

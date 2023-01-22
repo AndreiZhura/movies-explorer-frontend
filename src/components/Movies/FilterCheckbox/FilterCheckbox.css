@@ -1,0 +1,59 @@
+.checbox {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-right: 28px;
+}
+
+.checkbox__input {
+    appearance: none;
+    position: absolute;
+}
+
+.checkbox__label {
+    margin-top: 5px;
+    position: relative;
+    width: 90%;
+    padding-left: 50px;
+    padding-right: 0px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.checkbox__label::before {
+    content: "";
+    cursor: pointer;
+    display: block;
+    width: 36px;
+    height: 20px;
+    background-color: #2BE080;
+    border-radius: 20px;
+    position: absolute;
+    left: 0px;
+    background-image: url(../../../images/tumb__COLOR_tumbler-on-2.svg);
+    background-repeat: no-repeat;
+    background-position: 150% 25%;
+    z-index: 0;
+}
+
+.checkbox__label::after {
+    content: "";
+    cursor: pointer;
+    display: block;
+    width: 36px;
+    height: 20px;
+    background-color: #2BE080;
+    border-radius: 20px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-image: url(../../../images/tumb__COLOR_tumbler-on-2.svg);
+    background-repeat: no-repeat;
+    background-position: -50% 25%;
+    visibility: hidden;
+}
+
+.checkbox__input:checked + .checkbox__label::after{
+    visibility: visible;
+}

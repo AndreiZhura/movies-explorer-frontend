@@ -1,5 +1,7 @@
 import React from "react";
 import "./SearchForm.css"
+import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
+import lupa from '../../../images/lupa.svg'
 
 
 function SearchForm() {
@@ -7,21 +9,18 @@ function SearchForm() {
         <section className="search-form">
             <div className="search-form__container">
                 <form className="search-form__forma">
+                <img src={lupa} alt="поиск" class="search-form__icon"/>
                     <input
                         className="section-form__input"
                         id="text-input"
                         required
-                        placeholder="Фильмы"
+                        placeholder="Фильм"
                         type="text"
                         name="text-link"
                     />
                     <button className="section-form__button"></button>
-                    <div className="checbox">
-                        <input className="checkbox__input" type="checkbox" id = "checkbox" />
-                        <label className="checkbox__label" for="checkbox" >Короткометражка</label>
-                    </div>
-
                 </form>
+                    <FilterCheckbox/>
             </div>
         </section>
     );
