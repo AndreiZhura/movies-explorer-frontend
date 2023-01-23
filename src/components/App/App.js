@@ -14,7 +14,7 @@ import Movies from '../Movies/Movies';
 function App() {
   return (
     <>
-    <Header/>
+  
       <Movies/>
     </>
   );

@@ -57,3 +57,10 @@
 .checkbox__input:checked + .checkbox__label::after{
     visibility: visible;
 }
+
+@media screen and (max-width:425px) {
+    .checbox {
+       
+    }
+
+}
