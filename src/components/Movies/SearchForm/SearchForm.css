@@ -42,7 +42,7 @@
     opacity: 0.5;
 }
 
-.search-form__icon {
+.lupa {
     width: 35px;
     height: 35px;
     margin-top: -1px;
@@ -95,7 +95,7 @@
         border-right: none;
     }
 
-    .search-form__icon {
+    .lupa {
         appearance: none;
         position: absolute;
         visibility: hidden;

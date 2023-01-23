@@ -13,7 +13,7 @@ function Header(props) {
   return (
   <header className="header">
     <img src={logo} alt="логотип" className="header__logo" />
-    <NavigationRegister/>
+    <Navigation/>
   </header>
   );
 }

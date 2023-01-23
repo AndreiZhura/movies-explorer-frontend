@@ -9,7 +9,7 @@ function SearchForm() {
         <section className="search-form">
             <div className="search-form__container">
                 <form className="search-form__forma">
-                <img src={lupa} alt="поиск" class="search-form__icon"/>
+                <img src={lupa} alt="поиск" class="lupa"/>
                     <input
                         className="section-form__input"
                         id="text-input"

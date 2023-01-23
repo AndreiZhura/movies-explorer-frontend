@@ -1,18 +1,6 @@
 .menu{
-    color: black;
     display: flex;
     margin-right: 70px;
-}
-
-.menu_profile{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.menu__profile{
-    width: 30%;
-    display: flex;
 }
 
 .menu__item{
@@ -24,7 +12,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
+    color: white;
+}
+
+.menu__item_register{
+  letter-spacing: -0.5px;
 }
 
 .menu__item_films{
@@ -52,3 +44,32 @@
     background-color:#F9F9F9;
 }
 
+@media screen and (max-width:768px) {
+    .menu {
+        margin-right: 2px; 
+        margin-bottom: 5px;
+    }
+
+    .menu__item_green{
+        margin-left: 30px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .menu {
+        margin-right: 2px; 
+        margin-bottom: 0px;
+    }
+
+    .menu__item_green{
+        margin-left: 13px;
+        width: 54px;
+        height: 26px;
+    }
+    .menu__item{
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 16px;
+        letter-spacing: 0px;
+    }
+}
