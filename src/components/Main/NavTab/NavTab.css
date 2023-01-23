@@ -1,6 +1,6 @@
 .navtab {
     align-self: flex-end;
-    margin-bottom: 30px;
+    margin-bottom: 33px;
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -19,4 +19,26 @@
     height: 36px;
     border-radius: 10px;
     background-color:#E8E8E8;
+}
+
+@media screen and (max-width:768px) {
+    .navtab {
+        margin-bottom: 29px;
+    }
+
+    .navtab__item {
+        letter-spacing: -0.04em;
+    }
+}
+
+@media screen and (max-width:410px) {
+    .navtab {
+        margin-bottom: 17px;
+    }
+
+    .navtab__item {
+        width: 82px;
+        height: 26px;
+        font-size: 10px;
+    }
 }
