@@ -1,10 +1,12 @@
 .up-title {
-    border-bottom: 1px solid black;
     width: 1140px;
+    border-bottom:1px solid #A0A0A0;
 }
 
 .up-title_project {
-    margin: 110px 70px 0 70px;
+    margin-top: 110px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -18,7 +20,7 @@
 
 .up-title__text {
     margin-top: 0px;
-    margin-bottom: 23px;
+    margin-bottom: 20px;
     font-weight: 400;
     font-size: 22px;
     line-height: 26.63px;
@@ -31,8 +33,42 @@
 
 @media screen and (max-width:1279px) {
     .up-title {
-        width: calc(100vw - 2 * 3.75vw);
-        margin-left: auto;
-        margin-right: auto;
+        width: calc(100vw - 2 * 8.75vw);
+       
     }
 }
+
+@media screen and (max-width:769px) {
+    .up-title {
+        width: 668px
+       
+    }
+}
+
+@media screen and (max-width:767px) {
+    .up-title {
+        width: calc(100vw - 2 * 8.75vw);
+       
+    }
+}
+
+@media screen and (max-width:425px) {
+
+    .up-title {
+        width: 284px;
+    }
+
+    .up-title_project {
+        margin-top: 70px;
+
+    }
+    
+
+    .up-title__text {
+        font-size: 18px;
+        line-height: 21.78px;
+        margin-bottom: 28px;
+    }
+}
+
+

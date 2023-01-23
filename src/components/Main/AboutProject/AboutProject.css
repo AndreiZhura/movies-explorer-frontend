@@ -1,16 +1,22 @@
 .about-project {
-    width: 1280px;
+    height: 608px;
+    color: black;
+}
+
+.about-project__main{
+    display: grid;
+    grid-template-columns: 50% 50%;  
+    margin: 70px 70px 0px 70px;
 }
 
 .about-project__container {
-    margin: 70px 70px 0px 70px;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
 }
 
 .about-project__title {
     margin-top: 0px;
-    margin-bottom: 25px;
+    margin-bottom: 37px;
     font-weight: 400;
     font-size: 20px;
     line-height: 25px;
@@ -18,7 +24,7 @@
 }
 
 .about-project__title_frond-end {
-    margin-left: 17px;
+    margin-left: 20px;
 }
 
 .about-project__text {
@@ -30,11 +36,11 @@
 }
 
 .about-project__text_frond-end {
-    margin-left: 17px;
+    margin-left: 20px;
 }
 
 .about-project__time {
-    margin: 95px 70px 0 70px;
+    margin: 88px 70px 0 70px;
     display: grid;
     grid-template-columns: 50% 50%;
 }
@@ -45,13 +51,16 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 16.64px;
+    margin-top: 12px;
     margin-bottom: 8px;
+    background-color: #A0A0A0;
 }
 
 .about-project__limited__green {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 0px;
     width: 228px;
     height: 36px;
     background-color: #2BE080;
@@ -61,14 +70,12 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 3px;
-    padding-left: 81px;
-
+    padding-left: 84px;
 }
 
 .about-project__technologie {
     width: 228px;
-    margin-bottom: 115px;
+    margin-top: 5px;
     text-align: center;
     font-weight: 500;
     font-size: 14px;
@@ -81,5 +88,130 @@
     .about-project {
         width: calc(100vw - 2 * 3.75vw);
 
+    }
+}
+
+@media screen and (max-width:769px) {
+    .about-project {
+        width: 769px;
+
+    }
+    .about-project__main {
+        margin: 70px 50px 0px 50px;
+    }
+
+   
+
+    .about-project__title {
+        margin-bottom: 20px;
+    }
+
+    .about-project__title_frond-end {
+        margin-left: 15px;
+    }
+
+    .about-project__text {
+        font-size: 12px;
+        line-height: 18px;
+        width: 95%;
+    }
+
+    .about-project__text_frond-end {
+        margin-left: 15px;
+    }
+
+    .about-project__time {
+        margin: 81px 50px 0 50px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .about-project__limited__green {
+        width: 140px;
+    }
+
+    .about-project__limited__gray {
+        padding-left: 40px;
+    }
+
+    .about-project__technologie {
+        width: 140px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .about-project {
+        width: calc(100vw - 2 * 3.75vw);
+
+    }
+}
+
+@media screen and (max-width:525px) {
+
+    .about-project__main {
+        margin: 60px 0px 0px 0px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+
+    }
+
+    .about-project__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        margin-bottom: 48px;
+        margin-left: 5px;
+    }
+
+    .about-project__title {
+        font-size: 18px;
+        line-height: 25px;
+        line-height: 21.78px;
+        margin-bottom: 15px;
+    }
+
+    .about-project__title_frond-end {
+        margin-left: 0px;
+    }
+
+    .about-project__text {
+        width: 100%;
+        font-size: 11px;
+        line-height: 16px;
+        
+    }
+
+    .about-project__text_frond-end {
+        margin-left: 0px;
+    }
+    .about-project__time {
+        margin: 0px 0px 0px 0px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin-left: 0px;
+    }
+    .about-project__limited {
+       margin-top: 0px;
+       margin-bottom: 0px;
+       font-size: 11px;
+       line-height: 13.31px;
+    }
+    .about-project__limited__green {
+        width: 100px;
+        height: 35px;
+    }
+    .about-project__limited__gray {
+        padding-left: 25px;
+    }
+
+    .about-project__technologie {
+        margin-top: 10px;
+        width: 110px;
+        font-size: 11px;
+        line-height: 12.74px;
+    }
+    .about-project__technologie_frontend{
+        width: 100px;
     }
 }

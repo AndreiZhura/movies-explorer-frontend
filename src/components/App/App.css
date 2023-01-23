@@ -1,6 +1,6 @@
 @import url(../../vendor/fonts/inter.css);
 .page {
-    background-color:black;
+    background-color:white;
     display: flex;
     justify-content: center;
     margin: 0;
