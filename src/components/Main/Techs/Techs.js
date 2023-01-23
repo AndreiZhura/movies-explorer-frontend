@@ -1,6 +1,6 @@
 import React from "react";
 import './Techs.css'
-import '../joint/up-title.css'
+import '../common-Main/up-title.css'
 
 
 

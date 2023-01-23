@@ -3,37 +3,36 @@
     padding-top: 100px;
     display: flex;
     flex-direction: column;
+    width: 1280px;
 }
 .tekhnologies__title {
     text-align: center;
     font-weight: 400;
     font-size: 50px;
     line-height: 58px;
-    letter-spacing: -2px;
-    margin-top: 0px;
-    margin-bottom: 26px;
+    letter-spacing: -0.04em;
+    margin-top: 90px;
+    margin-bottom: 0px;
 }
 .tekhnologies__subtitle {
     text-align: center;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    letter-spacing: -1px;
+    letter-spacing: -0.04em;
     width: 460px;
+    height: 40px;
     align-self: center;
-    margin-top: 0px;
-    margin-bottom: 100px;
+    margin-top: 26px;
+    margin-bottom: 0px;
 }
 .tekhnologies__lists {
     list-style-type: none;
     display: flex;
     justify-content: center;
-    margin-top: 0px;
+    margin-top: 100px;
     margin-bottom: 100px;
-    margin-left: 295px;
-    margin-right: 309px;
-    padding-left: 0px;
-    gap: 10px;
+    padding-left: 10px;
 }
 .tekhnologies__list {
     width: 90px;
@@ -46,12 +45,78 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 16.94px;
-    letter-spacing: -1px;
+    letter-spacing: -0.04em;
+    margin-right: 10px;
 }
 
 @media screen and (max-width:1279px) {
     .tekhnologies {
         width: calc(100vw - 2 * 3.75vw);
 
+    }
+}
+
+@media screen and (max-width:768px) {
+
+    .tekhnologies {
+       height: 567px;
+    }
+
+    .tekhnologies__title {
+        margin-top: 80px;
+        margin-bottom: 0px;
+    }
+
+    .tekhnologies__subtitle {
+        font-size: 12px;
+        line-height: 18px;
+        width: 460px;
+        height: 36px;
+        margin-top: 22px;
+    }
+    .tekhnologies__lists {
+        margin-top: 83px;
+    }
+    .tekhnologies__list {
+        width: 84px;
+        height: 57px;
+        font-size: 12px;
+        line-height: 14.52px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .tekhnologies {
+        width: 320px;
+        height: 651px;
+
+    }
+
+    .tekhnologies__title {
+        margin-top: 60px;
+        font-size: 30px;
+        line-height: 36.31px;
+    }
+
+    .tekhnologies__subtitle {
+        font-size: 11px;
+        line-height: 16px;
+        width: 292px;
+        height: 32px;
+        margin-top: 24px;
+    }
+
+    .tekhnologies__lists {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       padding-left: 7px;
+       width: 178px;
+       margin-left: auto;
+       margin-right: auto;
+       margin-top: 50px;
+    }
+
+    .tekhnologies__list {
+        margin-bottom: 10px;
     }
 }
