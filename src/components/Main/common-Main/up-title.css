@@ -35,15 +35,20 @@
 @media screen and (max-width:1279px) {
     .up-title {
         width: calc(100vw - 2 * 8.75vw);
-       
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .up-title_about-me {
+        width: calc(100vw - 10vw);
+        margin-top: 110px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
 @media screen and (max-width:769px) {
     .up-title {
         width: 668px;
-        margin-left: auto;
-        margin-right: auto;
     }
 }
 
@@ -73,6 +78,14 @@
         font-size: 18px;
         line-height: 21.78px;
         margin-bottom: 28px;
+    }
+}
+
+
+@media screen and (max-width:320px) {
+
+    .up-title {
+        width: 293px;
     }
 }
 
