@@ -1,43 +1,146 @@
 .footer {
-    width: 1140px;
+    width: 1280px;
+    height: 172px;
     margin-left: auto;
     margin-right: auto;
+    background-color: #FAFAFA;
+    padding-top: 79px;
 }
+
 .footer__title {
-    margin-top: 79px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1140px;
     text-align: center;
+    margin-bottom: 0px;
     font-weight: 400;
     font-size: 13px;
     line-height: 15.73px;
     padding-bottom: 20px;
     color: #A0A0A0;
-    border-bottom: 1px solid #E8E8E8;
+    border-bottom: 1px solid #0e0d0d;
 }
+
 .footer__info {
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    margin-top: 5px;
+    width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
     font-weight: 400;
     font-size: 13px;
-    line-height: 15.74px;
-   
+    line-height: 15.73px;
 }
+
 .footer__year {
+    margin-top: 20px;
+    margin-bottom: 20px;
 
 }
+
 .footer__yandex {
-    flex-grow: 1;
-    text-align: end;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: absolute;
+    right: 62px;
 }
-.footer__git {
-    margin-left: 20px;
 
+.footer__git {
+    position: absolute;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    right: 0px;
 }
 
 @media screen and (max-width:1279px) {
     .footer {
         width: calc(100vw - 2 * 3.75vw);
-        margin-left: auto;
-        margin-right: auto;
+    }
+
+    .footer__title {
+        width: calc(95vw - 2 * 3.75vw);
+    }
+
+    .footer__info {
+        width: calc(95vw - 2 * 3.75vw);
+    }
+}
+
+@media screen and (max-width:769px) {
+    .footer {
+        width: 768px
+    }
+
+    .footer__title {
+        width: 708px
+    }
+
+    .footer__info {
+        width: 708px
+    }
+}
+
+@media screen and (max-width:767px) {
+    .footer {
+        width: calc(100vw - 2 * 3.75vw);
+    }
+
+    .footer__title {
+        width: calc(95vw - 2 * 3.75vw);
+    }
+
+    .footer__info {
+        width: calc(95vw - 2 * 3.75vw);
+    }
+}
+
+@media screen and (max-width:425px) {
+    .footer {
+        width: 320px;
+        height: 253px;
+        padding-top: 62px;
+    }
+
+    .footer__title {
+        width: 300px;
+        font-size: 12px;
+        line-height: 14.52px
+    }
+
+    .footer__info {
+        display: grid;
+        grid-template-rows: 30% 30% 30%;
+        grid-template-areas: ". yandex ."
+                             ". git ."
+                             ". year .";
+        width: 300px;
+        height: 137px;
+        font-size: 12px;
+        line-height: 14.52px
+    }
+
+    .footer__year {
+      text-align: center;
+      grid-area: year;
+      color:#A0A0A0;
+      margin: 0;
+      margin-top: 21px;
+      margin-bottom: 0px;
+    }
+
+    .footer__yandex {
+        position: static;
+        text-align: center;
+        grid-area: yandex;
+        margin-top: 31px;
+        margin-bottom: 0px;
+    }
+
+    .footer__git {
+        position: static;
+        text-align: center;
+        grid-area:  git;
+        margin-top: 18px;
+        margin-bottom: 0px;
     }
 }
