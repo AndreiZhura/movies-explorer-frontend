@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: black;
 }
 
 .menu__item_register{
@@ -41,7 +41,7 @@
     width: 100px;
     height: 32px;
     border-radius: 3px;
-    background-color:#F9F9F9;
+    background-color:black;
 }
 
 @media screen and (max-width:768px) {

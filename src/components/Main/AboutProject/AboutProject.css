@@ -1,5 +1,5 @@
 .about-project {
-    height: 608px;
+    height: 500px;
     color: black;
 }
 
@@ -53,7 +53,8 @@
     line-height: 16.64px;
     margin-top: 12px;
     margin-bottom: 8px;
-    background-color: #A0A0A0;
+    background-color: #F2F2F2;
+    ;
 }
 
 .about-project__limited__green {
@@ -80,7 +81,8 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
-    color: #A0A0A0;
+    color: #F2F2F2;
+    ;
 }
 
 
@@ -103,7 +105,7 @@
    
 
     .about-project__title {
-        margin-bottom: 20px;
+        margin-bottom: 39px;
     }
 
     .about-project__title_frond-end {
@@ -121,7 +123,7 @@
     }
 
     .about-project__time {
-        margin: 81px 50px 0 50px;
+        margin: 65px 50px 0 50px;
         display: grid;
         grid-template-columns: 50% 50%;
     }

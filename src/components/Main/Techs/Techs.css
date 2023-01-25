@@ -1,10 +1,11 @@
 .tekhnologies {
     background-color: #F5F5F5;
-    padding-top: 100px;
+    padding-top: 85px;
     display: flex;
     flex-direction: column;
     width: 1280px;
 }
+
 .tekhnologies__title {
     text-align: center;
     font-weight: 400;
@@ -14,6 +15,7 @@
     margin-top: 90px;
     margin-bottom: 0px;
 }
+
 .tekhnologies__subtitle {
     text-align: center;
     font-weight: 400;
@@ -26,6 +28,7 @@
     margin-top: 26px;
     margin-bottom: 0px;
 }
+
 .tekhnologies__lists {
     list-style-type: none;
     display: flex;
@@ -34,6 +37,7 @@
     margin-bottom: 100px;
     padding-left: 10px;
 }
+
 .tekhnologies__list {
     width: 90px;
     height: 60px;
@@ -52,14 +56,14 @@
 @media screen and (max-width:1279px) {
     .tekhnologies {
         width: calc(100vw - 2 * 3.75vw);
-
     }
 }
 
 @media screen and (max-width:768px) {
 
     .tekhnologies {
-       height: 567px;
+        width: 768px;
+        height: 567px;
     }
 
     .tekhnologies__title {
@@ -74,9 +78,11 @@
         height: 36px;
         margin-top: 22px;
     }
+
     .tekhnologies__lists {
         margin-top: 83px;
     }
+
     .tekhnologies__list {
         width: 84px;
         height: 57px;
@@ -107,13 +113,13 @@
     }
 
     .tekhnologies__lists {
-       display: grid;
-       grid-template-columns: 1fr 1fr;
-       padding-left: 7px;
-       width: 178px;
-       margin-left: auto;
-       margin-right: auto;
-       margin-top: 50px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-left: 7px;
+        width: 178px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
     }
 
     .tekhnologies__list {

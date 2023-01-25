@@ -20,7 +20,8 @@
 .portfolio__list {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #E6E6E6;
+    ;
 }
 .portfolio__link {
     text-decoration: none;
