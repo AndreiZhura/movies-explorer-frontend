@@ -71,5 +71,10 @@
     .header__logo {
         margin: 0px 0px 0px 2px;
     }
+
+    .header__button-open {
+        width: 22px;
+        top: 36%;
+      }
 }
 

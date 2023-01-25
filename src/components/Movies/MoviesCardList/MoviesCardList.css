@@ -47,3 +47,12 @@
         grid-template-columns: 1fr;
     }
 }
+
+@media screen and (max-width:320px) {
+    .movie-card-list {
+        width: 85%;
+        padding-top: 41px;
+        grid-template-columns: 1fr;
+        row-gap: 6px;
+    }
+}
