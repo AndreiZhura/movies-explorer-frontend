@@ -162,7 +162,7 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
-        margin-bottom: 48px;
+        margin-bottom: 40px;
         margin-left: 5px;
     }
 
@@ -170,7 +170,7 @@
         font-size: 18px;
         line-height: 25px;
         line-height: 21.78px;
-        margin-bottom: 15px;
+        margin-bottom: 18px;
     }
 
     .about-project__title_frond-end {
@@ -189,7 +189,7 @@
     }
 
     .about-project__time {
-        margin: 0px 0px 0px 0px;
+        margin: 6px 0px 0px 0px;
         display: grid;
         grid-template-columns: 50% 50%;
         margin-left: 0px;

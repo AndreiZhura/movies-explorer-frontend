@@ -1,14 +1,13 @@
 .up-title {
     width: 1140px;
     border-bottom:1px solid #000000;
-    ;
-
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .up-title_project {
     margin-top: 110px;
-    margin-left: auto;
-    margin-right: auto;
+
 }
 
 
@@ -72,7 +71,7 @@
     }
 
     .up-title_project {
-        margin-top: 70px;
+        margin-top: 66px;
     }
     
 
@@ -87,7 +86,10 @@
 @media screen and (max-width:320px) {
 
     .up-title {
-        width: 293px;
+        width: 285px;
+    }
+    .up-title_about-me {
+        margin-top: 140px;
     }
 }
 

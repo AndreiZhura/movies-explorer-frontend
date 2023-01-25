@@ -30,7 +30,10 @@
 
 @media screen and (max-width:410px) {
     .navtab {
-        margin-bottom: 17px;
+        margin-bottom: 22px;
+        gap: 6px;
+        
+
     }
 
     .navtab__item {

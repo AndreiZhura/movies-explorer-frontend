@@ -118,14 +118,16 @@
 
     .footer__info {
         width: calc(95vw - 2 * 3.75vw);
-    }
+        margin-left: auto;
+        margin-right: auto;
+}
 }
 
 @media screen and (max-width:425px) {
     .footer {
         width: 320px;
         height: 253px;
-        padding-top: 62px;
+        padding-top: 48px;
     }
 
     .footer__title {
@@ -135,6 +137,7 @@
     }
 
     .footer__info {
+        width: 320px;
         display: grid;
         grid-template-rows: 30% 30% 30%;
         grid-template-areas: ". yandex ."
@@ -143,7 +146,7 @@
         width: 300px;
         height: 137px;
         font-size: 12px;
-        line-height: 14.52px
+        line-height: 14.52px;
     }
 
     .footer__year {

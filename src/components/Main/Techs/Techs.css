@@ -1,6 +1,6 @@
 .tekhnologies {
     background-color: #F5F5F5;
-    padding-top: 85px;
+    padding-top: 140px;
     display: flex;
     flex-direction: column;
     width: 1280px;
@@ -91,6 +91,17 @@
     }
 }
 
+
+@media screen and (max-width:768px) {
+
+    .tekhnologies {
+        width: calc(100vw - 10vw);
+       margin-left: auto;
+       margin-right: auto;
+
+    }
+
+}
 
 
 @media screen and (max-width:450px) {
