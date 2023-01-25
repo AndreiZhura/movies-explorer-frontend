@@ -3,9 +3,9 @@
     color: black;
 }
 
-.about-project__main{
+.about-project__main {
     display: grid;
-    grid-template-columns: 50% 50%;  
+    grid-template-columns: 50% 50%;
     margin: 70px 70px 0px 70px;
 }
 
@@ -81,15 +81,15 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
-    color: #F2F2F2;
-    ;
+    color: #A0A0A0;
 }
 
 
 @media screen and (max-width:1279px) {
     .about-project {
         width: calc(100vw - 2 * 3.75vw);
-
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -98,11 +98,10 @@
         width: 769px;
 
     }
+
     .about-project__main {
         margin: 70px 50px 0px 50px;
     }
-
-   
 
     .about-project__title {
         margin-bottom: 39px;
@@ -123,7 +122,7 @@
     }
 
     .about-project__time {
-        margin: 65px 50px 0 50px;
+        margin: 61px 50px 0 50px;
         display: grid;
         grid-template-columns: 50% 50%;
     }
@@ -144,7 +143,8 @@
 @media screen and (max-width:767px) {
     .about-project {
         width: calc(100vw - 2 * 3.75vw);
-
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -181,28 +181,32 @@
         width: 100%;
         font-size: 11px;
         line-height: 16px;
-        
+
     }
 
     .about-project__text_frond-end {
         margin-left: 0px;
     }
+
     .about-project__time {
         margin: 0px 0px 0px 0px;
         display: grid;
         grid-template-columns: 50% 50%;
         margin-left: 0px;
     }
+
     .about-project__limited {
-       margin-top: 0px;
-       margin-bottom: 0px;
-       font-size: 11px;
-       line-height: 13.31px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: 11px;
+        line-height: 13.31px;
     }
+
     .about-project__limited__green {
         width: 100px;
         height: 35px;
     }
+
     .about-project__limited__gray {
         padding-left: 25px;
     }
@@ -213,7 +217,8 @@
         font-size: 11px;
         line-height: 12.74px;
     }
-    .about-project__technologie_frontend{
+
+    .about-project__technologie_frontend {
         width: 100px;
     }
 }

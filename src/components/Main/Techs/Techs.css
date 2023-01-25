@@ -91,11 +91,11 @@
     }
 }
 
+
+
 @media screen and (max-width:450px) {
     .tekhnologies {
-        width: 320px;
         height: 651px;
-
     }
 
     .tekhnologies__title {
