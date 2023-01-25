@@ -4,12 +4,10 @@
     flex-direction: column;
     margin-right: 29px;
 }
-
 .checkbox__input {
     appearance: none;
     position: absolute;
 }
-
 .checkbox__label {
     margin-top: 0px;
     position: relative;
@@ -20,7 +18,6 @@
     font-size: 13px;
     line-height: 18px;
 }
-
 .checkbox__label::before {
     content: "";
     cursor: pointer;
@@ -36,7 +33,6 @@
     background-position: 150% 25%;
     z-index: 0;
 }
-
 .checkbox__label::after {
     content: "";
     cursor: pointer;
@@ -53,24 +49,19 @@
     background-position: -50% 25%;
     visibility: hidden;
 }
-
 .checkbox__input:checked+.checkbox__label::after {
     visibility: visible;
 }
-
-
 
 @media screen and (max-width:768px) {
     .checbox {
         margin-right: 19px;
     }
 }
-
 @media screen and (max-width:425px) {
     .checbox {
         margin-left: 24px;
     }
-
 
     .checkbox__label {
         font-size: 11px;

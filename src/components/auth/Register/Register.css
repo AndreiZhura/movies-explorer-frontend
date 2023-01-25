@@ -1,7 +1,39 @@
 .register{
     width: 1280px;
+    display: flex;
+    justify-content: center;
 }
 
 .section-main__button_register{
     margin-top: 126px;
 }
+
+.redister-main{
+    margin-top: 56px;
+    width: 396px;
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (max-width:1280px) {
+    .register {
+        width: calc(100vw - 2 * 3.75vw);
+    }
+}
+
+
+@media screen and (max-width:600px) {
+    .register {
+        width: calc(100vw - 2 * 3.75vw);
+    }
+    .redister-main{
+        width: 260px;
+    }
+}
+
+@media screen and (max-width:600px) {
+   
+    .redister-main{
+       height: 1000px;
+    }
+}
+

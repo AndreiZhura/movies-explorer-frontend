@@ -1,28 +1,23 @@
 .auth__logo {
-    margin-top: 70px;
-    margin-left: 442px;
     width: 38px;
     height: 38px;
 }
 
 .auth__title {
-    margin-top: 36px;
-    margin-bottom: 0px;
-    margin-left: 442px;
+    margin-top: 40px;
+    margin-bottom: 38px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 29px;
-    
+
 }
 
 .auth-main__form {
     display: flex;
     flex-direction: column;
     width: 396px;
-    margin-top: 40px;
-    margin-left: 442px;
 }
 
 .auth-main__title {
@@ -30,7 +25,7 @@
     font-size: 10px;
     line-height: 12.1px;
     color: #A0A0A0;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
 .auth-main__input {
@@ -38,6 +33,7 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     margin-bottom: 25px;
     height: 27px;
+    width: 100%;
 }
 
 .auth-main__button {
@@ -46,27 +42,87 @@
     color: white;
     border: none;
     border-radius: 3px;
-    margin-top: 196px;
+    margin-top: 133px;
     font-weight: 500;
     font-size: 14px;
     line-height: 16.94px;
+    letter-spacing: 0.8px;
     background-color: #2BE080;
 }
 
 .auth-main__text {
-    margin-top: 18px;
+    margin-top: 17px;
     text-align: center;
     font-weight: 400;
     font-size: 14px;
     line-height: 16.94px;
+    letter-spacing: 0px;
     color: #A0A0A0;
 }
 
 .auth-main__text-button {
-    margin-left: 10px;
+    margin-left: 5px;
     font-weight: 400;
     font-size: 14px;
     line-height: 16.94px;
     text-decoration: none;
     color: #2BE080;
+}
+
+@media screen and (max-width:1279px) {
+
+    .auth-main__form {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width:600px) {
+
+    .auth-main__form {
+        display: flex;
+        flex-direction: column;
+        width: 260px;
+
+    }
+
+    .auth__logo {
+        align-self: center;
+    }
+
+    .auth__title {
+        align-self: center;
+    }
+
+    .auth-main__button {
+        width: 260px;
+    }
+
+
+    .auth-main__text {
+        width: 260px;
+    }
+}
+
+@media screen and (max-width:320px) {
+
+    .auth-main__button {
+        margin-top: 220px;
+        font-size: 12px;
+        line-height: 14.52px;
+    }
+
+    .auth-main__text {
+        font-size: 12px;
+        line-height: 14.52px;
+        margin-top: 13px;
+    }
+    .auth-main__form {
+        gap: 0px;
+    }
+
+    .auth__title {
+        margin-top: 48px;
+        margin-bottom: 79px;    
+    }
 }
