@@ -5,9 +5,8 @@ import './App.css';
 import Header from '../common/Header/Header';
 //import Profile from '../auth/Profile/Profile';
 import Main from '../Main/Main';
-//import SearchForm from '../Movies/SearchForm/SearchForm';
 //import PageNotFound from '../PageNotFound/PageNotFound';
-//import Movies from '../Movies/Movies';
+import Movies from '../Movies/Movies';
 import Footer from '../common/Footer/Footer';
 
 
@@ -15,7 +14,7 @@ function App() {
   return (
     <>
       <Header />
-      <Main />
+      <Movies />
       <Footer />
     </>
   );

@@ -8,3 +8,42 @@
     grid-template-columns: 1fr 1fr 1fr;
     padding-top: 70px;
 }
+
+@media screen and (max-width:1279px) {
+    .movie-card-list {
+        width: calc(100vw - 2 * 3.75vw);
+        row-gap: 15px;
+        column-gap: 10px;
+    }
+}
+
+@media screen and (max-width:1176px) {
+    .movie-card-list {
+        width: 80%;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width:989px) {
+    .movie-card-list {
+        width: calc(100vw - 2 * 3.75vw);
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .movie-card-list {
+        width: 93%;
+        padding-top: 113px;
+        row-gap: 24px;
+        column-gap: 16px;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .movie-card-list {
+        width: 80%;
+        padding-top: 50px;
+        grid-template-columns: 1fr;
+    }
+}

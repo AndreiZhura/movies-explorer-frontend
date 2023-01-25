@@ -15,19 +15,26 @@
     color: black;
 }
 
+.menu__profile{
+    position: absolute;
+    top: 40%;
+    left: 12%;
+    width: 20%;
+    display: flex;
+}
+
+.menu__item_films{
+  margin-right: 15px;
+}
+
+.menu__item_save-films{
+
+}
+
 .menu__item_register{
   letter-spacing: -0.5px;
 }
 
-.menu__item_films{
-    margin-left: 13%;
-    margin-right: 5%;
-
-}
-
-.menu__item_save-films{
-    
-}
 
 .menu__item_green{
     width: 76px;
@@ -41,7 +48,17 @@
     width: 100px;
     height: 32px;
     border-radius: 3px;
-    background-color:black;
+    background-color:#F9F9F9;
+    font-size: 14px;
+
+}
+
+
+@media screen and (max-width:1279px) {
+    .menu__profile{
+        width: calc(20vw + 10vw);
+        left: calc(12% + 5%)
+    }
 }
 
 @media screen and (max-width:768px) {
@@ -53,6 +70,13 @@
     .menu__item_green{
         margin-left: 30px;
     }
+    .menu__profile{
+      visibility: hidden;
+    }
+    .menu__item_profile{
+        visibility: hidden;
+    }
+    
 }
 
 @media screen and (max-width:320px) {
