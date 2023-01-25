@@ -42,12 +42,20 @@
     color: white;
     border: none;
     border-radius: 3px;
-    margin-top: 133px;
+
     font-weight: 500;
     font-size: 14px;
     line-height: 16.94px;
     letter-spacing: 0.8px;
     background-color: #2BE080;
+}
+
+.auth-main__button_register {
+    margin-top: 133px;
+}
+
+.auth-main__button_login {
+    margin-top: 201px;
 }
 
 .auth-main__text {
@@ -106,8 +114,14 @@
 
 @media screen and (max-width:320px) {
 
-    .auth-main__button {
+    .auth-main__button_register {
         margin-top: 220px;
+        font-size: 12px;
+        line-height: 14.52px;
+    }
+
+    .auth-main__button_login {
+        margin-top: 290px;
         font-size: 12px;
         line-height: 14.52px;
     }
@@ -116,13 +130,22 @@
         font-size: 12px;
         line-height: 14.52px;
         margin-top: 13px;
+        margin-left: 10px;
     }
+
+    .auth-main__text_login {
+        font-size: 12px;
+        line-height: 14.52px;
+        margin-top: 13px;
+        margin-left: 5px;
+    }
+
     .auth-main__form {
         gap: 0px;
     }
 
     .auth__title {
         margin-top: 48px;
-        margin-bottom: 79px;    
+        margin-bottom: 79px;
     }
 }
