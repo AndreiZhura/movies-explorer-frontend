@@ -1,6 +1,6 @@
 .movies {
     width: 364px;
-
+    position: relative;
 }
 
 .movies__title {
@@ -21,6 +21,25 @@
     line-height: 13.31px;
 }
 
+.movies__button{
+    background-image: url(../../../images/cross.svg);
+    position: absolute;
+    top: 28px;
+    right: 13px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+}
+
+.movies__button_hidden{
+    visibility: hidden;
+}
+.movies__button_visible{
+    visibility: visible;
+}
 
 
 @media screen and (max-width:1279px) {
