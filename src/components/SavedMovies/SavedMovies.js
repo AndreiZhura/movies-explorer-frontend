@@ -7,7 +7,7 @@ function SavedMovies() {
     return (
         <div className="saved-movies">
             <SearchForm/>
-            <MoviesCardList isSavedMovies = {false}/>
+            <MoviesCardList/>
         </div>
     );
 }
