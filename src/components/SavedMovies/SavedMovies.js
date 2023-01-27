@@ -1,14 +1,17 @@
 import React from "react";
-import './SavedMovies.css';
+
 import SearchForm from '../Movies/SearchForm/SearchForm';
 import MoviesCardList from '../Movies/MoviesCardList/MoviesCardList'
+import HeaderProfile from '../common/Header/HeaderProfile.js'
 
 function SavedMovies() {
     return (
-        <div className="saved-movies">
-            <SearchForm/>
-            <MoviesCardList/>
-        </div>
+        <>
+            <HeaderProfile />
+            <SearchForm />
+            <MoviesCardList />
+        </>
+
     );
 }
 

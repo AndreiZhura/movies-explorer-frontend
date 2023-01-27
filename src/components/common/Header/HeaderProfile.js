@@ -1,13 +1,13 @@
 
 import React from "react";
 import './Header.css'
-import Navigation from '../Navigation/Navigation'
+import NavigationProfile from "../NavigationProfile/NavigationProfile";
 // import { Link, Route, Routes } from "react-router-dom";
 import logo from "../../../images/logo.svg";
 import { NavLink } from 'react-router-dom';
 import './MenuRight.css'
 
-function Header(props) {
+function HeaderProfile(props) {
   const [isMenu, setIsMenu] = React.useState(false);
 
   function handleChange() {
@@ -18,7 +18,7 @@ function Header(props) {
     <>
       <header className="header header_profile popup">
         <img src={logo} alt="логотип" className="header__logo" />
-        <Navigation />
+        <NavigationProfile />
         <button
           className="header__button header__button-open "
           onClick={handleChange}
@@ -44,4 +44,4 @@ function Header(props) {
   );
 }
 
-export default Header;
+export default HeaderProfile;
