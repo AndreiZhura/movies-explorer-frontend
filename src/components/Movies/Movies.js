@@ -10,8 +10,7 @@ function Movies() {
             <HeaderProfile />
             <main className="main">
             <SearchForm />
-            <MoviesCardList />
-
+            <MoviesCardList  isSavedMovies = {true} />
             </main>
             <Footer />
         </>
