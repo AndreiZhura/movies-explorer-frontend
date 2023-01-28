@@ -6,7 +6,7 @@ function PageNotFound() {
     return (
         <section className="page-not-found">
             <div className="page-not-found__texts">
-                <p className="page-not-found__error">404</p>
+                <h3 className="page-not-found__error">404</h3>
                 <p className="page-not-found__text">Страница не найдена</p>
             </div>
             <NavLink className="page-not-found__link" to="/tips">Назад</NavLink>

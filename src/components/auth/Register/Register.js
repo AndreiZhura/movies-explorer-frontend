@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 function Register() {
   return (
+    
     <section className="register">
       <div className="redister-main">
       <Link to="/" className="logo"></Link>

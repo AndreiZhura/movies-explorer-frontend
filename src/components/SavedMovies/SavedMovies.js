@@ -8,9 +8,11 @@ function SavedMovies() {
     return (
         <>
             <HeaderProfile />
-            <SearchForm />
-            <MoviesCardList />
-            <Footer/>
+            <main className="main">
+                <SearchForm />
+                <MoviesCardList />
+            </main>
+            <Footer />
         </>
 
     );

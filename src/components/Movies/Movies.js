@@ -8,8 +8,11 @@ function Movies() {
     return (
         <>
             <HeaderProfile />
+            <main className="main">
             <SearchForm />
             <MoviesCardList />
+
+            </main>
             <Footer />
         </>
     )
