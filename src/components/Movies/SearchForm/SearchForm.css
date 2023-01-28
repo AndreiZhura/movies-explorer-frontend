@@ -70,12 +70,22 @@
         margin-right: auto;
     }
 
+    .search-form__forma {
+        width:75%;
+    }
+
     .search-form__container {
         width: calc(100vw - 2 * 3.75vw);
     }
 
     .search-form__input {
         width: calc(100vw - 2 * 30vw);
+    }
+}
+
+@media screen and (max-width:918px) {
+    .search-form__forma {
+        width: calc(100vw - 2 * 18vw);
     }
 }
 
@@ -86,6 +96,10 @@
     }
     .search-form__button {
         margin-right: 40px;
+    }
+
+    .search-form__forma {
+        width: calc(100vw - 2 * 20vw);
     }
 }
 
