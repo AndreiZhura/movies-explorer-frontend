@@ -24,13 +24,13 @@
 
 @media screen and (max-width:768px) {
     .navtab {
-        margin-bottom: 32px;
+        margin-bottom: 31px;
     }
 }
 
 @media screen and (max-width:410px) {
     .navtab {
-        margin-bottom: 22px;
+        margin-bottom: 20px;
         gap: 6px;
         
 

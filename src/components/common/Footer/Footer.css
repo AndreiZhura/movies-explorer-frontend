@@ -8,10 +8,11 @@
 }
 
 .footer__title {
-    margin-left: auto;
+    margin-left: 38px;
     margin-right: auto;
     width: 1140px;
     text-align: center;
+    margin-top: 6px;
     margin-bottom: 0px;
     font-weight: 400;
     font-size: 13px;
@@ -34,13 +35,13 @@
 }
 
 .footer__year {
-    margin-top: 20px;
+    margin-top: 25px;
     margin-bottom: 20px;
 
 }
 
 .footer__yandex {
-    margin-top: 20px;
+    margin-top: 25px;
     margin-bottom: 20px;
     position: absolute;
     right: 62px;
@@ -48,7 +49,7 @@
 
 .footer__git {
     position: absolute;
-    margin-top: 20px;
+    margin-top: 25px;
     margin-bottom: 20px;
     right: 0px;
 }
@@ -70,7 +71,8 @@
 @media screen and (max-width:769px) {
     .footer {
         width: 768px;
-        padding-top: 20px;        
+        padding-top: 20px;    
+        background-color: #ffff;    
     }
 
     .footer__info {
@@ -85,14 +87,14 @@
 
     .footer__year {
         padding-left: 8px;
-        margin-top: 15px;
+        margin-top: 21px;
         margin-bottom: 20px;
         font-size: 13px;
         line-height: 15.73px;
     }
     
     .footer__yandex {
-        margin-top: 15px;
+        margin-top: 21px;
         margin-bottom: 20px;
         font-size: 13px;
         line-height: 15.73px;
@@ -100,7 +102,7 @@
     }
     
     .footer__git {
-        margin-top: 15px;
+        margin-top: 21px;
         margin-bottom: 20px;
         font-size: 13px;
         line-height: 15.73px;
@@ -127,13 +129,14 @@
     .footer {
         width: 320px;
         height: 253px;
-        padding-top: 48px;
+        padding-top: 53px;
     }
 
     .footer__title {
         width: 300px;
         font-size: 12px;
-        line-height: 14.52px
+        line-height: 14.52px;
+        margin-left: 10px;
     }
 
     .footer__info {
@@ -147,6 +150,7 @@
         height: 137px;
         font-size: 12px;
         line-height: 14.52px;
+        margin-left: 10px;
     }
 
     .footer__year {
@@ -156,6 +160,8 @@
       margin: 0;
       margin-top: 21px;
       margin-bottom: 0px;
+      font-size: 12px;
+      line-height: 14.52px;
     }
 
     .footer__yandex {
@@ -164,6 +170,8 @@
         grid-area: yandex;
         margin-top: 31px;
         margin-bottom: 0px;
+        font-size: 12px;
+        line-height: 14.52px;
     }
 
     .footer__git {
@@ -172,5 +180,7 @@
         grid-area:  git;
         margin-top: 18px;
         margin-bottom: 0px;
+        font-size: 12px;
+        line-height: 14.52px;
     }
 }

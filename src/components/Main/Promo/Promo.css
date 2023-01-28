@@ -31,7 +31,7 @@
 
 @media screen and (max-width:768px) {
     .promo {
-        width: 728px;
+        width: 734px;
         height: 834px;
     }
 
@@ -61,7 +61,7 @@
     }
 
     .promo__title {
-        width: calc(100vw - 2 * 3.75vw);
+        width: calc(100vw - 2 * 4.75vw);
         font-size: 29px;
         line-height: 37px;
         text-align: center;

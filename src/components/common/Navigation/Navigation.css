@@ -77,8 +77,8 @@
 
 @media screen and (max-width:320px) {
     .menu {
-        margin-right: 2px; 
-        margin-bottom: 0px;
+        margin-right: 3px; 
+        margin-bottom: 5px;
     }
 
     .menu__item_green{

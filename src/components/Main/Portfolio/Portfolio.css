@@ -106,7 +106,7 @@
     .portfolio__image {
         width: 12px;
         height: 28px;
-        margin-top: 18px;
+        margin-top: 0px;
         margin-right: 3px;
     }
 }
