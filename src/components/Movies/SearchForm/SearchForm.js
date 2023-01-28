@@ -6,7 +6,7 @@ import lupa from '../../../images/lupa.svg'
 
 function SearchForm() {
     return (
-        <section className="search-form">
+        <div className="search-form">
             <div className="search-form__container">
                 <form className="search-form__forma">
                 <img src={lupa} alt="поиск" class="lupa"/>
@@ -22,7 +22,7 @@ function SearchForm() {
                 </form>
                     <FilterCheckbox/>
             </div>
-        </section>
+        </div>
     );
 };
 
