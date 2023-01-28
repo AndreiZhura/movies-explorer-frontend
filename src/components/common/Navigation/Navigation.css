@@ -51,7 +51,6 @@
     border-radius: 20px;
     background-color: #F9F9F9;
     font-size: 14px;
-    transition: opacity 0.5s ease;
 }
 
 @media screen and (max-width:1279px) {
