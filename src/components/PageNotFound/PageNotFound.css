@@ -3,6 +3,8 @@
     height: 700px;
     display: flex;
     flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .page-not-found__error {

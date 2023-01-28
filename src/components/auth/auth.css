@@ -38,6 +38,7 @@
 }
 
 .auth-main__button {
+    cursor: pointer;
     width: 396px;
     height: 45px;
     color: white;

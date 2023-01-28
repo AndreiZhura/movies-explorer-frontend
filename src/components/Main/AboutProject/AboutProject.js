@@ -8,7 +8,7 @@ import '../common-Main/up-title.css'
 function AboutProject(props) {
 
   return (
-    <section className="about-project">
+    <section className="about-project" id = "project">
       <div className="up-title up-title_project">
         <h3 className="up-title__text">О проекте</h3>
       </div>

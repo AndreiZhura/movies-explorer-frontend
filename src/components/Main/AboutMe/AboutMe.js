@@ -5,7 +5,7 @@ import Avatar from '../../../images/avatar.svg'
 
 function AboutMe() {
   return (
-    <section className="about-me">
+    <section className="about-me" id = 'stydent'>
       <div className="up-title up-title_about-me">
         <h3 className="up-title__text">Студент</h3>
       </div>

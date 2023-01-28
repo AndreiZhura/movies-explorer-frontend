@@ -8,7 +8,7 @@ import '../common-Main/up-title.css'
 function Techs(props) {
 
   return (
-    <section className="tekhnologies">
+    <section className="tekhnologies" id="tech">
       <div className="up-title up-title_tekhnologies">
         <h3 className="up-title__text">Технологии</h3>
       </div>

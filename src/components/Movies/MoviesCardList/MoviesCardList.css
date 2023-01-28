@@ -10,6 +10,8 @@
 }
 
 .movies-card-list__button {
+
+    cursor: pointer;
     width: 320px;
     height: 36px;
     background-color: #E8E8E8;
@@ -20,6 +22,11 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 14.52px;
+    transition: background-color 0.5s ease
+}
+
+.movies-card-list__button:hover {
+    background-color: #2BE080;
 }
 
 @media screen and (max-width:1279px) {

@@ -9,9 +9,9 @@ function NavTab(props) {
 
   return (
     <nav className="navtab">
-    <NavLink className="navtab__item" exact to="/">О проекте</NavLink>
-    <NavLink className="navtab__item"  to="/tips">Технологии</NavLink>
-    <NavLink className="navtab__item"  to="/tips">Студент</NavLink>
+    <a className="navtab__item" href = "#project">О проекте</a>
+    <a className="navtab__item" href = "#tech" >Технологии</a>
+    <a className="navtab__item" href = "#stydent" >Студент</a>
   </nav>
   );
 }
