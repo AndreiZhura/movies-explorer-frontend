@@ -1,16 +1,13 @@
 @import url(../../vendor/fonts/inter.css);
 .page {
     background-color:white;
-    display: flex;
-    justify-content: center;
     margin: 0;
-    margin-left: auto;
-    margin-right: auto;
     font-family: 'Inter', Arial, sans-serif;
-    max-width: 1280px;
     height: 100%;
     color:black;
 }
+
+
 
 *{
     box-sizing: border-box;

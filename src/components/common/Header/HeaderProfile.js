@@ -2,9 +2,7 @@
 import React from "react";
 import './Header.css'
 import NavigationProfile from "../NavigationProfile/NavigationProfile";
-// import { Link, Route, Routes } from "react-router-dom";
-import logo from "../../../images/logo.svg";
-import { NavLink } from 'react-router-dom';
+import { Link ,NavLink } from 'react-router-dom';
 import './MenuRight.css'
 
 function HeaderProfile(props) {
@@ -17,7 +15,7 @@ function HeaderProfile(props) {
   return (
     <>
       <header className="header header_profile popup">
-        <img src={logo} alt="логотип" className="header__logo" />
+      <Link to="/" className="header__logo"></Link>
         <NavigationProfile />
         <button
           className="header__button header__button-open "

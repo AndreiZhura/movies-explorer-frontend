@@ -45,6 +45,9 @@
 
 .header__logo {
     margin: 18px 0px 18px 70px;
+    background-image: url(../../../images/logo.svg);
+    width: 38px;
+    height: 38px;
 }
 
 

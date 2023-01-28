@@ -2,6 +2,8 @@
     width: 1280px;
     padding-left: 70px;
     padding-right: 70px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .portfolio__title {
     margin-top: 100px;
@@ -25,6 +27,9 @@
 }
 .portfolio__link {
     text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     color: black;
     padding-top: 20px;
     padding-bottom: 19px;

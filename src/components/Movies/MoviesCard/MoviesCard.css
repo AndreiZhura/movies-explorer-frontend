@@ -41,6 +41,9 @@
     visibility: visible;
 }
 
+.movies__img {
+   width: 100%;
+}
 
 @media screen and (max-width:1279px) {
     .movies {
@@ -59,11 +62,6 @@
     .movies {
        align-self: center;
        justify-self: center;
-    }
-
-    .movies__img {
-        width: 300px;
-        height: 168px;
     }
 }
 

@@ -1,4 +1,5 @@
 .auth__logo {
+    background-image: url(../../images/logo.svg);
     width: 38px;
     height: 38px;
 }
