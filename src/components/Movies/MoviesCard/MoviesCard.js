@@ -11,6 +11,7 @@ function MoviesCard(props) {
       <p className="movies__time">1ч 47м</p>
       <img src={movie} alt="фильм" className="movies__img" />
       <button className={props.isSavedMovies ? "movies__button movies__button_hidden" : "movies__button movies__button_visible"}></button>
+      <button className={props.isMoviesStars ? "movies__button-stars movies__button-stars_hidden" : "movies__button-stars movies__button-stars_visible"}></button>
     </article>
   );
 }

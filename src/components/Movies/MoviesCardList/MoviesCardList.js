@@ -6,14 +6,56 @@ function MoviesCardList(props){
     return(
         <>
         <div className="movie-card-list">
-         <MoviesCard isSavedMovies = {props.isSavedMovies}/>
-         <MoviesCard isSavedMovies = {props.isSavedMovies}/>
-         <MoviesCard isSavedMovies = {props.isSavedMovies}/>
-         <MoviesCard isSavedMovies = {props.isSavedMovies}/>
-         <MoviesCard isSavedMovies = {props.isSavedMovies}/>
-         <MoviesCard isSavedMovies = {props.isSavedMovies}/>
-         <MoviesCard isSavedMovies = {props.isSavedMovies}/>
-         <MoviesCard isSavedMovies = {props.isSavedMovies}/>
+         <MoviesCard 
+         isMoviesStars = {props.isMoviesStars}
+         isSavedMovies = {props.isSavedMovies}
+         />
+          <MoviesCard 
+         isMoviesStars = {props.isMoviesStars}
+         isSavedMovies = {props.isSavedMovies}
+         />
+          <MoviesCard 
+         isMoviesStars = {props.isMoviesStars}
+         isSavedMovies = {props.isSavedMovies}
+         />
+          <MoviesCard 
+         isMoviesStars = {props.isMoviesStars}
+         isSavedMovies = {props.isSavedMovies}
+         />
+          <MoviesCard 
+         isMoviesStars = {props.isMoviesStars}
+         isSavedMovies = {props.isSavedMovies}
+         />
+          <MoviesCard 
+         isMoviesStars = {props.isMoviesStars}
+         isSavedMovies = {props.isSavedMovies}
+         />
+          <MoviesCard 
+         isMoviesStars = {props.isMoviesStars}
+         isSavedMovies = {props.isSavedMovies}
+         />
+         <MoviesCard 
+         isMoviesStars = {props.isMoviesStars}
+         isSavedMovies = {props.isSavedMovies}
+         />
+          <MoviesCard 
+         isMoviesStars = {props.isMoviesStars}
+         isSavedMovies = {props.isSavedMovies}
+         />
+          <MoviesCard 
+         isMoviesStars = {props.isMoviesStars}
+         isSavedMovies = {props.isSavedMovies}
+         />
+          <MoviesCard 
+         isMoviesStars = {props.isMoviesStars}
+         isSavedMovies = {props.isSavedMovies}
+         />
+       <MoviesCard 
+         isMoviesStars = {props.isMoviesStars}
+         isSavedMovies = {props.isSavedMovies}
+         />
+
+         <button className="movies-card-list__button">Ещё</button>
         </div>
         </>
     );

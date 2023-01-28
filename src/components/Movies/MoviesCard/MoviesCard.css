@@ -34,10 +34,31 @@
     background-color: white;
 }
 
+.movies__button-stars{
+    background-image: url(../../../images/stars.svg);
+    position: absolute;
+    top: 28px;
+    right: 13px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+}
+
+
 .movies__button_hidden{
     visibility: hidden;
 }
 .movies__button_visible{
+    visibility: visible;
+}
+
+.movies__button-stars_hidden{
+    visibility: hidden;
+}
+.movies__button-stars_visible{
     visibility: visible;
 }
 
