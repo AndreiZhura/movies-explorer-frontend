@@ -14,7 +14,7 @@ function HeaderProfile(props) {
 
   return (
     <>
-      <header className="header header_profile popup">
+      <header className="header header_profile">
       <Link to="/" className="header__logo"></Link>
         <NavigationProfile />
         <button

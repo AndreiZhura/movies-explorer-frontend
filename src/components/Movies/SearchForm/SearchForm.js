@@ -11,14 +11,14 @@ function SearchForm() {
                 <form className="search-form__forma">
                 <img src={lupa} alt="поиск" class="lupa"/>
                     <input
-                        className="section-form__input"
+                        className="search-form__input"
                         id="text-input"
                         required
                         placeholder="Фильм"
                         type="text"
                         name="text-link"
                     />
-                    <button className="section-form__button"></button>
+                    <button className="search-form__button"></button>
                 </form>
                     <FilterCheckbox/>
             </div>

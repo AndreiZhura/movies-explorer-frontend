@@ -8,8 +8,10 @@ function Login(props) {
   return (
     <section className="login">
       <div className="login-main">
-      <Link to="/" className="auth__logo"></Link>
+      <Link to="/" className="logo"></Link>
+      <div className="auth">
       <h1 className="auth__title">Рады видеть!</h1>
+      <div className="auth-main">
       <form className='auth-main__form' >
         <span className="auth-main__title">E-mail</span>
         <input
@@ -35,6 +37,8 @@ function Login(props) {
           <Link to="/signup" className='auth-main__text-button  '>Регистрация
           </Link></p>
       </form>
+      </div>
+      </div>
       </div>
     </section>
   );

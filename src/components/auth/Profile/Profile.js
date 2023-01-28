@@ -8,7 +8,7 @@ function Profile() {
       <div className="profile-main">
         <h1 className="profile__title">Привет, Виталий!</h1>
         <form className='profile-main__form' >
-          <div className="test">
+          <div className="profile-main__container">
 
             <span className="profile-main__title">Имя</span>
             <input
@@ -21,7 +21,7 @@ function Profile() {
               readonly="readonly"
             />
           </div>
-          <div className="test">
+          <div className="profile-main__container">
             <span className="profile-main__title">E-mail</span>
             <input
               className="profile-main__input"

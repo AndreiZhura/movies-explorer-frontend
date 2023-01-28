@@ -8,8 +8,10 @@ function Register() {
   return (
     <section className="register">
       <div className="redister-main">
-      <Link to="/" className="auth__logo"></Link>
+      <Link to="/" className="logo"></Link>
+      <div className="auth">
         <h1 className="auth__title">Добро пожаловать!</h1>
+        <div className="auth-main">
         <form className='auth-main__form' >
           <span className="auth-main__title">Имя</span>
           <input
@@ -44,6 +46,8 @@ function Register() {
             <Link to="/signin" className='auth-main__text-button'>Войти
             </Link></p>
         </form>
+        </div>
+      </div>
       </div>
     </section>
   );
