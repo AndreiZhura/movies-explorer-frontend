@@ -106,6 +106,18 @@
 
 }
 
+@media screen and (max-width:750px) {
+
+    .tekhnologies__lists {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+
+}
+
+
+
 
 @media screen and (max-width:450px) {
     .tekhnologies {

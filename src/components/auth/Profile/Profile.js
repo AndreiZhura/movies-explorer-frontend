@@ -14,9 +14,8 @@ function Profile() {
             <input
               className="profile-main__input"
               id="name-input"
-              required
               placeholder="Виталий"
-              type="name"
+              type="text"
               name="name-link"
               readonly="readonly"
             />
@@ -26,7 +25,6 @@ function Profile() {
             <input
               className="profile-main__input"
               id="email-input"
-              required
               placeholder="pochta@yandex.ru"
               type="email"
               name="email-link"
