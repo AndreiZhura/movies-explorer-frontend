@@ -93,4 +93,9 @@
        align-self: flex-start;
        justify-self: flex-start;
     }
+
+    .movies__img {
+        width: 300px;
+        height: 168px;
+    }
 }

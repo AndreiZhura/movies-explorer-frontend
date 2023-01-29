@@ -1,9 +1,9 @@
 import React from "react";
 import './Footer.css'
 
-function Footer(){
+function Footer(props){
     return(
-    <footer className="footer">
+    <footer  className={props.isMovieFooter  ? "footer footer_movies" : "footer"}>
         <p className="footer__title">Учебный проект Яндекс.Практикум х BeatFilm.</p>
         <div className="footer__info">
         <p className="footer__year">© 2023</p>

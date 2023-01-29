@@ -26,36 +26,10 @@ function MoviesCardList(props){
          isMoviesStars = {props.isMoviesStars}
          isSavedMovies = {props.isSavedMovies}
          />
-          <MoviesCard 
-         isMoviesStars = {props.isMoviesStars}
-         isSavedMovies = {props.isSavedMovies}
-         />
-          <MoviesCard 
-         isMoviesStars = {props.isMoviesStars}
-         isSavedMovies = {props.isSavedMovies}
-         />
-         <MoviesCard 
-         isMoviesStars = {props.isMoviesStars}
-         isSavedMovies = {props.isSavedMovies}
-         />
-          <MoviesCard 
-         isMoviesStars = {props.isMoviesStars}
-         isSavedMovies = {props.isSavedMovies}
-         />
-          <MoviesCard 
-         isMoviesStars = {props.isMoviesStars}
-         isSavedMovies = {props.isSavedMovies}
-         />
-          <MoviesCard 
-         isMoviesStars = {props.isMoviesStars}
-         isSavedMovies = {props.isSavedMovies}
-         />
-       <MoviesCard 
-         isMoviesStars = {props.isMoviesStars}
-         isSavedMovies = {props.isSavedMovies}
-         />
-
-         <button className="movies-card-list__button">Ещё</button>
+         
+        </div>
+        <div className="movies-buttons">
+         <button className="movies-buttons__button">Ещё</button>
         </div>
         </>
     );

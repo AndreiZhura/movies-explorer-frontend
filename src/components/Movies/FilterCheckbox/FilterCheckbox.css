@@ -59,14 +59,16 @@
     visibility: visible;
 }
 
-@media screen and (max-width:768px) {
-    .checbox {
+@media screen and (max-width:769px) {
+    .checkbox {
+        margin-top: 2px;
         margin-right: 19px;
     }
 }
 @media screen and (max-width:425px) {
-    .checbox {
-        margin-left: 24px;
+    .checkbox {
+        margin-top: 5px;
+        margin-left: 20px;
     }
 
     .checkbox__label {

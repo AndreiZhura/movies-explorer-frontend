@@ -14,7 +14,7 @@ function Movies() {
                     isMoviesStars={false}
                     isSavedMovies={true} />
             </main>
-            <Footer />
+            <Footer isMovieFooter = {true} />
         </>
     )
 };

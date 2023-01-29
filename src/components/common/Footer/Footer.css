@@ -4,15 +4,19 @@
     margin-left: auto;
     margin-right: auto;
     background-color: #FAFAFA;
-    padding-top: 151px;
+    padding-top: 52px;
+}
+
+.footer_movies{
+    padding-top: 73px;
 }
 
 .footer__title {
-    margin-left: 38px;
+    margin-left: 69px;
     margin-right: auto;
     width: 1140px;
     text-align: center;
-    margin-top: 6px;
+    margin-top: 10px;
     margin-bottom: 0px;
     font-weight: 400;
     font-size: 13px;
@@ -20,7 +24,7 @@
     padding-bottom: 20px;
     color: #A0A0A0;
     border-bottom: 1px solid #E8E8E8;
-    ;
+
 }
 
 .footer__info {
@@ -32,16 +36,17 @@
     font-weight: 400;
     font-size: 13px;
     line-height: 15.73px;
+    
 }
 
 .footer__year {
-    margin-top: 25px;
+    margin-top: 21px;
     margin-bottom: 20px;
 
 }
 
 .footer__yandex {
-    margin-top: 25px;
+    margin-top: 21px;
     margin-bottom: 20px;
     position: absolute;
     right: 62px;
@@ -49,7 +54,7 @@
 
 .footer__git {
     position: absolute;
-    margin-top: 25px;
+    margin-top: 21px;
     margin-bottom: 20px;
     right: 0px;
 }
@@ -61,6 +66,8 @@
 
     .footer__title {
         width: calc(95vw - 2 * 3.75vw);
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .footer__info {
@@ -74,6 +81,11 @@
         padding-top: 20px;    
         background-color: #ffff;    
     }
+
+    .footer_movies{
+        padding-top: 66px;
+    }
+    
 
     .footer__info {
       margin-right: 30px;
@@ -129,7 +141,11 @@
     .footer {
         width: 320px;
         height: 253px;
-        padding-top: 53px;
+        padding-top: 48px;
+    }
+
+    .footer_movies{
+        padding-top: 63px;
     }
 
     .footer__title {
@@ -160,6 +176,7 @@
       margin: 0;
       margin-top: 21px;
       margin-bottom: 0px;
+      padding-left: 0px;
       font-size: 12px;
       line-height: 14.52px;
     }
@@ -168,7 +185,7 @@
         position: static;
         text-align: center;
         grid-area: yandex;
-        margin-top: 31px;
+        margin-top: 33px;
         margin-bottom: 0px;
         font-size: 12px;
         line-height: 14.52px;

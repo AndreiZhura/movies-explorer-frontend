@@ -95,19 +95,21 @@
     .search-form__forma {
         width: calc(100vw - 2 * 18vw);
     }
+
 }
 
 
 @media screen and (max-width:768px) {
+
     .search-form {
-        margin-top: 75px;
+        margin-top: 78px;
     }
     .search-form__button {
         margin-right: 40px;
     }
 
     .search-form__forma {
-        width: calc(100vw - 2 * 20vw);
+        width: 100vw;
     }
 }
 
@@ -158,5 +160,6 @@
   
     .search-form__container {
         width: 100%;
+        gap: 60px;
     }
 }
