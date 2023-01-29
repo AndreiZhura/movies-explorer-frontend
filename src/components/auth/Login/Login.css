@@ -10,19 +10,65 @@
     margin-top: 196px;
     cursor: pointer;
 }
-.login-main{
+
+.login-main {
     margin-top: 56px;
     width: 396px;
     display: flex;
     flex-direction: column;
 }
 
-.auth__title_login{
-    margin-left: 1000px;
+.auth__title_login {
+    margin-left: 0px;
 }
+
+
 
 @media screen and (max-width:1280px) {
     .login {
         width: calc(100vw - 2 * 3.75vw);
+    }
+}
+
+@media screen and (max-width:600px) {
+    .login {
+        width: calc(100vw - 2 * 3.75vw);
+    }
+
+    .logo_login {
+        margin-left: 64px;
+    }
+
+    .auth__title_login {
+        margin-left: 64px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .login {
+        width: calc(100vw - 2 * 3.75vw);
+    }
+
+    .logo_login {
+        margin-left: 64px;
+    }
+    .auth__title_login {
+        margin-left: 64px;
+    }
+
+    .auth__title_login {
+       padding-left: 40px;
+    }
+    .auth-main__text_login {
+        text-align:start ;
+        font-size: 12px;
+        line-height: 14.52px;
+        margin-top: 13px;
+        margin-left: 5px;
+    }
+
+    .auth-main__text-button_login{
+        font-size: 12px;
+        line-height: 14.52px;
     }
 }
