@@ -23,7 +23,7 @@ function Header(props) {
           onClick={handleChange}
         ></button>
         {isMenu && (
-          <section className="menu-right">
+          <div className="menu-right">
             <div className="menu-right__main">
               <button className="menu-right__close"
                 onClick={handleChange}></button>
@@ -36,7 +36,7 @@ function Header(props) {
                 <NavLink className="menu-right__account"   to="/profile">Аккаунт</NavLink>
               </nav>
             </div>
-          </section>
+          </div>
         )}
       </header>
     </>

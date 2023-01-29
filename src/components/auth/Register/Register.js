@@ -25,7 +25,7 @@ function Register() {
           />
           <span className="auth-main__title">E-mail</span>
           <input
-            className="auth-main__input"
+            className="auth-main__input auth-main__input_email "
             id="email-input"
             required
             placeholder="Email"

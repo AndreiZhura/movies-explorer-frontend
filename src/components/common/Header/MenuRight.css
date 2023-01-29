@@ -19,6 +19,7 @@
 }
 
 .menu-right__close {
+    cursor: pointer;
     position: absolute;
     width: 18px;
     height: 26px;
@@ -28,7 +29,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
-    top: 2.5%;
+    top: 3.5%;
     left: 91%;
 }
 
@@ -40,7 +41,7 @@
     align-items: center;
     background-color: rgb(255, 255, 255);
     height: 13.1%;
-    margin-top: 163px;
+    margin-top: 169px;
 }
 
 .menu-right__item {
@@ -50,6 +51,7 @@
     font-size: 18px;
     line-height: 21.78px;
     padding-bottom: 10px;
+    transition: border-bottom 1s ease;
 }
 
 .menu-right__item:hover {

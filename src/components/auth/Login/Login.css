@@ -17,6 +17,10 @@
     flex-direction: column;
 }
 
+.auth__title_login{
+    margin-left: 1000px;
+}
+
 @media screen and (max-width:1280px) {
     .login {
         width: calc(100vw - 2 * 3.75vw);

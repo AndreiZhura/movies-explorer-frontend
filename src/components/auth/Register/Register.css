@@ -17,6 +17,11 @@
     display: flex;
     flex-direction: column;
 }
+
+.auth-main__input_email{
+    border-bottom: 1px solid #2BE080;
+}
+
 @media screen and (max-width:1280px) {
     .register {
         width: calc(100vw - 2 * 3.75vw);
@@ -30,13 +35,18 @@
     }
     .redister-main{
         width: 260px;
+        height: 1000px;
     }
 }
 
-@media screen and (max-width:600px) {
-   
+
+@media screen and (max-width:320px) {
+
+    .register {
+        width: 100vw;
+    }
     .redister-main{
-       height: 1000px;
+        width: 100vw;
     }
+   
 }
-

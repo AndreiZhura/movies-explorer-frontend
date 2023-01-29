@@ -86,7 +86,7 @@
 
 @media screen and (max-width:768px) {
     .profile-main {
-        margin-top: 211px;
+        margin-top: 214px;
     }
 
 
@@ -102,17 +102,24 @@
 
 @media screen and (max-width:460px) {
     .profile-main {
-        margin-top: 48px;
+        margin-top: 55px;
         width: 260px;
     }
 
 
     .profile__title {
         margin-top: 0px;
-        margin-bottom: 78px;
+        margin-bottom: 74px;
     }
 
     .profile-main__button {
-        margin-top: 346px;
+        margin-top: 350px;
+        font-size: 12px;
+        line-height: 14.52px;
+    }
+
+    .profile-main__text-button{
+        font-size: 12px;
+        line-height: 14.52px;
     }
 }

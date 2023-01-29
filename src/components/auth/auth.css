@@ -131,9 +131,9 @@
 @media screen and (max-width:320px) {
 
     .auth-main__button_register {
-        margin-top: 220px;
+        margin-top: 222px;
         font-size: 12px;
-        line-height: 14.52px;
+        line-height: 13.52px;
     }
 
     .auth-main__button_login {
@@ -146,7 +146,9 @@
         font-size: 12px;
         line-height: 14.52px;
         margin-top: 13px;
-        margin-left: 10px;
+        margin-left: 0px;
+        height: 10px;
+       
     }
 
     .auth-main__text_login {
@@ -158,10 +160,26 @@
 
     .auth-main__form {
         gap: 0px;
+        width: 90%;
     }
 
     .auth__title {
         margin-top: 48px;
         margin-bottom: 79px;
+        margin-left: 28px;
+    }
+    .auth-main__input {
+       font-size: 14px;
+       line-height: 16.94px;
+    }
+    .auth-main__text-button {
+        margin-left: 13px;
+        font-size: 14px;
+        line-height: 16.94px;
+    }
+
+    .logo {
+      margin-left: 129px;
+  
     }
 }
