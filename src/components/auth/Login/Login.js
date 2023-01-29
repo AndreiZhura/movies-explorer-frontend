@@ -34,7 +34,7 @@ function Login(props) {
         />
         <button className='auth-main__button auth-main__button_login'>Войти</button>
         <p className='auth-main__text auth-main__text_login'>Ещё не зарегистрированы?
-          <Link to="/signup" className='auth-main__text-button  auth-main__text-button_login '>Регистрация
+          <Link to="/signup" className='auth-main__text-button auth-main__text-login '>Регистрация
           </Link></p>
       </form>
       </div>

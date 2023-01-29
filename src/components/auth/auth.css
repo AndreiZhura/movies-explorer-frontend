@@ -168,8 +168,13 @@
     }
     .auth-main__text-button {
         margin-left: 13px;
-        font-size: 14px;
-        line-height: 16.94px;
+        font-size: 12px;
+        line-height: 14.52px;
+    }
+
+    .auth-main__text-button{
+        font-size: 10px;
+        line-height: 14px;
     }
 
     .logo {
