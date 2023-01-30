@@ -68,19 +68,20 @@
     }
 }
 
-@media screen and (max-width:700px) {
+@media screen and (max-width:766px) {
     .movie-card-list {
-        width: 80%;
-        padding-top: 50px;
+        width: 300px;
         grid-template-columns: 1fr;
     }
+
 }
 
-@media screen and (max-width:320px) {
+
+
+@media screen and (max-width:425px) {
     .movie-card-list {
         width: 300px;
         padding-top: 41px;
-        grid-template-columns: 1fr;
         row-gap: 4px;
     }
 

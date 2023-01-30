@@ -1,7 +1,7 @@
 .movies {
     width: 364px;
     position: relative;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .movies__title {
@@ -22,7 +22,7 @@
     line-height: 13.31px;
 }
 
-.movies__button{
+.movies__button {
     cursor: pointer;
     background-image: url(../../../images/cross.svg);
     position: absolute;
@@ -36,7 +36,7 @@
     background-color: white;
 }
 
-.movies__button-stars{
+.movies__button-stars {
     cursor: pointer;
     background-image: url(../../../images/stars0.svg);
     position: absolute;
@@ -51,27 +51,30 @@
 }
 
 
-.movies__button_hidden{
+.movies__button_hidden {
     visibility: hidden;
 }
-.movies__button_visible{
+
+.movies__button_visible {
     visibility: visible;
 }
 
-.movies__button-stars_hidden{
+.movies__button-stars_hidden {
     visibility: hidden;
 }
-.movies__button-stars_visible{
+
+.movies__button-stars_visible {
     visibility: visible;
 }
 
 .movies__img {
-   width: 100%;
+    width: 100%;
+    margin-bottom: -4px;
 }
 
 @media screen and (max-width:1279px) {
     .movies {
-        width: calc(364px - 10px)
+        width: calc(364px - 25px)
     }
 }
 
@@ -84,15 +87,16 @@
 
 @media screen and (max-width:700px) {
     .movies {
-       align-self: center;
-       justify-self: center;
+        align-self: center;
+        justify-self: center;
     }
 }
 
 @media screen and (max-width:425px) {
     .movies {
-       align-self: flex-start;
-       justify-self: flex-start;
+        width: calc(364px - 63px);
+        align-self: flex-start;
+        justify-self: flex-start;
     }
 
     .movies__img {
