@@ -105,11 +105,11 @@
         margin-top: 78px;
     }
     .search-form__button {
-        margin-right: 40px;
+        margin-right: 16px;
     }
 
     .search-form__forma {
-        width: 100vw;
+        width: 65vw;
     }
 }
 
