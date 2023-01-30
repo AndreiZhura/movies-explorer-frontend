@@ -94,6 +94,17 @@
         margin-left: auto;
         margin-right: auto;
     }
+
+    .about-project__main {
+        width: calc(100vw - 6vw);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .about-project__time {
+        width: calc(100vw - 6vw);
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 @media screen and (max-width:769px) {
@@ -103,7 +114,8 @@
     }
 
     .about-project__main {
-        margin: 70px 50px 0px 50px;
+        width: 668px;
+        margin: 70px auto 0px auto;
     }
 
     .about-project__title {
@@ -135,11 +147,15 @@
     }
 
     .about-project__limited_gray {
-        padding-left: 40px;
+        padding-left: 12px;
     }
 
     .about-project__technologie {
         width: 140px;
+    }
+
+    .about-project__technologie_frontend {
+        width: 88px;
     }
 }
 
@@ -148,6 +164,15 @@
         width: calc(100vw -  1vw);
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .about-project__main {
+        width: calc(100vw -  15vw);
+        margin: 70px auto 0px auto;
+    }
+
+    .about-project__time {
+        width: calc(100vw -  15vw);
     }
 }
 
@@ -158,7 +183,7 @@
     }
 
     .about-project__main {
-        margin: 60px 0px 0px 0px;
+        margin: 60px auto 0px auto;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
@@ -195,10 +220,10 @@
     }
 
     .about-project__time {
-        margin: 4px 0px 0px 0px;
+        margin: 4px auto 0px auto;
         display: grid;
         grid-template-columns: 50% 50%;
-        margin-left: 0px;
+
     }
 
     .about-project__limited {

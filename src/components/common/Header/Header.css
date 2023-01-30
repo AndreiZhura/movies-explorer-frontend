@@ -80,8 +80,8 @@
         background-color: rgb(255, 255, 255);
         position: absolute;
         display: block;
-        right: 11px;
-        top: 32%;
+        right: 38px;
+        top: 35%;
         visibility: visible;
     }
 }
@@ -118,6 +118,7 @@
     
     .header__button-open {
         width: 22px;
-        top: 35%;
+        top: 32%;
+        right: 22px;
     }
 }

@@ -57,6 +57,10 @@
     .menu__profile {
         width: calc(20vw + 10vw);
     }
+
+    .menu__profile {
+        left: 16%;
+    }
 }
 
 @media screen and (max-width:768px) {

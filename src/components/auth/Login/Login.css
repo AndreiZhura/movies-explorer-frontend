@@ -26,14 +26,12 @@
 
 @media screen and (max-width:1280px) {
     .login {
-        width: calc(100vw - 2 * 3.75vw);
+        width: calc(100vw);
     }
 }
 
 @media screen and (max-width:600px) {
-    .login {
-        width: calc(100vw - 2 * 3.75vw);
-    }
+   
 
     .logo_login {
         margin-left: 64px;
@@ -45,10 +43,7 @@
 }
 
 @media screen and (max-width:320px) {
-    .login {
-        width: calc(100vw - 2 * 3.75vw);
-    }
-
+   
     .logo_login {
         margin-left: 64px;
     }

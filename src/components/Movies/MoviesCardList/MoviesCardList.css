@@ -58,9 +58,9 @@
 @media screen and (max-width:768px) {
     .movie-card-list {
         width: 93%;
-        padding-top: 113px;
-        row-gap: 24px;
-        column-gap: 16px;
+        padding-top: 109px;
+        row-gap: 31px;
+        column-gap: 28px;
     }
 
     .movies-buttons{
@@ -82,7 +82,7 @@
     .movie-card-list {
         width: 300px;
         padding-top: 41px;
-        row-gap: 4px;
+        row-gap: 9px;
     }
 
     .movies-buttons__button {

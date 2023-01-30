@@ -78,7 +78,7 @@
 @media screen and (max-width:769px) {
     .footer {
         width: 768px;
-        padding-top: 20px;    
+        padding-top: 16px;    
         background-color: #ffff;    
     }
 
@@ -94,7 +94,8 @@
     }
     
     .footer__title {
-        width: 708px
+        width: 708px;
+        padding-left: 18px;
     }
 
     .footer__year {

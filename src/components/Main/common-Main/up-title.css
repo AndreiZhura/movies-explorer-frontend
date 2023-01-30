@@ -40,12 +40,11 @@
 
 @media screen and (max-width:1279px) {
     .up-title {
-        width: calc(100vw - 1vw);
+        width: 92vw;
         margin-left: auto;
         margin-right: auto;
     }
     .up-title_about-me {
-        width: calc(100vw - 1vw);
         margin-top: 85px;
         margin-left: auto;
         margin-right: auto;
@@ -65,7 +64,7 @@
 
 @media screen and (max-width:767px) {
     .up-title {
-        width: calc(100vw - 1vw);
+        width: 80vw;
        
     }
 }

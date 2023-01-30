@@ -68,7 +68,7 @@
 @media screen and (max-width:425px) {
     .checkbox {
         margin-top: 5px;
-        margin-left: 20px;
+        margin-left: 25px;
     }
 
     .checkbox__label {

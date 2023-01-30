@@ -24,15 +24,12 @@
 
 @media screen and (max-width:1280px) {
     .register {
-        width: calc(100vw - 2 * 3.75vw);
+        width: 100vw;
     }
 }
 
 
 @media screen and (max-width:600px) {
-    .register {
-        width: calc(100vw - 2 * 3.75vw);
-    }
     .redister-main{
         width: 260px;
         height: 1000px;
@@ -42,9 +39,7 @@
 
 @media screen and (max-width:320px) {
 
-    .register {
-        width: 100vw;
-    }
+ 
     .redister-main{
         width: 100vw;
     }
