@@ -3,6 +3,7 @@
     width: 38px;
     height: 38px;
     transition: opacity 0.5s ease;
+    border-radius: 10px;
 }
 
 .logo:hover {

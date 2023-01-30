@@ -50,6 +50,7 @@
     height: 38px;
     background-color: #E8E8E8;
     transition: opacity 0.5s ease;
+    border-radius: 10px;
 }
 
 .header__logo:hover {

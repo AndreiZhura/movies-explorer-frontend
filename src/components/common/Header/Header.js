@@ -18,10 +18,6 @@ function Header(props) {
       <header className="header header_profile">
         <Link to="/" className="header__logo"></Link>
         <Navigation />
-        <button
-          className="header__button header__button-open "
-          onClick={handleChange}
-        ></button>
         {isMenu && (
           <div className="menu-right">
             <div className="menu-right__main">
