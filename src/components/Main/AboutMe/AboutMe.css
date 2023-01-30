@@ -30,13 +30,12 @@
 }
 
 .about-me__text {
+    margin-top: 0px;
     height: 88px;
     width: 590px;
     font-weight: 400;
     font-size: 14px;
-    line-height: 159%;
-    letter-spacing: 0px;
-
+    line-height: 22.6px;
 }
 
 .about-me__image {
