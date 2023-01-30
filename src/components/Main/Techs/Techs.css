@@ -57,7 +57,7 @@
 
 @media screen and (max-width:1279px) {
     .tekhnologies {
-        width: calc(100vw - 2 * 3.75vw);
+        width: calc(100vw - 1vw);
     }
 }
 
@@ -98,7 +98,7 @@
 @media screen and (max-width:768px) {
 
     .tekhnologies {
-        width: calc(100vw - 10vw);
+        width: calc(100vw - 1vw);
        margin-left: auto;
        margin-right: auto;
 

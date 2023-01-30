@@ -16,7 +16,7 @@
 }
 
 .up-title_about-me {
-    margin: 110px 70px 0 70px;
+    margin: 110px auto 0 auto;
 }
 
 .up-title__text {
@@ -29,17 +29,23 @@
 }
 
 
+@media screen and (max-width:1280px) {
+    .up-title_about-me {
+        margin: 110px 70px 0 70px;
+    }
+}
+
 
 
 
 @media screen and (max-width:1279px) {
     .up-title {
-        width: calc(100vw - 2 * 8.75vw);
+        width: calc(100vw - 1vw);
         margin-left: auto;
         margin-right: auto;
     }
     .up-title_about-me {
-        width: calc(100vw - 10vw);
+        width: calc(100vw - 1vw);
         margin-top: 85px;
         margin-left: auto;
         margin-right: auto;
@@ -59,19 +65,16 @@
 
 @media screen and (max-width:767px) {
     .up-title {
-        width: calc(100vw - 2 * 8.75vw);
+        width: calc(100vw - 1vw);
        
     }
 }
 
 @media screen and (max-width:450px) {
 
-    .up-title {
-        width: 284px;
-    }
 
     .up-title_project {
-        margin-top: 69px;
+        margin-top: 72px;
     }
     
 

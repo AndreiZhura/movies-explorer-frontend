@@ -90,7 +90,7 @@
 
 @media screen and (max-width:1279px) {
     .about-project {
-        width: calc(100vw - 2 * 3.75vw);
+        width: calc(100vw - 1vw);
         margin-left: auto;
         margin-right: auto;
     }
@@ -145,7 +145,7 @@
 
 @media screen and (max-width:767px) {
     .about-project {
-        width: calc(100vw -  10vw);
+        width: calc(100vw -  1vw);
         margin-left: auto;
         margin-right: auto;
     }
@@ -227,4 +227,16 @@
     .about-project__technologie_frontend {
         width: 100px;
     }
+}
+
+@media screen and (max-width:320px) {
+    .about-project__main {
+        margin: 60px 0px 0px 15px;
+    }
+
+    .about-project__time {
+        margin: 4px 0px 0px 15px;
+        width: 288px;
+    }
+
 }

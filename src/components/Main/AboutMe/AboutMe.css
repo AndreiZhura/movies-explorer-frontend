@@ -1,5 +1,4 @@
 .about-me {
-    width: 1280px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -59,7 +58,7 @@
 
 @media screen and (max-width:1279px) {
     .about-me {
-        width: calc(100vw - 2 * 3.75vw);
+        width: calc(100vw - 1vw);
     }
 
     .about-me__info {
@@ -125,7 +124,7 @@
 
 @media screen and (max-width:767px) {
     .about-me {
-        width: calc(100vw - 2 * 3.75vw);
+        width: calc(100vw - 1vw);
     }
 
 
@@ -187,5 +186,14 @@
         font-size: 14px;
         line-height: 16.94px;
     }
+}
+
+@media screen and (max-width:320px) {
+
+    .about-me {
+        width: 320px;
+        margin-left: 13px;
+    }
+
 }
 

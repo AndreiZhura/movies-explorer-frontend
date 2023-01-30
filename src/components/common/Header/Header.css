@@ -63,14 +63,17 @@
 
 @media screen and (max-width:1279px) {
     .header {
-        width: calc(100vw - 2 * 3.75vw);
+        width: calc(100vw - 1vw);
     }
 }
 
 @media screen and (max-width:768px) {
+    .header {
+        width: 768px;
+    }
 
     .header__logo {
-        margin: 0px 0px 5px 0px;
+        margin: 18px 0px 18px 30px;
     }
 
     .header__button {
@@ -83,6 +86,12 @@
     }
 }
 
+@media screen and (max-width:767px) {
+    .header {
+        width: calc(100vw - 1vw);
+    }
+}
+
 
 @media screen and (max-width:425px) {
     .header {
@@ -90,9 +99,23 @@
     }
 
     .header__logo {
-        margin: 0px 0px 0px 2px;
+        margin: 11px 0px 18px 14px;
     }
 
+    .header__button-open {
+        width: 22px;
+        top: 35%;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .header {
+        margin-bottom: 9px;
+        width: 320px;
+        height: 74px;
+    }
+
+    
     .header__button-open {
         width: 22px;
         top: 35%;
