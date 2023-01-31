@@ -110,7 +110,7 @@
     .portfolio__image {
         width: 12px;
         height: 28px;
-        margin-top: 0px;
+        margin-top: -3px;
         margin-right: 3px;
     }
 }

@@ -193,7 +193,7 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
-        margin-bottom: 47px;
+        margin-bottom: 45px;
         margin-left: 3px;
     }
 
@@ -201,7 +201,7 @@
         font-size: 18px;
         line-height: 25px;
         line-height: 21.78px;
-        margin-bottom: 15px;
+        margin-bottom: 16px;
     }
 
     .about-project__title_frond-end {
@@ -243,14 +243,14 @@
     }
 
     .about-project__technologie {
-        margin-top: 10px;
-        width: 110px;
+        margin-top: 8px;
+        width: 100px;
         font-size: 11px;
         line-height: 12.74px;
     }
 
     .about-project__technologie_frontend {
-        width: 100px;
+        width: 98px;
     }
 }
 
@@ -260,7 +260,7 @@
     }
 
     .about-project__time {
-        margin: 4px 0px 0px 15px;
+        margin: 4px 0px 0px 17px;
         width: 288px;
     }
 
