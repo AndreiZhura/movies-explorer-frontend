@@ -1,7 +1,8 @@
 .movies {
     width: 364px;
+    height: 271px;
     position: relative;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
 }
 
 .movies__title {
@@ -16,6 +17,7 @@
 
 .movies__time {
     margin-top: 0px;
+    margin-bottom: 13px;
     margin-left: 13px;
     font-weight: 400;
     font-size: 11px;
@@ -69,7 +71,7 @@
 
 .movies__img {
     width: 100%;
-    margin-bottom: -4px;
+    height: 203px;
 }
 
 @media screen and (max-width:1279px) {
