@@ -5,10 +5,9 @@
     margin-right: auto;
     background-color: #FAFAFA;
     padding-top: 52px;
-    border: 1px solid green;
 }
 
-.footer_movies{
+.footer_movies {
     padding-top: 73px;
 }
 
@@ -37,7 +36,7 @@
     font-weight: 400;
     font-size: 13px;
     line-height: 15.73px;
-    
+
 }
 
 .footer__year {
@@ -79,49 +78,69 @@
 @media screen and (max-width:769px) {
     .footer {
         width: 768px;
-        padding-top: 16px;    
-        background-color: #ffff;    
+        padding-top: 16px;
+        background-color: #ffff;
     }
 
-    .footer_movies{
-        padding-top: 75px;
+    .footer_movies {
+        padding-top: 73px;
     }
-    
+
 
     .footer__info {
-      margin-right: 30px;
-      margin-left: 30px;
-      width: 716px;
+        margin-right: 30px;
+        margin-left: 30px;
+        width: 716px;
     }
-    
+
     .footer__title {
         width: 708px;
-        padding-left: 0px;
+        padding-left: 12px;
     }
 
     .footer__year {
-        padding-left: 0px;
+        padding-left: 8px;
         margin-top: 21px;
         margin-bottom: 20px;
         font-size: 13px;
         line-height: 15.73px;
     }
-    
+
     .footer__yandex {
-        padding-right: 8px;
+        padding-right: 0px;
         margin-top: 21px;
         margin-bottom: 20px;
         font-size: 13px;
         line-height: 15.73px;
-     
+
     }
-    
+
     .footer__git {
-        padding-right: 8px;
+        padding-right: 0px;
         margin-top: 21px;
         margin-bottom: 20px;
         font-size: 13px;
         line-height: 15.73px;
+    }
+
+
+    .footer__title_movies {
+        text-align: center;
+        padding-left: 0px;
+    }
+
+
+
+    .footer__year_movies {
+        padding-left: 0px;
+    }
+
+    .footer__yandex_movies {
+        padding-right: 8px;
+    }
+
+    .footer__git_movies {
+        padding-right: 8px;
     }
 }
 
@@ -138,7 +157,7 @@
         width: calc(95vw - 1vw);
         margin-left: auto;
         margin-right: auto;
-}
+    }
 }
 
 @media screen and (max-width:425px) {
@@ -148,7 +167,7 @@
         padding-top: 48px;
     }
 
-    .footer_movies{
+    .footer_movies {
         padding-top: 63px;
     }
 
@@ -160,12 +179,11 @@
     }
 
     .footer__info {
-        width: 320px;
         display: grid;
         grid-template-rows: 30% 30% 30%;
         grid-template-areas: ". yandex ."
-                             ". git ."
-                             ". year .";
+            ". git ."
+            ". year .";
         width: 300px;
         height: 137px;
         font-size: 12px;
@@ -174,15 +192,17 @@
     }
 
     .footer__year {
-      text-align: center;
-      grid-area: year;
-      color:#A0A0A0;
-      margin: 0;
-      margin-top: 21px;
-      margin-bottom: 0px;
-      padding-left: 0px;
-      font-size: 12px;
-      line-height: 14.52px;
+        text-align: center;
+        grid-area: year;
+        color: #A0A0A0;
+        margin: 0;
+        margin-top: 21px;
+        margin-bottom: 0px;
+        padding-left: 0px;
+        font-size: 12px;
+        line-height: 14.52px;
+        width: 100%;
+        padding-right: 8px;
     }
 
     .footer__yandex {
@@ -198,7 +218,7 @@
     .footer__git {
         position: static;
         text-align: center;
-        grid-area:  git;
+        grid-area: git;
         margin-top: 18px;
         margin-bottom: 0px;
         font-size: 12px;
@@ -207,3 +227,51 @@
 }
 
 
+@media screen and (max-width:320px) {
+
+    .footer_movies {
+        padding-top: 74px;
+    }
+
+    .footer__title {
+        margin-left: 4px;
+    }
+
+    .footer__yandex {
+        margin-top: 32px;
+        margin-left: 0px;
+    }
+
+    .footer__git {
+        margin-top: 17px;
+        margin-left: 0px;
+
+    }
+
+    .footer__year {
+        padding-right: 0px;
+    }
+
+    .footer__title_movies {
+        text-align: center;
+        padding-left: 12px;
+    }
+
+    .footer_movies{
+        padding-top: 73px;
+    }
+
+    .footer__year_movies {
+       margin-left: 0px;
+    }
+
+    .footer__yandex_movies {
+        padding-right: 0px;
+    }
+
+    .footer__git_movies {
+        padding-right: 0px;
+    }
+
+
+}

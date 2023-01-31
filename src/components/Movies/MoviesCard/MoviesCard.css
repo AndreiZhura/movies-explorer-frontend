@@ -3,7 +3,6 @@
     height: 271px;
     position: relative;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
-    border: 1px solid green;
 }
 
 .movies__title {
@@ -115,6 +114,31 @@
 
     .movies__img {
         width: 300px;
-        height: 168px;
+        margin-top: 11px;
     }
+}
+
+@media screen and (max-width:340px) {
+  
+    .movies {
+        width: 300px;
+        height: 236px;
+    }
+
+    .movies__img {
+        width: 300px;
+        height: 168px;
+        margin-top: 0px;
+    }
+
+    .movies__title {
+        margin-top: 23px;
+        margin-left: 13px;
+        margin-bottom: 10px;
+
+    }
+
+    .movies__time {
+     margin-left: 15px;
+}
 }
