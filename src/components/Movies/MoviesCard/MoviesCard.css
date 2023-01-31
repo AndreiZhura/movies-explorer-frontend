@@ -40,10 +40,10 @@
 
 .movies__button-stars {
     cursor: pointer;
-    background-image: url(../../../images/stars0.svg);
+    background-image: url(../../../images/stars.svg);
     position: absolute;
     top: 28px;
-    right: 13px;
+    right: 15px;
     width: 30px;
     height: 30px;
     border: none;
