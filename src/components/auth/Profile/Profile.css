@@ -102,7 +102,7 @@
 
 @media screen and (max-width:460px) {
     .profile-main {
-        margin-top: 55px;
+        margin-top: 59px;
         width: 260px;
     }
 
@@ -122,4 +122,15 @@
         font-size: 12px;
         line-height: 14.52px;
     }
+}
+
+@media screen and (max-width:460px) {
+    .profile-main__container {
+        height: 30px;
+    }
+
+    .profile-main__input {
+        margin-top: 7px;
+    }
+    
 }

@@ -25,7 +25,7 @@ function Register() {
           />
           <span className="auth-main__title">E-mail</span>
           <input
-            className="auth-main__input auth-main__input_email "
+            className="auth-main__input auth-main__input_email"
             id="email-input"
             required
             placeholder="Email"
@@ -43,8 +43,8 @@ function Register() {
 
           />
           <button className='auth-main__button auth-main__button_register '>Зарегистрироваться</button>
-          <p className='auth-main__text'>Уже зарегистрированы?
-            <Link to="/signin" className='auth-main__text-button'>Войти
+          <p className='auth-main__text auth-main__text_register'>Уже зарегистрированы?
+            <Link to="/signin" className='auth-main__text-button auth-main__text-button_register'>Войти
             </Link></p>
         </form>
         </div>
