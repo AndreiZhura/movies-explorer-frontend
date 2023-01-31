@@ -41,7 +41,7 @@
     align-items: center;
     background-color: rgb(255, 255, 255);
     height: 13.1%;
-    margin-top: 174px;
+    margin-top: 175px;
 }
 
 .menu-right__item {
@@ -91,22 +91,26 @@
         margin-top: 103.5%;
         text-align: center;
     }
+    .menu-right__accounts {
+        margin-top: 320px;
+    
+    }
 }
 
 @media screen and (max-width:320px) {
 
     .menu-right__navigetion {
-        margin-top: 142px;
+        margin-top: 146px;
         height: 10.8%;
     }
 
     .menu-right__close {
-        top: 1.4%;
-        left: 83%;
+        top: 2.1%;
+        left: 88%;
     }
 
     .menu-right__accounts {
-        margin-top: 435px;
+        margin-top: 476px;
         text-align: center;
     }
 
