@@ -5,6 +5,7 @@
     margin-right: auto;
     background-color: #FAFAFA;
     padding-top: 52px;
+    border: 1px solid green;
 }
 
 .footer_movies{
@@ -61,7 +62,7 @@
 
 @media screen and (max-width:1279px) {
     .footer {
-        width: calc(100vw - 1vw);
+        width: calc(100vw - 2 * 3.75vw);
     }
 
     .footer__title {
@@ -83,7 +84,7 @@
     }
 
     .footer_movies{
-        padding-top: 66px;
+        padding-top: 75px;
     }
     
 
@@ -95,11 +96,11 @@
     
     .footer__title {
         width: 708px;
-        padding-left: 18px;
+        padding-left: 0px;
     }
 
     .footer__year {
-        padding-left: 8px;
+        padding-left: 0px;
         margin-top: 21px;
         margin-bottom: 20px;
         font-size: 13px;
@@ -107,6 +108,7 @@
     }
     
     .footer__yandex {
+        padding-right: 8px;
         margin-top: 21px;
         margin-bottom: 20px;
         font-size: 13px;
@@ -115,6 +117,7 @@
     }
     
     .footer__git {
+        padding-right: 8px;
         margin-top: 21px;
         margin-bottom: 20px;
         font-size: 13px;
