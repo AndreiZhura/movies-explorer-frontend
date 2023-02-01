@@ -97,7 +97,11 @@
     }
 
     .up-title_project {
-        width: 95%;
+        width: 93%;
+    }
+
+    .up-title_about-me{
+        width: 98%;
     }
     .up-title_tekhnologies {
         width: 95%;

@@ -241,7 +241,7 @@
     }
 
     .about-project__limited_gray {
-        padding-left: 25px;
+        padding-left: 27px;
     }
 
     .about-project__technologie {
@@ -263,12 +263,15 @@
     }
 
     .about-project__main {
+        margin-top: 62px;
         width: 95%;
     }
 
     .about-project__time {
-        width: 95%;
+        width: 93%;
     }
-
+    .about-project__technologie_frontend {
+        width: 102px;
+    }
 
 }

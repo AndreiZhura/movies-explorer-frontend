@@ -41,22 +41,24 @@
 }
 
 .footer__year {
-    margin-top: 21px;
+    margin-top: 19px;
     margin-bottom: 20px;
-
+    margin-left: 1px;
 }
 
 .footer__yandex {
-    margin-top: 21px;
+    margin-top: 20px;
     margin-bottom: 20px;
+    margin-right: 4px;
     position: absolute;
     right: 62px;
 }
 
 .footer__git {
     position: absolute;
-    margin-top: 21px;
+    margin-top: 20px;
     margin-bottom: 20px;
+    margin-right: 5px;
     right: 0px;
 }
 
@@ -111,6 +113,7 @@
         padding-right: 0px;
         margin-top: 21px;
         margin-bottom: 20px;
+        margin-right: 1px;
         font-size: 13px;
         line-height: 15.73px;
 
@@ -120,6 +123,7 @@
         padding-right: 0px;
         margin-top: 21px;
         margin-bottom: 20px;
+        margin-right: 0px;
         font-size: 13px;
         line-height: 15.73px;
     }
