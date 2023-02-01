@@ -87,8 +87,17 @@
 
 @media screen and (max-width:320px) {
 
+    .up-title {
+        width: 100%;
+       
+    }
+
     .up-title_about-me {
         margin-top: 81px;
+    }
+
+    .up-title_project {
+        width: 95%;
     }
 }
 

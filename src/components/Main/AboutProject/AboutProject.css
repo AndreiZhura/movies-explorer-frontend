@@ -100,6 +100,7 @@
         margin-left: auto;
         margin-right: auto;
     }
+
     .about-project__time {
         width: calc(95vw - 2 * 3.75vw);
         margin-left: auto;
@@ -167,15 +168,15 @@
     }
 
     .about-project__main {
-        width: calc(100vw -  15vw);
+        width: calc(100vw - 15vw);
         margin: 70px auto 0px auto;
     }
 
     .about-project__time {
         margin: 61px 50px 0 0px;
-        width: calc(100vw -  15vw);
+        width: calc(100vw - 15vw);
     }
- 
+
 }
 
 @media screen and (max-width:717px) {
@@ -254,4 +255,22 @@
     .about-project__technologie_frontend {
         width: 98px;
     }
+}
+
+@media screen and (max-width:320px) {
+
+    .about-project {
+        width: 95%;
+    }
+
+    .about-project__main {
+        width: 95%;
+    }
+
+    .about-project__time {
+        
+        width: 95%;
+    }
+
+
 }
