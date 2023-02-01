@@ -161,7 +161,7 @@
 
 @media screen and (max-width:767px) {
     .about-project {
-        width: calc(100vw -  1vw);
+        width: calc(95vw - 2 * 3.75vw);
         margin-left: auto;
         margin-right: auto;
     }
