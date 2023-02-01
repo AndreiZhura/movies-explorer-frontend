@@ -172,6 +172,7 @@
     }
 
     .about-project__time {
+        margin: 61px 50px 0 0px;
         width: calc(100vw -  15vw);
     }
  
