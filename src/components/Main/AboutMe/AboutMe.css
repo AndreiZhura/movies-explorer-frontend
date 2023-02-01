@@ -188,6 +188,18 @@
     }
 }
 
+@media screen and (max-width:330px) {
+
+    .about-me { 
+    }
+
+    .about-me__info{
+     
+        width: 99%;
+    }
+
+}
+
 @media screen and (max-width:320px) {
 
     .about-me {
