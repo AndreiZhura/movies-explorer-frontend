@@ -115,7 +115,7 @@
 
     .about-project__main {
         width: 668px;
-        margin: 70px auto 0px auto;
+        margin: 67px auto 0px auto;
     }
 
     .about-project__title {
@@ -137,7 +137,7 @@
     }
 
     .about-project__time {
-        margin: 61px 50px 0 50px;
+        margin: 64px 50px 0 50px;
         display: grid;
         grid-template-columns: 50% 50%;
     }
