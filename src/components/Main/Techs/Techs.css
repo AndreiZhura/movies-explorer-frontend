@@ -113,9 +113,11 @@
         flex-wrap: wrap;
         row-gap: 10px;
     }
+    .tekhnologies__subtitle {
+        width: calc(100vw - 2 * 3.75vw);
 
 }
-
+}
 
 
 
