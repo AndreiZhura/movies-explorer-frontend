@@ -156,6 +156,7 @@
 
     .footer__title {
         width: calc(95vw - 2 * 3.75vw);
+        padding-left: 0px;
     }
 
     .footer__info {
