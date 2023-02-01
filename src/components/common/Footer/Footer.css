@@ -163,7 +163,7 @@
 
 @media screen and (max-width:425px) {
     .footer {
-        width: 100%;
+        width: 95%;
         height: 253px;
         padding-top: 48px;
     }
@@ -173,7 +173,7 @@
     }
 
     .footer__title {
-        width: 100%;
+        width: 95%;
         font-size: 12px;
         line-height: 14.52px;
     }
@@ -184,7 +184,7 @@
         grid-template-areas: ". yandex ."
             ". git ."
             ". year .";
-        width: 300px;
+        width: 95%;
         height: 137px;
         font-size: 12px;
         line-height: 14.52px;
@@ -231,6 +231,8 @@
     .footer_movies {
         padding-top: 74px;
     }
+
+
 
     
 
