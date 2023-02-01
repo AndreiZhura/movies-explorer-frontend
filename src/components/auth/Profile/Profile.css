@@ -127,6 +127,9 @@
 @media screen and (max-width:460px) {
     .profile-main__container {
         height: 30px;
+        width: 82%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .profile-main__input {
