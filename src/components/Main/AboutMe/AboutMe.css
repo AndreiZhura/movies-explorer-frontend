@@ -57,8 +57,9 @@
 
 @media screen and (max-width:1279px) {
     .about-me {
-        width: calc(100vw - 1vw);
+        width: calc(100vw - 2 * 3.75vw);
     }
+    
 
     .about-me__info {
         width: calc(100vw - 2 * 3.75vw);
@@ -123,7 +124,7 @@
 
 @media screen and (max-width:767px) {
     .about-me {
-        width: calc(100vw - 1vw);
+        width: calc(100vw - 2 * 3.75vw);
     }
 
 

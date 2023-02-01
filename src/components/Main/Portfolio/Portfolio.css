@@ -49,7 +49,7 @@
 
 @media screen and (max-width:1279px) {
     .portfolio {
-        width: calc(100vw - 1vw);
+        width: calc(100vw - 2 * 3.75vw);
     }
 }
 
@@ -71,7 +71,7 @@
 
 @media screen and (max-width:765px) {
     .portfolio {
-        width: calc(100vw - 1vw);
+        width: calc(100vw - 2 * 3.75vw);
         margin-left: auto;
         margin-right: auto;
     }

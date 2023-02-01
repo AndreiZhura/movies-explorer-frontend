@@ -25,7 +25,7 @@
 
 @media screen and (max-width:1279px) {
     .promo {
-        width: calc(100vw - 1vw);
+        width: calc(100vw - 2 * 3.75vw);
     }
 }
 
@@ -48,7 +48,7 @@
 
 @media screen and (max-width:767px) {
     .promo {
-        width: calc(100vw - 1vw);
+        width: calc(100vw - 2 * 3.75vw);
     }
     .promo__title {
         width: calc(100vw - 2 * 3.75vw);;
