@@ -48,7 +48,7 @@
     background-image: url(../../../images/logo.svg);
     width: 38px;
     height: 38px;
-    background-color: #E8E8E8;
+    background-color: #fff;
     transition: opacity 0.5s ease;
     border-radius: 10px;
 }

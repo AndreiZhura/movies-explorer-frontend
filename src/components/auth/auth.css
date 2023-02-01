@@ -4,6 +4,7 @@
     height: 38px;
     transition: opacity 0.5s ease;
     border-radius: 10px;
+    background-color: #fff;
 }
 
 .logo:hover {
