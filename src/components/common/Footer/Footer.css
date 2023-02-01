@@ -62,7 +62,7 @@
 
 @media screen and (max-width:1279px) {
     .footer {
-        width: calc(100vw - 2 * 3.75vw);
+        width: 92.5vw;
     }
 
     .footer__title {

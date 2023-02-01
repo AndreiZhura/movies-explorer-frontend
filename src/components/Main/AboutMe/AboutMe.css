@@ -57,12 +57,12 @@
 
 @media screen and (max-width:1279px) {
     .about-me {
-        width: calc(100vw - 2 * 3.75vw);
+        width: 92.5vw;
     }
     
 
     .about-me__info {
-        width: calc(100vw - 2 * 3.75vw);
+        width: 92.5vw;
     }
 }
 
@@ -124,7 +124,7 @@
 
 @media screen and (max-width:767px) {
     .about-me {
-        width: calc(100vw - 2 * 3.75vw);
+        width: 92.5vw;
     }
 
 

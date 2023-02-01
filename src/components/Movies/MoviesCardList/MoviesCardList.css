@@ -38,12 +38,12 @@
 
 @media screen and (max-width:1279px) {
     .movie-card-list {
-        width: calc(100vw - 2 * 3.75vw);
+        width: 92.5vw;
         row-gap: 15px;
         column-gap: 10px;
     }
     .movies-buttons{
-        width: calc(100vw - 2 * 3.75vw);
+        width: 92.5vw;
         margin: 0 auto;
     }
 }
@@ -57,7 +57,7 @@
 
 @media screen and (max-width:989px) {
     .movie-card-list {
-        width: calc(100vw - 2 * 3.75vw);
+        width: 92.5vw;
     }
 }
 
