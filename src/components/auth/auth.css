@@ -24,7 +24,7 @@
 .auth-main__form {
     display: flex;
     flex-direction: column;
-    width: 396px;
+    width: 99%;
 }
 
 .auth-main__title {
@@ -46,7 +46,7 @@
 
 .auth-main__button {
     cursor: pointer;
-    width: 396px;
+    width: 100%;
     height: 45px;
     color: white;
     border: none;
@@ -114,8 +114,6 @@
     .auth-main__form {
         display: flex;
         flex-direction: column;
-        width: 260px;
-
     }
 
     .auth__logo {
@@ -126,9 +124,7 @@
         align-self: center;
     }
 
-    .auth-main__button {
-        width: 260px;
-    }
+   
 
     .auth-main__text-login {
         font-size: 12px;
@@ -136,7 +132,7 @@
     }
 
     .auth-main__text {
-        width: 260px;
+      
         font-size: 12px;
         line-height: 14.52px;
         text-align: start;
@@ -149,7 +145,6 @@
 @media screen and (max-width:320px) {
 
     .auth-main__button {
-        width: 260px;
         height: 45px;
     }
 
@@ -184,7 +179,9 @@
     .auth__title {
         margin-top: 48px;
         margin-bottom: 80px;
-        margin-left: 28px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
     }
 
     .auth-main__input {

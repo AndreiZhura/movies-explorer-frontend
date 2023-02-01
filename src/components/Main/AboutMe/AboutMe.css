@@ -195,12 +195,4 @@
     }
 }
 
-@media screen and (max-width:320px) {
-
-    .about-me {
-        width: 320px;
-        margin-left: 14px;
-    }
-
-}
 

@@ -61,7 +61,7 @@
     }
 
     .promo__title {
-        width: calc(100vw - 2 * 4.75vw);
+        width: 99%;
         font-size: 29px;
         line-height: 37px;
         text-align: center;
@@ -85,7 +85,7 @@
     }
 
     .promo__title {
-        width: calc(100vw - 2 * 3.75vw);
+        width: 100%;
         margin-top: 221px;
         
     }

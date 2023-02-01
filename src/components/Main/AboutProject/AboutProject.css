@@ -255,15 +255,3 @@
         width: 98px;
     }
 }
-
-@media screen and (max-width:320px) {
-    .about-project__main {
-        margin: 60px 0px 0px 15px;
-    }
-
-    .about-project__time {
-        margin: 4px 0px 0px 17px;
-        width: 288px;
-    }
-
-}
