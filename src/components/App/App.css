@@ -5,10 +5,12 @@
     color:black;
     max-width: 1280px;
     height: 100%;
+   
 }
 
 
 
 *{
     box-sizing: border-box;
+    border: 1px solid green;
 }
