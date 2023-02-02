@@ -63,7 +63,7 @@
 
 @media screen and (max-width:768px) {
     .movie-card-list {
-        width: 93%;
+        width: 94%;
         row-gap: 28px;
         column-gap: 23px;
         margin-bottom: 71px;
