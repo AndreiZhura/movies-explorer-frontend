@@ -1,5 +1,6 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import ProtectedRouteElement from '../ProtectedRoute';
 import Login from '../auth/Login/Login';
 import Register from '../auth/Register/Register';
 import Profile from '../auth/Profile/Profile';
@@ -19,7 +20,7 @@ function App() {
   return (
     <>
       <Routes>
-      <Route path="/" element={loggedIn ? <Navigate to="/profile" replace /> : <Navigate to="/signin" replace />} /> 
+        <Route path="/" element={loggedIn ? <Navigate to="/profile" replace /> : <Navigate to="/signin" replace />} />
         <Route path="/" element={<Main />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/saved-movies" element={<SavedMovies />} />
