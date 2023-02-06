@@ -96,13 +96,13 @@ function App() {
     auth
       .register(email, password, name)
       .then((res) => {
-        if (res.statusCode !== 400) {
+        
           setInfoError(false);
           history("/signin");
-        }
+        
       })
       .catch((err) => {
-        console.log(err);
+        console.log(true);
         setInfoError(true);
       });
   }
@@ -130,7 +130,7 @@ function App() {
     <>
       <CurrentUserContext.Provider value={currentUser}>
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route exact path="/" element={<Main />} />
           <Route path="/movies" element={
             <ProtectedRoute loggedIn={isLoggedIn}>
               <Movies
