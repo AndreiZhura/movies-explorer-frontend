@@ -4,17 +4,18 @@ import MoviesCardList from "./MoviesCardList/MoviesCardList";
 import Footer from "../common/Footer/Footer";
 import HeaderProfile from '../common/Header/HeaderProfile.js'
 
-function Movies() {
+function Movies({ movies }) {
     return (
         <>
             <HeaderProfile />
             <main className="main">
                 <SearchForm />
                 <MoviesCardList
+                    movies={movies}
                     isMoviesStars={false}
                     isSavedMovies={true} />
             </main>
-            <Footer isMovieFooter = {true} />
+            <Footer isMovieFooter={true} />
         </>
     )
 };
