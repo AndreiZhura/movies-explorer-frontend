@@ -13,18 +13,43 @@ import { useNavigate } from "react-router-dom";
 import ProtectedRoute from '../ProtectedRoute';
 import CurrentUserContext from '../../contexts/CurrentUserContext.js';
 import ApiMovies from '../../utils/MoviesApi';
+import api from '../../utils/MainApi'
 import * as auth from "../../utils/auth";
 
 function App() {
 
-  const [loggedIn, setloggedIn] = useState(false);
+
   const [currentUser, setCurrentUser] = useState({});
   const [movies, setMovies] = useState([]);
   const [userData, setUserData] = useState({});
   const [isLoggedIn, setisLoggedIn] = useState(false);
-  const [userEmail, setUserEmail] = useState("");
+
   const history = useNavigate();
 
+  // теперь карточки и вся информация о юзере загружаются если  isLoggedIn === true
+  useEffect(() => {
+    if (!isLoggedIn) return;
+    api
+      .downLoadingUserInformationFromServer()
+      .then((res) => {
+        setCurrentUser(res);
+        setUserData(res);
+        setisLoggedIn(true)
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+
+    /* api
+       .downloadingCardsFromServer()
+       .then((result) => {
+         setCards(result.data);
+       })
+       .catch((err) => {
+         console.error(err);
+       });*/
+
+  }, [isLoggedIn]);
 
   const newAuth = (token) => {
     return auth
@@ -32,12 +57,7 @@ function App() {
       .then((res) => {
         if (res) {
           setisLoggedIn(true);
-          setloggedIn(true);
-          setUserEmail(res.data.email);
-          setUserData({
-            username: res.username,
-            email: res.email,
-          });
+          setUserData(res);
         }
       })
       .catch((err) => {
@@ -53,19 +73,17 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (loggedIn) {
-      history("/");
+    if (isLoggedIn) {
+      history("/profile");
     }
-  }, [loggedIn]);
+  }, [isLoggedIn]);
 
   function handleLogin(email, password) {
     auth
       .authorize(email, password)
       .then((res) => {
         setisLoggedIn(true);
-        setloggedIn(true);
-        setUserEmail(email);
-        history("/");
+        history("/profile");
         localStorage.setItem("token", res.token);
       })
       .catch((err) => {
@@ -73,12 +91,11 @@ function App() {
       });
   }
 
-  function handleRegistration(email,password,name) {
+  function handleRegistration(email, password, name) {
     auth
-      .register(email,password,name)
+      .register(email, password, name)
       .then((res) => {
         if (res.statusCode !== 400) {
-          console.log(res);
           history("/signin");
         }
       })
@@ -88,18 +105,22 @@ function App() {
   }
 
 
-/*
-  useEffect(() => {
-    ApiMovies.AllMovies()
-      .then((result) => {
-        setMovies(result)
-        console.log(result.id)
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, []);
-*/
+  /*
+    useEffect(() => {
+      ApiMovies.AllMovies()
+        .then((result) => {
+          setMovies(result)
+          console.log(result.id)
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }, []);*/
+  function signOut() {
+    localStorage.removeItem('token');
+    history.push('/signup');
+    setisLoggedIn(false);
+  }
 
 
   return (
@@ -108,7 +129,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/movies" element={
-            <ProtectedRoute>
+            <ProtectedRoute loggedIn={isLoggedIn}>
               <Movies
                 movies={movies}
               />
@@ -116,13 +137,17 @@ function App() {
 
           } />
           <Route path="/saved-movies" element={
-            <ProtectedRoute>
+            <ProtectedRoute isLoggedIn={isLoggedIn}>
               <SavedMovies />
             </ProtectedRoute>
           } />
           <Route path="/profile" element={
-            <ProtectedRoute>
-              <Profile />
+            <ProtectedRoute isLoggedIn={isLoggedIn}>
+              <Profile
+                userData={userData}
+                signOut={signOut}
+                handleProfile={newAuth}
+              />
             </ProtectedRoute>
           } />
           <Route path="/signin" element={<Login
