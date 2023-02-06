@@ -23,6 +23,7 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [userData, setUserData] = useState({});
   const [isLoggedIn, setisLoggedIn] = useState(false);
+  const [ infoError, setInfoError ] = useState(false);
 
   const history = useNavigate();
 
@@ -74,7 +75,7 @@ function App() {
 
   useEffect(() => {
     if (isLoggedIn) {
-      history("/profile");
+      history("/");
     }
   }, [isLoggedIn]);
 
@@ -96,11 +97,13 @@ function App() {
       .register(email, password, name)
       .then((res) => {
         if (res.statusCode !== 400) {
+          setInfoError(false);
           history("/signin");
         }
       })
       .catch((err) => {
         console.log(err);
+        setInfoError(true);
       });
   }
 
