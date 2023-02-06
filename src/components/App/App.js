@@ -88,7 +88,7 @@ function App() {
         localStorage.setItem("token", res.token);
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.message);
       });
   }
 
@@ -102,7 +102,7 @@ function App() {
         
       })
       .catch((err) => {
-        console.log(true);
+        console.log(err);
         setInfoError(true);
       });
   }
@@ -158,6 +158,7 @@ function App() {
           />} />
           <Route path="/signup" element={<Register
             handleRegistration={handleRegistration}
+            infoError = {infoError}
           />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>

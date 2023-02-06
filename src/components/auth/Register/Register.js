@@ -71,7 +71,7 @@ function Register(props) {
             value={password}
             onChange={handlePassword}
           />
-          <span className={props.errorMessage ? 'auth-main__password_visible': "auth-main__password"}>Что-то пошло не так...</span>
+          <span className={props.infoError ? 'auth-main__password_visible': "auth-main__password"}>Что-то пошло не так...</span>
           <button className='auth-main__button auth-main__button_register '>Зарегистрироваться</button>
           <p className='auth-main__text auth-main__text_register'>Уже зарегистрированы?
             <Link to="/signin" className='auth-main__text-button auth-main__text-button_register'>Войти
