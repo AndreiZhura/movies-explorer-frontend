@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://api.andreizhura-diplom.nomoredomains.club';
+export const BASE_URL = 'https://api.andreizhura-diplom.nomoredomains.club';
 
 function getResponse(res) {
   if(res.ok) {

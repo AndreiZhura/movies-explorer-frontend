@@ -22,57 +22,8 @@ function App() {
   const [userData, setUserData] = useState({});
   const [isLoggedIn, setisLoggedIn] = useState(false);
   const [userEmail, setUserEmail] = useState("");
-  const [infoPopup, setInfoPopup] = useState(false);
-  const [isOpenInfoPopup, setisOpenInfoPopup] = useState(false);
   const history = useNavigate();
 
-
-  function handleLogin(email, password) {
-    auth
-      .authorize(email, password)
-      .then((res) => {
-        setisLoggedIn(true);
-        setloggedIn(true);
-        setUserEmail(email);
-        history.push("/");
-        localStorage.setItem("token", res.token);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      newAuth(token);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (loggedIn) {
-      history.push("/");
-    }
-  }, [loggedIn]);
-
-
-  function handleRegistration(email, password) {
-    auth
-      .register(email, password)
-      .then((res) => {
-        if (res.statusCode !== 400) {
-          setInfoPopup(true);
-          setisOpenInfoPopup(true);
-
-          history.push("/sign-in");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-        setInfoPopup(false);
-        setisOpenInfoPopup(true);
-      });
-  }
 
   const newAuth = (token) => {
     return auth
@@ -92,6 +43,49 @@ function App() {
         console.error(err);
       });
   };
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      newAuth(token);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (loggedIn) {
+      history.push("/");
+    }
+  }, [loggedIn]);
+
+  function handleLogin(email, password) {
+    auth
+      .authorize(email, password)
+      .then((res) => {
+        setisLoggedIn(true);
+        setloggedIn(true);
+        setUserEmail(email);
+        history.push("/");
+        localStorage.setItem("token", res.token);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  function handleRegistration(email,password,name) {
+    auth
+      .register(email,password,name)
+      .then((res) => {
+        if (res.statusCode !== 400) {
+          console.log(res);
+          history.push("/signin");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
 
 
   useEffect(() => {
