@@ -1,0 +1,1 @@
+export const MOVIES = `https://api.nomoreparties.co/beatfilm-movies`
