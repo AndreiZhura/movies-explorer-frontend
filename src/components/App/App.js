@@ -8,7 +8,8 @@ import PageNotFound from '../PageNotFound/PageNotFound';
 import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import { Routes } from 'react-router-dom';
-import { Route, useNavigate } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import ProtectedRoute from '../ProtectedRoute';
 import CurrentUserContext from '../../contexts/CurrentUserContext.js';
 import ApiMovies from '../../utils/MoviesApi';
@@ -53,7 +54,7 @@ function App() {
 
   useEffect(() => {
     if (loggedIn) {
-      history.push("/");
+      history("/");
     }
   }, [loggedIn]);
 
@@ -64,7 +65,7 @@ function App() {
         setisLoggedIn(true);
         setloggedIn(true);
         setUserEmail(email);
-        history.push("/");
+        history("/");
         localStorage.setItem("token", res.token);
       })
       .catch((err) => {
@@ -78,7 +79,7 @@ function App() {
       .then((res) => {
         if (res.statusCode !== 400) {
           console.log(res);
-          history.push("/signin");
+          history("/signin");
         }
       })
       .catch((err) => {
@@ -87,7 +88,7 @@ function App() {
   }
 
 
-
+/*
   useEffect(() => {
     ApiMovies.AllMovies()
       .then((result) => {
@@ -98,7 +99,7 @@ function App() {
         console.error(err);
       });
   }, []);
-
+*/
 
 
   return (
