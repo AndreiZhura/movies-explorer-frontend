@@ -1,22 +1,33 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./MoviesCardList.css";
 import MoviesCard from "../MoviesCard/MoviesCard";
 import SavesCard from "../savesCard/savesCard";
 
 function MoviesCardList({ isSavesMovies, movies }) {
   const [width, setWidth] = useState(window.innerWidth);
-  const [amountMovies , setAmountMovies]  = useState(0);
-
+  const [counter , setCounter] = useState(0);
+  
+  function count(){
+    if (width > 1279) {
+      setCounter(counter + 3)
+    }
+    else if (width > 767) {
+      setCounter(counter + 2)
+    }
+    else if (width > 319) {
+      setCounter(counter + 1);
+      }
+  }
 
   useEffect(() => {
     if (width > 1279) {
-      setAmountMovies(8);
+      setCounter(13)
     }
     else if (width > 767) {
-      setAmountMovies(2+3);
+      setCounter(9);
     }
    else if (width > 319) {
-      setAmountMovies(3);
+    setCounter(6);
     }
   },[])
 
@@ -27,7 +38,7 @@ function MoviesCardList({ isSavesMovies, movies }) {
           <SavesCard />
         ) : (
           <>
-            {movies.slice(1,amountMovies).map((movie) => (
+            {movies.slice(1,counter).map((movie) => (
               <MoviesCard
                 key={movie.id}
                 movie={movie}
@@ -37,7 +48,7 @@ function MoviesCardList({ isSavesMovies, movies }) {
         )}
       </div>
       <div className="movies-buttons">
-        <button className="movies-buttons__button">Ещё</button>
+        <button className="movies-buttons__button" onClick={count}>ещё</button>
       </div>
     </>
   );
