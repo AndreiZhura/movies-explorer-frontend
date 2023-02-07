@@ -24,14 +24,14 @@ function Login(props) {
         />
         <span className="auth-main__title">Пароль</span>
         <input
-          className="auth-main__input"
+          className="auth-main__input auth-main__input_bottom"
           id="password-input"
           required
           placeholder="Пароль"
           type="password"
           name="password-link"
-
         />
+         <span className="auth-main__error">Что-то пошло не так...</span>
         <button className='auth-main__button auth-main__button_login'>Войти</button>
         <p className='auth-main__text auth-main__text_login'>Ещё не зарегистрированы?
           <Link to="/signup" className='auth-main__text-button auth-main__text-login '>Регистрация
