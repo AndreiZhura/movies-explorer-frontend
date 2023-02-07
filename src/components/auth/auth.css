@@ -100,6 +100,10 @@
     opacity: 0.7;
 }
 
+.auth-main__error_hidden{
+    visibility: hidden;
+}
+
 .auth-main__input_bottom{
     margin-bottom: 5px;
     color: red;

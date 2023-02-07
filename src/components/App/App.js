@@ -9,32 +9,81 @@ import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute.js'
 import { Routes, Route } from 'react-router-dom';
+//функционал
+import { useState, useEffect } from 'react';
+import * as auth from "../../components/utils/MainApi";
+import { useNavigate } from "react-router-dom";
 
 
 
 function App() {
+
+  const [loggedIn, setloggedIn] = useState(false);
+  const [infoError, setInfoError] = useState(true);
+  const history = useNavigate();
+
+
+  function handleLogin(email, password) {
+    auth
+      .authorize(email, password)
+      .then((res) => {
+        setloggedIn(true);
+        history("/profile");
+        localStorage.setItem("token", res.token);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  function handleRegistration(email, password, name) {
+    auth
+      .register(email, password, name)
+      .then((res) => {
+
+        setInfoError(true);
+        history("/signin");
+
+      })
+      .catch((err) => {
+        console.log(err);
+        setInfoError(false);
+      });
+  }
+
+
+
+  function signOut() {
+    localStorage.removeItem('token');
+    history.push('/signup');
+    setloggedIn(false);
+  }
+
   return (
     <>
       <Routes>
         <Route exact path="/" element={<Main />} />
         <Route path="/movies" element={
-          <ProtectedRoute loggedIn={true}>
+          <ProtectedRoute loggedIn={loggedIn}>
             <Movies />
           </ProtectedRoute>
         } />
         <Route path="/saved-movies" element={
-          <ProtectedRoute loggedIn={false}>
+          <ProtectedRoute loggedIn={loggedIn}>
             <SavedMovies isSavesMovies={true} />
           </ProtectedRoute>
         } />
 
         <Route path="/profile" element={
-          <ProtectedRoute loggedIn={true}>
+          <ProtectedRoute loggedIn={loggedIn}>
             <Profile />
           </ProtectedRoute>
         } />
         <Route path="/signin" element={<Login />} />
-        <Route path="/signup" element={<Register />} />
+        <Route path="/signup" element={<Register
+          handleRegistration={handleRegistration}
+          infoError={infoError}
+        />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>
