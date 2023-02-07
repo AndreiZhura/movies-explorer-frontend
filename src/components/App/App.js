@@ -27,12 +27,14 @@ function App() {
     auth
       .authorize(email, password)
       .then((res) => {
-        setloggedIn(true);
+        setloggedIn(true)
+        setInfoError(true);
         history("/profile");
         localStorage.setItem("token", res.token);
       })
       .catch((err) => {
         console.log(err);
+        setInfoError(false);
       });
   }
 
@@ -79,7 +81,10 @@ function App() {
             <Profile />
           </ProtectedRoute>
         } />
-        <Route path="/signin" element={<Login />} />
+        <Route path="/signin" element={<Login
+          handleLogin={handleLogin}
+          infoError={infoError}
+        />} />
         <Route path="/signup" element={<Register
           handleRegistration={handleRegistration}
           infoError={infoError}
