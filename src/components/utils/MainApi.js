@@ -56,3 +56,15 @@ export const authorize = (email, password) => {
 
   // загрузка информации с сервера
    
+  export const userInfo = () => {
+    return fetch(`${BASE_URL}/users/me`, {
+      method: 'GET',
+      headers: {
+          authorization: `Bearer ${localStorage.getItem('token')}`,
+          'Content-Type': 'application/json',
+        },
+  })
+    .then((res)=>{
+      return getResponse(res)
+    })
+  } 

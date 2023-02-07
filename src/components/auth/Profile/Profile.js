@@ -40,7 +40,7 @@ function Profile(props) {
             />
           </div>
           <button className='profile-main__button profile-main__button_register '>Редактировать</button>
-          <Link to="/signin" className='profile-main__text-button'>Выйти из аккаунта
+          <Link to="/signin" className='profile-main__text-button'  onClick={props.signOut}>Выйти из аккаунта
           </Link>
         </form>
       </div>

@@ -8,10 +8,10 @@ import PageNotFound from '../PageNotFound/PageNotFound';
 import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute.js'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 //функционал
 import { useState, useEffect } from 'react';
-import * as auth from "../../components/utils/MainApi";
+import * as api from "../../components/utils/MainApi";
 import { useNavigate } from "react-router-dom";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 
@@ -23,17 +23,32 @@ function App() {
   const [infoError, setInfoError] = useState(true);
  // const [userData, setUserData] = useState({});
   const [currentUser, setCurrentUser] = useState({});
+  // проверяем авторизован пользователь или нет
+  const [isLoggedIn, setisLoggedIn] = useState(false);
   const history = useNavigate();
 
+  useEffect(()=>{
+    if (!isLoggedIn) return;
+    api.userInfo()
+    .then((res) => {
+      console.log(res);
+      setloggedIn(true);
+      history("/profile");
+      setCurrentUser(res.data);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+  }, [isLoggedIn])
 
   const newAuth = (token) => {
-    return auth
+    return api
       .checkToken(token)
       .then((res) => {
         if (res) {
+          setisLoggedIn(true);
           setloggedIn(true);
-          console.log(res.data)
-          setCurrentUser(res.data)
+          setCurrentUser(res.data);
         }
       })
       .catch((err) => {
@@ -49,7 +64,7 @@ function App() {
   }, []);
 
   function handleLogin(email, password) {
-    auth
+    api
       .authorize(email, password)
       .then((res) => {
         setloggedIn(true);
@@ -64,7 +79,7 @@ function App() {
   }
 
   function handleRegistration(email, password, name) {
-    auth
+    api
       .register(email, password, name)
       .then((res) => {
 
@@ -83,14 +98,14 @@ function App() {
   function signOut() {
     localStorage.removeItem('token');
     history.push('/signup');
-    setloggedIn(false);
+    setisLoggedIn(false);
   }
 
   return (
     <>
     <CurrentUserContext.Provider value={currentUser}>
       <Routes>
-        <Route exact path="/" element={<Main />} />
+        <Route path="/" element={<Main />} />
         <Route path="/movies" element={
           <ProtectedRoute loggedIn={loggedIn}>
             <Movies />
@@ -104,7 +119,9 @@ function App() {
 
         <Route path="/profile" element={
           <ProtectedRoute loggedIn={loggedIn}>
-            <Profile />
+            <Profile
+            signOut={signOut}
+            />
           </ProtectedRoute>
         } />
         <Route path="/signin" element={<Login
