@@ -8,7 +8,7 @@ import PageNotFound from '../PageNotFound/PageNotFound';
 import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute.js'
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route} from 'react-router-dom';
 //функционал
 import { useState, useEffect } from 'react';
 import * as api from "../../components/utils/MainApi";
@@ -31,7 +31,7 @@ function App() {
     if (!isLoggedIn) return;
     api.userInfo()
     .then((res) => {
-      console.log(res);
+
       setloggedIn(true);
       history("/profile");
       setCurrentUser(res.data);
@@ -93,6 +93,21 @@ function App() {
       });
   }
 
+  function handleUpdateUser(User) {
+    /*Редактирование профиля
+      Отредактированные данные профиля должны сохраняться на сервере.  */
+      console.log(User)
+    api
+      .updateUserInfo(User)
+      .then((result) => {
+        console.log(result.data)
+        setCurrentUser(result.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+
 
 
   function signOut() {
@@ -121,6 +136,7 @@ function App() {
           <ProtectedRoute loggedIn={loggedIn}>
             <Profile
             signOut={signOut}
+            handleUpdateUser={handleUpdateUser}
             />
           </ProtectedRoute>
         } />
