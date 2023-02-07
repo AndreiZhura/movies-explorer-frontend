@@ -8,10 +8,11 @@ import PageNotFound from '../PageNotFound/PageNotFound';
 import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute.js'
-import { Routes, Route} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 //функционал
 import { useState, useEffect } from 'react';
 import * as api from "../../components/utils/MainApi";
+import * as apiMovie from "../utils/MoviesApi"
 import { useNavigate } from "react-router-dom";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 
@@ -21,24 +22,36 @@ function App() {
 
   const [loggedIn, setloggedIn] = useState(false);
   const [infoError, setInfoError] = useState(true);
- // const [userData, setUserData] = useState({});
+  // const [userData, setUserData] = useState({});
   const [currentUser, setCurrentUser] = useState({});
   // проверяем авторизован пользователь или нет
   const [isLoggedIn, setisLoggedIn] = useState(false);
+  // Фильмы 
+  const [movies, setMovie] = useState({})
+
   const history = useNavigate();
 
-  useEffect(()=>{
+  useEffect(() => {
     if (!isLoggedIn) return;
     api.userInfo()
-    .then((res) => {
+      .then((res) => {
+        setloggedIn(true);
+        history("/movies");
+        setCurrentUser(res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
 
-      setloggedIn(true);
-      history("/profile");
-      setCurrentUser(res.data);
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+    apiMovie.MoviesApi()
+      .then((result) => {
+        console.log(result)
+        setMovie(result)
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+
   }, [isLoggedIn])
 
   const newAuth = (token) => {
@@ -69,7 +82,7 @@ function App() {
       .then((res) => {
         setloggedIn(true);
         setInfoError(true);
-        history("/profile");
+        history("/movies");
         localStorage.setItem("token", res.token);
       })
       .catch((err) => {
@@ -96,7 +109,7 @@ function App() {
   function handleUpdateUser(User) {
     /*Редактирование профиля
       Отредактированные данные профиля должны сохраняться на сервере.  */
-      console.log(User)
+    console.log(User)
     api
       .updateUserInfo(User)
       .then((result) => {
@@ -118,39 +131,41 @@ function App() {
 
   return (
     <>
-    <CurrentUserContext.Provider value={currentUser}>
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/movies" element={
-          <ProtectedRoute loggedIn={loggedIn}>
-            <Movies />
-          </ProtectedRoute>
-        } />
-        <Route path="/saved-movies" element={
-          <ProtectedRoute loggedIn={loggedIn}>
-            <SavedMovies isSavesMovies={true} />
-          </ProtectedRoute>
-        } />
+      <CurrentUserContext.Provider value={currentUser}>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/movies" element={
+            <ProtectedRoute loggedIn={loggedIn}>
+              <Movies
+                movies={movies}
+              />
+            </ProtectedRoute>
+          } />
+          <Route path="/saved-movies" element={
+            <ProtectedRoute loggedIn={loggedIn}>
+              <SavedMovies isSavesMovies={true} />
+            </ProtectedRoute>
+          } />
 
-        <Route path="/profile" element={
-          <ProtectedRoute loggedIn={loggedIn}>
-            <Profile
-            signOut={signOut}
-            handleUpdateUser={handleUpdateUser}
-            />
-          </ProtectedRoute>
-        } />
-        <Route path="/signin" element={<Login
-          handleLogin={handleLogin}
-          infoError={infoError}
-        />} />
-        <Route path="/signup" element={<Register
-          handleRegistration={handleRegistration}
-          infoError={infoError}
-        />} />
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-    </CurrentUserContext.Provider>
+          <Route path="/profile" element={
+            <ProtectedRoute loggedIn={loggedIn}>
+              <Profile
+                signOut={signOut}
+                handleUpdateUser={handleUpdateUser}
+              />
+            </ProtectedRoute>
+          } />
+          <Route path="/signin" element={<Login
+            handleLogin={handleLogin}
+            infoError={infoError}
+          />} />
+          <Route path="/signup" element={<Register
+            handleRegistration={handleRegistration}
+            infoError={infoError}
+          />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </CurrentUserContext.Provider>
     </>
   );
 }

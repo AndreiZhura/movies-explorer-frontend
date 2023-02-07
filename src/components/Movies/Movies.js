@@ -4,14 +4,15 @@ import MoviesCardList from "./MoviesCardList/MoviesCardList";
 import Footer from "../common/Footer/Footer";
 import HeaderProfile from '../common/Header/HeaderProfile.js'
 
-function Movies(props) {
+function Movies({isSavesMovies,movies}) {
     return (
         <>
             <HeaderProfile />
             <main className="main">
                 <SearchForm />
                 <MoviesCardList
-                    isSavesMovies={props.isSavesMovies}
+                    isSavesMovies={isSavesMovies}
+                    movies = {movies}
                 />
             </main>
             <Footer isMovieFooter={true} />
