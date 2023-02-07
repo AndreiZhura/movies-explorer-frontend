@@ -7,22 +7,32 @@ import Main from '../Main/Main';
 import PageNotFound from '../PageNotFound/PageNotFound';
 import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
-import { Routes } from 'react-router-dom';
-import { Route } from 'react-router-dom';
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute.js'
+import { Routes, Route } from 'react-router-dom';
+
 
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/movies" element={<Movies
-          isSavesMovies={false}
-        />} />
-        <Route path="/saved-movies" element={<SavedMovies
-          isSavesMovies={true}
-        />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route exact path="/" element={<Main />} />
+        <Route path="/movies" element={
+          <ProtectedRoute loggedIn={true}>
+            <Movies />
+          </ProtectedRoute>
+        } />
+        <Route path="/saved-movies" element={
+          <ProtectedRoute loggedIn={false}>
+            <SavedMovies isSavesMovies={true} />
+          </ProtectedRoute>
+        } />
+
+        <Route path="/profile" element={
+          <ProtectedRoute loggedIn={true}>
+            <Profile />
+          </ProtectedRoute>
+        } />
         <Route path="/signin" element={<Login />} />
         <Route path="/signup" element={<Register />} />
         <Route path="*" element={<PageNotFound />} />

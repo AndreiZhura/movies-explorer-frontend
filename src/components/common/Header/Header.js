@@ -24,7 +24,7 @@ function Header(props) {
               <button className="menu-right__close"
                 onClick={handleChange}></button>
               <nav className="menu-right__navigetion">
-                <NavLink className="menu-right__item" exact to="/t">Главная</NavLink>
+                <NavLink className="menu-right__item"  to="/t">Главная</NavLink>
                 <NavLink className="menu-right__item" to="/movies">Фильмы</NavLink>
                 <NavLink className="menu-right__item" to="/saved-movies">Сохраненные фильмы</NavLink>
               </nav>
