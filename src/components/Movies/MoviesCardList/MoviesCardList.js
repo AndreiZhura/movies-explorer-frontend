@@ -11,12 +11,12 @@ function MoviesCardList({ isSavesMovies, movies }) {
           <SavesCard />
         ) : (
           <>
-            {movies.map((movie) => {
+            {movies.map((movie) => (
               <MoviesCard
                 key={movie.id}
                 movie={movie}
               />
-            })}
+            ))}
           </>
         )}
       </div>

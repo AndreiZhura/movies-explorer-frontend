@@ -27,7 +27,7 @@ function App() {
   // проверяем авторизован пользователь или нет
   const [isLoggedIn, setisLoggedIn] = useState(false);
   // Фильмы 
-  const [movies, setMovie] = useState({})
+  const [movies, setMovie] = useState([])
 
   const history = useNavigate();
 
