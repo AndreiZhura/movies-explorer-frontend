@@ -43,6 +43,8 @@ function Register(props) {
             className="auth-main__input"
             id="name-input"
             required
+            minLength="2"
+            maxLength="40"
             placeholder="Виталий"
             type="name"
             name="name-link"
@@ -54,6 +56,8 @@ function Register(props) {
             className="auth-main__input auth-main__input_email"
             id="email-input"
             required
+            minLength="2"
+            maxLength="40"
             placeholder="Email"
             type="email"
             name="email-link"
@@ -65,6 +69,8 @@ function Register(props) {
             className="auth-main__input auth-main__input_password"
             id="password-input"
             required
+            minLength="2"
+            maxLength="40"
             placeholder="Пароль"
             type="password"
             name="password-link"

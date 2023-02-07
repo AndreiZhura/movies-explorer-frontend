@@ -105,14 +105,13 @@
 }
 
 .auth-main__password{
-    font-size: 10px;
-    line-height: 12.1px;
-    color: red;
     visibility: hidden;
 }
 
 .auth-main__password_visible{
-   
+    font-size: 10px;
+    line-height: 12.1px;
+    color: red;
     visibility: visible;
 }
 
