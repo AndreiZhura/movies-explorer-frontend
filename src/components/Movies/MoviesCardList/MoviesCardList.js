@@ -5,9 +5,9 @@ import SavesCard from "../savesCard/savesCard";
 
 function MoviesCardList({ isSavesMovies, movies }) {
   const [width, setWidth] = useState(window.innerWidth);
-  const [counter , setCounter] = useState(0);
-  
-  function count(){
+  const [counter, setCounter] = useState(0);
+console.log(counter)
+  function count() {
     if (width > 1279) {
       setCounter(counter + 3)
     }
@@ -16,20 +16,20 @@ function MoviesCardList({ isSavesMovies, movies }) {
     }
     else if (width > 319) {
       setCounter(counter + 1);
-      }
+    }
   }
 
   useEffect(() => {
     if (width > 1279) {
-      setCounter(13)
+      setCounter(100)
     }
     else if (width > 767) {
       setCounter(9);
     }
-   else if (width > 319) {
-    setCounter(6);
+    else if (width > 319) {
+      setCounter(6);
     }
-  },[])
+  }, [])
 
   return (
     <>
@@ -38,7 +38,7 @@ function MoviesCardList({ isSavesMovies, movies }) {
           <SavesCard />
         ) : (
           <>
-            {movies.slice(1,counter).map((movie) => (
+            {movies.slice(1, counter).map((movie) => (
               <MoviesCard
                 key={movie.id}
                 movie={movie}
@@ -48,7 +48,11 @@ function MoviesCardList({ isSavesMovies, movies }) {
         )}
       </div>
       <div className="movies-buttons">
-        <button className="movies-buttons__button" onClick={count}>ещё</button>
+        {counter >= movies.length ?
+          (<button className="movies-buttons__button movies-buttons__button_hidden" onClick={count}>ещё</button>)
+          :
+          (<button className="movies-buttons__button" onClick={count}>ещё</button>)}
+
       </div>
     </>
   );

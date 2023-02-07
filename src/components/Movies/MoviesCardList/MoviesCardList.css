@@ -36,6 +36,10 @@
     background-color: #2BE080;
 }
 
+.movies-buttons__button_hidden{
+    visibility: hidden;
+}
+
 @media screen and (max-width:1279px) {
     .movie-card-list {
         width: 92.5vw;
