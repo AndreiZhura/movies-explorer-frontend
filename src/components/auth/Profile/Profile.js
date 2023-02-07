@@ -2,14 +2,19 @@ import React from "react";
 import './Profile.css'
 import HeaderProfile from '../../../components/common/Header/HeaderProfile';
 import { Link } from 'react-router-dom';
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-function Profile() {
+function Profile(props) {
+
+  const currentUser = React.useContext(CurrentUserContext);
+  console.log(currentUser)
+
   return (
     <>
     <HeaderProfile/>  
     <section className="profile">
       <div className="profile-main">
-        <h1 className="profile__title">Привет, Виталий!</h1>
+        <h1 className="profile__title">Привет, {currentUser.name}</h1>
         <form className='profile-main__form' >
           <div className="profile-main__container">
 
@@ -17,7 +22,7 @@ function Profile() {
             <input
               className="profile-main__input"
               id="name-input"
-              placeholder="Виталий"
+              placeholder={currentUser.name}
               type="text"
               name="name-link"
               readonly="readonly"
@@ -28,7 +33,7 @@ function Profile() {
             <input
               className="profile-main__input"
               id="email-input"
-              placeholder="pochta@yandex.ru"
+              placeholder={currentUser.name}
               type="email"
               name="email-link"
               readonly="readonly"

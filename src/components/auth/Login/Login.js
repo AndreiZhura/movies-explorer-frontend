@@ -2,9 +2,27 @@ import React from "react";
 import './Login.css'
 import '../auth.css'
 import { Link } from 'react-router-dom';
+import { useState } from "react";
 
 
 function Login(props) {
+
+  const [email, setUserEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    props.handleLogin(email,password)
+  }
+
+  function handleEmail(evt) {
+    setUserEmail(evt.target.value);
+  }
+
+  function handlePassword(evt) {
+    setPassword(evt.target.value);
+  }
+
   return (
     <section className="login ">
       <div className="login-main">
@@ -12,7 +30,7 @@ function Login(props) {
         <div className="auth">
           <h1 className="auth__title auth__title_login">Рады видеть!</h1>
           <div className="auth-main">
-            <form className='auth-main__form' >
+          <form className='auth-main__form' onSubmit={handleSubmit} >
               <span className="auth-main__title">E-mail</span>
               <input
                 className="auth-main__input"
@@ -21,6 +39,7 @@ function Login(props) {
                 placeholder="Email"
                 type="email"
                 name="email-link"
+                onChange={handleEmail}
               />
               <span className="auth-main__title">Пароль</span>
               <input
@@ -30,6 +49,7 @@ function Login(props) {
                 placeholder="Пароль"
                 type="password"
                 name="password-link"
+                onChange={handlePassword}
               />
               <span className={props.infoError ? 'auth-main__error_hidden' : "auth-main__error"}>Что-то пошло не так...</span>
               <button className='auth-main__button auth-main__button_login'>Войти</button>

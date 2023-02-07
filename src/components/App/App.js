@@ -13,6 +13,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import * as auth from "../../components/utils/MainApi";
 import { useNavigate } from "react-router-dom";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 
 
 
@@ -20,8 +21,32 @@ function App() {
 
   const [loggedIn, setloggedIn] = useState(false);
   const [infoError, setInfoError] = useState(true);
+ // const [userData, setUserData] = useState({});
+  const [currentUser, setCurrentUser] = useState({});
   const history = useNavigate();
 
+
+  const newAuth = (token) => {
+    return auth
+      .checkToken(token)
+      .then((res) => {
+        if (res) {
+          setloggedIn(true);
+          console.log(res.data)
+          setCurrentUser(res.data)
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      newAuth(token);
+    }
+  }, []);
 
   function handleLogin(email, password) {
     auth
@@ -63,6 +88,7 @@ function App() {
 
   return (
     <>
+    <CurrentUserContext.Provider value={currentUser}>
       <Routes>
         <Route exact path="/" element={<Main />} />
         <Route path="/movies" element={
@@ -91,6 +117,7 @@ function App() {
         />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
+    </CurrentUserContext.Provider>
     </>
   );
 }
