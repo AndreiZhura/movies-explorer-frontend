@@ -33,7 +33,7 @@ function Profile(props) {
             <input
               className="profile-main__input"
               id="email-input"
-              placeholder={currentUser.name}
+              placeholder={currentUser.email}
               type="email"
               name="email-link"
               readonly="readonly"
