@@ -1,24 +1,13 @@
 import React from "react";
 import './MoviesCardList.css'
 import MoviesCard from "../MoviesCard/MoviesCard";
+import SavesCard from "../savesCard/savesCard";
 
-function MoviesCardList({
-  movies,
-  isMoviesStars,
-  isSavedMovies,
-}) {
+function MoviesCardList(props) {
   return (
     <>
       <div className="movie-card-list">
-        {movies.map((movie)=>(
-        <MoviesCard
-          key = { movie.id }
-          movie = { movie } 
-          isMoviesStars={isMoviesStars}
-          isSavedMovies={isSavedMovies}
-        />
-        ))}
-    
+       {props.isSavesMovies ? <SavesCard /> : <MoviesCard />}
       </div>
       <div className="movies-buttons">
         <button className="movies-buttons__button">Ещё</button>

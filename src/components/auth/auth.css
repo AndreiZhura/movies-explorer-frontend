@@ -66,11 +66,11 @@
 
 .auth-main__button_register {
     width: 101%;
-    margin-top: 133px;
+    margin-top: 134px;
 }
 
 .auth-main__button_login {
-    margin-top: 195px;
+    margin-top: 203px;
 }
 
 .auth-main__text {
@@ -100,19 +100,19 @@
     opacity: 0.7;
 }
 
-.auth-main__input_password{
-   margin-bottom: 4px;
-}
-
-.auth-main__password{
+.auth-main__error_hidden{
     visibility: hidden;
 }
 
-.auth-main__password_visible{
-    font-size: 10px;
-    line-height: 12.1px;
+.auth-main__input_bottom{
+    margin-bottom: 5px;
     color: red;
-    visibility: visible;
+}
+
+.auth-main__error{
+    color: red;
+    font-size: 10px;
+    font-weight: 12.1px;
 }
 
 
