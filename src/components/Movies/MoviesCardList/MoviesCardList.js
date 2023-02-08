@@ -3,7 +3,7 @@ import "./MoviesCardList.css";
 import MoviesCard from "../MoviesCard/MoviesCard";
 import SavesCard from "../savesCard/savesCard";
 
-function MoviesCardList({ isSavesMovies, movies, size }) {
+function MoviesCardList({ isSavesMovies, movies, check }) {
   // eslint-disable-next-line no-unused-vars
   const [width, setWidth] = useState(window.innerWidth);
   const [counter, setCounter] = useState(0);
@@ -55,7 +55,7 @@ function MoviesCardList({ isSavesMovies, movies, size }) {
         ) : (
           <>
             {
-              size ? (movies.filter(movie => movie.duration < 40).slice(1, counter).map((movie) => (
+              check ? (movies.filter(movie => movie.duration < 40).slice(1, counter).map((movie) => (
                 <MoviesCard
                   key={movie.id}
                   movie={movie}

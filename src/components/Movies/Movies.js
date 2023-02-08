@@ -6,11 +6,10 @@ import HeaderProfile from '../common/Header/HeaderProfile.js'
 
 function Movies({ isSavesMovies, movies }) {
 
-    const [size, setSize] = React.useState(false);
+    const [check, setCheck] = React.useState(false);
 
-    function handleSizeChange() {
-        setSize(!size);
-        alert('привет')
+    function handlecheckChange() {
+        setCheck(!check);
     }
 
 
@@ -21,12 +20,12 @@ function Movies({ isSavesMovies, movies }) {
             <HeaderProfile />
             <main className="main">
                 <SearchForm
-                onChange={handleSizeChange}
-                size={size}
+                onChange={handlecheckChange}
+                check={check}
                 />
                 <MoviesCardList
                     isSavesMovies={isSavesMovies}
-                    size = {size}
+                    check = {check}
                     movies={movies}
                 />
             </main>
