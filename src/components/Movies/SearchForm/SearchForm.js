@@ -4,12 +4,13 @@ import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 import lupa from '../../../images/lupa.svg'
 
 
-function SearchForm() {
+function SearchForm(props) {
+
     return (
         <div className="search-form">
             <div className="search-form__container">
                 <form className="search-form__forma">
-                <img src={lupa} alt="поиск" class="lupa"/>
+                    <img src={lupa} alt="поиск" class="lupa" />
                     <input
                         className="search-form__input"
                         id="text-input"
@@ -20,7 +21,9 @@ function SearchForm() {
                     />
                     <button className="search-form__button"></button>
                 </form>
-                    <FilterCheckbox/>
+                <FilterCheckbox
+
+                />
             </div>
         </div>
     );
