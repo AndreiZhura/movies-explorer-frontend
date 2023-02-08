@@ -15,6 +15,7 @@ import * as api from "../../components/utils/MainApi";
 import * as apiMovie from "../utils/MoviesApi"
 import { useNavigate } from "react-router-dom";
 import CurrentUserContext from "../contexts/CurrentUserContext";
+import Preloader from '../common/Preloader/Preloader';
 
 
 
