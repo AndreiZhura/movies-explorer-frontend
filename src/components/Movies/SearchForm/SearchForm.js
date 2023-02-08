@@ -4,7 +4,7 @@ import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 import lupa from '../../../images/lupa.svg'
 
 
-function SearchForm(props) {
+function SearchForm({ onChange}) {
 
     return (
         <div className="search-form">
@@ -22,7 +22,7 @@ function SearchForm(props) {
                     <button className="search-form__button"></button>
                 </form>
                 <FilterCheckbox
-
+                    onChange={onChange}
                 />
             </div>
         </div>

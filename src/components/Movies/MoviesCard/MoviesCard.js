@@ -4,8 +4,8 @@ import './MoviesCard.css'
 
 
 
-
 function MoviesCard(props) {
+
   return (
     <a href={props.movie.trailerLink} target="_blank" className="movies" rel="noreferrer">
       <h4 className="movies__title">{props.movie.nameRU}</h4>

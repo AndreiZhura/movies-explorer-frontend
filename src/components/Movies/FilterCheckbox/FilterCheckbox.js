@@ -1,22 +1,18 @@
 import React from "react";
 import './FilterCheckbox.css'
 
-function FilterCheckbox(props) {
 
-   const checkedRef = React.useRef();
 
-   function handleClick() {
-    checkedRef.current.play(); 
-    console.log(checkedRef)
-  }
+function FilterCheckbox({onChange}) {
+
 
     return (
         <div className="checkbox">
             <input className="checkbox__input"
-             type="checkbox"
-              id="checkbox"
-              onClick={handleClick}
-               />
+                type="checkbox"
+                id="checkbox"
+                onChange={onChange}
+            />
             <label className="checkbox__label" for="checkbox" >Короткометражки</label>
         </div>
     );
