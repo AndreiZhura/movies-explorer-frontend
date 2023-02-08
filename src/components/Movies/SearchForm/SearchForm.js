@@ -1,10 +1,12 @@
 import React from "react";
+import { useState } from "react";
 import "./SearchForm.css"
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 import lupa from '../../../images/lupa.svg'
 
 
 function SearchForm({ onChange}) {
+
 
     return (
         <div className="search-form">

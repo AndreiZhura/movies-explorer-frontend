@@ -73,7 +73,7 @@ function MoviesCardList({ isSavesMovies, movies, check }) {
         )}
       </div>
       <div className="movies-buttons">
-        {counter >= movies.length ?
+        {counter >= movies.length || check ?
           (<button className="movies-buttons__button movies-buttons__button_hidden" onClick={count}>Ещё</button>)
           :
           (<button className="movies-buttons__button" onClick={count}>Ещё</button>)}
