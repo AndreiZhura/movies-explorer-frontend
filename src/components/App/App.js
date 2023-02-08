@@ -132,7 +132,10 @@ function App() {
     <>
       <CurrentUserContext.Provider value={currentUser}>
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={
+          <Main
+          loggedIn={loggedIn}
+          />} />
           <Route path="/movies" element={
             <ProtectedRoute loggedIn={loggedIn}>
               <Movies

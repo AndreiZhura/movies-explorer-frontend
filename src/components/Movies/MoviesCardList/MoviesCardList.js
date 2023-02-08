@@ -6,7 +6,7 @@ import SavesCard from "../savesCard/savesCard";
 function MoviesCardList({ isSavesMovies, movies }) {
   const [width, setWidth] = useState(window.innerWidth);
   const [counter, setCounter] = useState(0);
-console.log(counter)
+
   function count() {
     if (width > 1279) {
       setCounter(counter + 3)
@@ -21,7 +21,7 @@ console.log(counter)
 
   useEffect(() => {
     if (width > 1279) {
-      setCounter(100)
+      setCounter(13)
     }
     else if (width > 767) {
       setCounter(9);

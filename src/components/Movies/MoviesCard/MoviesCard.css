@@ -13,6 +13,10 @@
     margin-top: 23px;
     margin-left: 14px;
     margin-bottom: 10px;
+    width: 85%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .movies__time {
@@ -83,9 +87,10 @@
 
 @media screen and (max-width:768px) {
     .movies {
-       margin-left: 4px;
-       height: 266px;
+        margin-left: 4px;
+        height: 266px;
     }
+
     .movies__img {
         width: 339px;
         height: 190px;
@@ -94,7 +99,7 @@
 
 @media screen and (max-width:766px) {
     .movies {
-       margin: 0 auto;
+        margin: 0 auto;
     }
 }
 
@@ -119,7 +124,7 @@
 }
 
 @media screen and (max-width:340px) {
-  
+
     .movies {
         width: 300px;
         height: 236px;
@@ -139,6 +144,6 @@
     }
 
     .movies__time {
-     margin-left: 15px;
-}
+        margin-left: 15px;
+    }
 }
