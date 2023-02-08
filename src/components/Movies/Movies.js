@@ -15,7 +15,7 @@ function Movies({ isSavesMovies, movies }) {
     }, [check])
 
     const filterMovies = movies.filter((movie) => {
-        return movie.nameRU.toLowerCase().includes(search) || movie.nameEN.toLowerCase().includes(search)
+        return movie.nameRU.toLowerCase().includes(search.toLowerCase()) || movie.nameEN.toLowerCase().includes(search.toLowerCase())
     })
 
 
@@ -29,7 +29,11 @@ function Movies({ isSavesMovies, movies }) {
     }
 
     useEffect(() => {
-        setSearch()
+        setSearch(search)
+    }, [search])
+
+    useEffect(() => {
+        setSearch('')
     }, [])
 
 

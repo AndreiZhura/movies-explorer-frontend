@@ -68,7 +68,7 @@ function MoviesCardList({ isSavesMovies, movies, check, search }) {
                   />
                 ))
               )
-            };
+            }
           </>
         )}
       </div>
