@@ -3,7 +3,7 @@ import "./MoviesCardList.css";
 import MoviesCard from "../MoviesCard/MoviesCard";
 import SavesCard from "../savesCard/savesCard";
 
-function MoviesCardList({ isSavesMovies, movies, check }) {
+function MoviesCardList({ isSavesMovies, movies, check, search }) {
   // eslint-disable-next-line no-unused-vars
   const [width, setWidth] = useState(window.innerWidth);
   const [counter, setCounter] = useState(0);

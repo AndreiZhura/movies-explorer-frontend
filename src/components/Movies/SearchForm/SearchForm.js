@@ -5,7 +5,7 @@ import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 import lupa from '../../../images/lupa.svg'
 
 
-function SearchForm({ onChange}) {
+function SearchForm({ onChange, handleSearchChange,onClick }) {
 
 
     return (
@@ -20,8 +20,9 @@ function SearchForm({ onChange}) {
                         placeholder="Фильм"
                         type="text"
                         name="text-link"
+                        onChange={handleSearchChange}
                     />
-                    <button className="search-form__button"></button>
+                    <button className="search-form__button" onClick = {onClick}></button>
                 </form>
                 <FilterCheckbox
                     onChange={onChange}
