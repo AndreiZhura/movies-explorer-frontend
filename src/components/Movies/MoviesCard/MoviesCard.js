@@ -1,18 +1,29 @@
 import React from "react";
 import './MoviesCard.css'
+import { useState } from "react";
 
 
 
 
 function MoviesCard(props) {
 
+  const [clickButton, setClickButton] = useState(false)
+
+  function buttonClick() {
+    setClickButton(!clickButton)
+  }
+
   return (
-    <a href={props.movie.trailerLink} target="_blank" className="movies" rel="noreferrer">
+    <>
+    <div  className="movies" rel="noreferrer">
+      <a className="movies__link" href={props.movie.trailerLink} target="_blank">
       <h4 className="movies__title">{props.movie.nameRU}</h4>
       <p className="movies__time">{props.movie.duration} минут</p>
       <img src={`https://api.nomoreparties.co/${props.movie.image.formats.thumbnail.url}`} alt="фильм" className="movies__img" />
-      <button className="movies__button-stars"></button>
-    </a>
+      </a>
+      <button className={clickButton ? "movies__button-stars movies__button-stars_green" : "movies__button-stars"} onClick = {buttonClick}></button>
+    </div>
+    </>
   );
 }
 

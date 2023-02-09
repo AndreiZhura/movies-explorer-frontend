@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useState } from "react"
+import { useState, useRef } from "react"
 import SearchForm from "./SearchForm/SearchForm";
 import MoviesCardList from "./MoviesCardList/MoviesCardList";
 import Footer from "../common/Footer/Footer";
@@ -12,29 +12,33 @@ function Movies({ isSavesMovies, movies }) {
     const [search, setSearch] = useState('');
 
     useEffect(() => {
+        setSearch('')
+    }, [])
+
+    useEffect(() => {
     }, [check])
 
     const filterMovies = movies.filter((movie) => {
-        return movie.nameRU.toLowerCase().includes(search.toLowerCase()) || movie.nameEN.toLowerCase().includes(search.toLowerCase())
+        return movie.nameRU.trim().toLowerCase().includes(search.toLowerCase()) && movie.nameEN.trim().toLowerCase().includes(search.toLowerCase())
     })
 
+    console.log(filterMovies)
+
+
+    const inputRef = useRef(null);
 
 
     function handlecheckChange() {
         setCheck(!check);
     }
 
-    function handleSearchChange(e) {
-        setSearch(e.target.value);
+    function handleClick(e) {
+        e.preventDefault();
+        setSearch(inputRef.current.value);
     }
 
-    useEffect(() => {
-        setSearch(search)
-    }, [search])
 
-    useEffect(() => {
-        setSearch('')
-    }, [])
+
 
 
 
@@ -44,9 +48,9 @@ function Movies({ isSavesMovies, movies }) {
             <main className="main">
                 <SearchForm
                     onChange={handlecheckChange}
-                    handleSearchChange={handleSearchChange}
                     check={check}
-                    onClick = {handleSearchChange}
+                    onClick={handleClick}
+                    inputRef={inputRef}
                 />
                 <MoviesCardList
                     isSavesMovies={isSavesMovies}

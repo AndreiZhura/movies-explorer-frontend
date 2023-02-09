@@ -3,9 +3,12 @@
     height: 271px;
     position: relative;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    transition: 0.5s;
+}
+
+.movies__link{
     color: black;
     text-decoration: none;
-    transition: 0.5s;
 }
 
 .movies:hover{
@@ -61,6 +64,10 @@
     background-repeat: no-repeat;
     background-position: center;
     background-color: white;
+}
+
+.movies__button-stars_green{
+    background-image: url(../../../images/stars.svg);
 }
 
 
