@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useState, useRef } from "react";
-import { useSearchParams } from "react-router-dom";
 import SearchForm from "./SearchForm/SearchForm";
 import MoviesCardList from "./MoviesCardList/MoviesCardList";
 import Footer from "../common/Footer/Footer";
@@ -12,48 +11,47 @@ function Movies({ isSavesMovies, movies }) {
 
     const [check, setCheck] = useState(false);
     const [search, setSearch] = useState('');
-
+    const inputRef = useRef(null);
+    
+    
+    
+    
+    
+    const filterMovies = movies.filter((movie) => {
+         return movie.nameRU.trim().toLowerCase().includes(search.toLowerCase())
+    })
+    
     useEffect(() => {
         setSearch('')
+       
     }, [])
-
-    useEffect(() => {
-    }, [check])
-
-   const filterMovies = movies.filter((movie) => {
-       // return movie.nameRU.trim().toLowerCase().includes('Ритмы'.toLowerCase())
-        return movie.nameRU.trim().toLowerCase().includes(search.toLowerCase()) //&& movie.nameEN.trim().toLowerCase().includes(search.toLowerCase())
-    })
-
-
-
-
-   
-  
-    function handlecheckChange() {
+    /*function handlecheckChange() {
         setCheck(!check);
     }
+    */
 
     function handleClick(e) {
         e.preventDefault();
-        setSearch(search);
+        setSearch(inputRef.current.value);
     }
+    
+    console.log(search)
+    console.log(filterMovies)
 
     return (
         <>
             <HeaderProfile />
             <main className="main">
                 <SearchForm
-                    onChange={handlecheckChange}
-                    check={check}
-                    search = {search}
-                    onClick={handleClick}
+                  inputRef={inputRef}
+                  onClick={handleClick}
                   
                 />
                 <MoviesCardList
                     isSavesMovies={isSavesMovies}
                     check={check}
                     movies={filterMovies}
+                    
                 />
             </main>
             <Footer isMovieFooter={true} />
