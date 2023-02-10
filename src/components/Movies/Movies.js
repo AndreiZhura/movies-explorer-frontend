@@ -8,6 +8,8 @@ import HeaderProfile from '../common/Header/HeaderProfile.js'
 
 function Movies({ isSavesMovies, movies }) {
 
+
+
     const [check, setCheck] = useState(false);
     const [search, setSearch] = useState('');
 
@@ -18,12 +20,13 @@ function Movies({ isSavesMovies, movies }) {
     useEffect(() => {
     }, [check])
 
-    const filterMovies = movies.filter((movie) => {
-        return movie.nameRU.trim().toLowerCase().includes('Америке'.toLowerCase())
-        //return movie.nameRU.trim().toLowerCase().includes(search.toLowerCase()) //&& movie.nameEN.trim().toLowerCase().includes(search.toLowerCase())
+   const filterMovies = movies.filter((movie) => {
+       // return movie.nameRU.trim().toLowerCase().includes('Ритмы'.toLowerCase())
+        return movie.nameRU.trim().toLowerCase().includes(search.toLowerCase()) //&& movie.nameEN.trim().toLowerCase().includes(search.toLowerCase())
     })
 
-    console.log(filterMovies)
+
+
 
    
   

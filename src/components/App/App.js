@@ -47,7 +47,6 @@ function App() {
     apiMovie.MoviesApi()
       .then((result) => {
         setMovie(result)
-        console.log(result)
       })
       .catch((err) => {
         console.error(err);
