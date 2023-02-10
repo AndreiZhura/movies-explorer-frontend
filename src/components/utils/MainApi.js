@@ -69,7 +69,7 @@ export const userInfo = () => {
     })
 }
 
-export const updateUserInfo = ({email, name}) => {
+export const updateUserInfo = ({ email, name }) => {
   return fetch(`${BASE_URL}/users/me`, {
     method: 'PATCH',
     headers: {
@@ -84,4 +84,28 @@ export const updateUserInfo = ({email, name}) => {
     .then((res) => {
       return getResponse(res)
     })
+}
+
+export const saveNewCard = (movie) => {
+  return fetch(`${this._url}/cards`, {
+    method: 'POST',
+    headers: {
+      authorization: `Bearer ${localStorage.getItem('token')}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+       country: movie.country || 'Нет данных',
+        director: movie.director,
+        duration: movie.duration,
+        year: movie.year,
+        description: movie.description,
+        image: (`https://api.nomoreparties.co/${movie.image.url}`),
+        trailerLink: movie.trailerLink || 'https://www.youtube.com',
+        thumbnail: (`https://api.nomoreparties.co/${movie.image.formats.thumbnail.url}`),
+        movieId: movie.id,
+        nameRU: movie.nameRU || 'Нет данных',
+        nameEN: movie.nameEN || 'Нет данных'
+    })
+  })
+    .then(this._getResponseData)
 }

@@ -47,6 +47,7 @@ function App() {
     apiMovie.MoviesApi()
       .then((result) => {
         setMovie(result)
+        console.log(result)
       })
       .catch((err) => {
         console.error(err);
@@ -109,7 +110,6 @@ function App() {
   function handleUpdateUser(User) {
     /*Редактирование профиля
       Отредактированные данные профиля должны сохраняться на сервере.  */
-    console.log(User)
     api
       .updateUserInfo(User)
       .then((result) => {

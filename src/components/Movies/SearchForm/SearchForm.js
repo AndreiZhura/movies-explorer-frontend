@@ -1,11 +1,10 @@
 import React from "react";
-import { useState } from "react";
 import "./SearchForm.css"
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 import lupa from '../../../images/lupa.svg'
 
 
-function SearchForm({ onChange,  inputRef,onClick }) {
+function SearchForm({ onChange, onClick }) {
 
 
     return (
@@ -15,17 +14,14 @@ function SearchForm({ onChange,  inputRef,onClick }) {
                     <img src={lupa} alt="поиск" class="lupa" />
                     <input
                         className="search-form__input"
-                        id="text-input"
                         required
                         placeholder="Фильм"
-                        type="text"
-                        name="text-link"
-                        ref={inputRef}
-        
+                        type="search"
+                        name="search"
                         autoComplete="off"
                     />
                     <button className="search-form__button"
-                      onClick={onClick}
+                        onClick={onClick}
                     ></button>
                 </form>
                 <FilterCheckbox

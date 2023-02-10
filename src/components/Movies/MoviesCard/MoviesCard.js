@@ -11,7 +11,10 @@ function MoviesCard(props) {
 
   function buttonClick() {
     setClickButton(!clickButton)
+    props.onCardSave(props.movie)
   }
+  
+  console.log(props)
 
   return (
     <>
