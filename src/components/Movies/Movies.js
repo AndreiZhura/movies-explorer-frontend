@@ -4,6 +4,7 @@ import SearchForm from "./SearchForm/SearchForm";
 import MoviesCardList from "./MoviesCardList/MoviesCardList";
 import Footer from "../common/Footer/Footer";
 import HeaderProfile from '../common/Header/HeaderProfile.js'
+import "./Movies.css"
 
 function Movies({ isSavesMovies, movies }) {
 
@@ -11,10 +12,11 @@ function Movies({ isSavesMovies, movies }) {
 
     const [check, setCheck] = useState(false);
     const [search, setSearch] = useState('');
+    const [number , setNumber] = useState(false)
     const inputRef = useRef(null);
     
     
-    
+    const numberValidator = str => /^\d+$/.test(str);
     
     
     const filterMovies = movies.filter((movie) => {
@@ -23,7 +25,7 @@ function Movies({ isSavesMovies, movies }) {
     
     console.log(filterMovies)
     useEffect(() => {
-        setSearch('')
+        setSearch('/')
        
     }, [])
     /*function handlecheckChange() {
@@ -33,7 +35,15 @@ function Movies({ isSavesMovies, movies }) {
 
     function handleClick(e) {
         e.preventDefault();
-        setSearch(inputRef.current.value);
+
+        if(numberValidator(inputRef.current.value)){
+            setSearch('/');
+            setNumber(true);
+        }
+        else{
+            setSearch(inputRef.current.value);
+            setNumber(false);
+        }
     }
     
 
@@ -47,12 +57,17 @@ function Movies({ isSavesMovies, movies }) {
                   onClick={handleClick}
                   
                 />
-                <MoviesCardList
-                    isSavesMovies={isSavesMovies}
-                    check={check}
-                    movies={filterMovies}
-                    
-                />
+                {
+                   number ? (
+                    <div className="movie__error">«Нужно ввести ключевое слово»</div>
+                   ) : (
+                       <MoviesCardList
+                           isSavesMovies={isSavesMovies}
+                           check={check}
+                           movies={filterMovies}
+                       />
+                   ) 
+                }
             </main>
             <Footer isMovieFooter={true} />
         </>
