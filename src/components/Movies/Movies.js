@@ -16,7 +16,6 @@ function Movies({ isSavesMovies, movies, loading, connectingError }) {
     const [shortMovie, setshortMovie] = useState(false);
     const inputRef = useRef(null);
 
-
     const numberValidator = str => /^\d+$/.test(str);
 
     const filterMovies = movies.filter((movie) => {

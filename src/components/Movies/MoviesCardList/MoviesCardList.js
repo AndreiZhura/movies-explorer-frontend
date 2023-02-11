@@ -10,6 +10,12 @@ function MoviesCardList({ movies }) {
   const [width, setWidth] = useState(window.innerWidth);
   const [counter, setCounter] = useState(0);
 
+  console.log(width)
+
+function checkWindowWidth(){
+  console.log("привет")
+}
+
   function count() {
     if (width > 1279) {
       setCounter(counter + 3)
@@ -23,6 +29,10 @@ function MoviesCardList({ movies }) {
   }
 
   useEffect(() => {
+    window.addEventListener('resize', checkWindowWidth)
+  }, [width])
+
+  useEffect(() => {
     if (width > 1279) {
       setCounter(12)
     }
@@ -34,27 +44,27 @@ function MoviesCardList({ movies }) {
     }
   }, []);
 
-const filter = movies.slice(0, counter)
+  const filter = movies.slice(0, counter)
 
 
   return (
     <>
       <div className="movie-card-list">
-        { movies.length === 0 ? <div className="movie-card-list__error">Ничего не найдено</div>:
+        {movies.length === 0 ? <div className="movie-card-list__error">Ничего не найдено</div> :
           filter.map((movie) => (
             <MoviesCard
               key={movie.id}
               movie={movie}
-          
+
             />
           ))
         }
       </div>
       {
-        movies.length === 0 ? <></> : counter >= movies.length ? <></>:
-      <div className="movies-buttons">
-        <button className="movies-buttons__button" onClick={count}>Ещё</button>
-      </div>
+        movies.length === 0 ? <></> : counter >= movies.length ? <></> :
+          <div className="movies-buttons">
+            <button className="movies-buttons__button" onClick={count}>Ещё</button>
+          </div>
       }
     </>
   );
