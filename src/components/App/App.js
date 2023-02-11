@@ -15,7 +15,7 @@ import * as api from "../../components/utils/MainApi";
 import * as apiMovie from "../utils/MoviesApi"
 import { useNavigate } from "react-router-dom";
 import CurrentUserContext from "../contexts/CurrentUserContext";
-import Preloader from '../common/Preloader/Preloader';
+
 
 
 
@@ -28,7 +28,8 @@ function App() {
   // проверяем авторизован пользователь или нет
   const [isLoggedIn, setisLoggedIn] = useState(false);
   // Фильмы 
-  const [movies, setMovie] = useState([])
+  const [movies, setMovie] = useState([]);
+  const [loading , setLoading] = useState(false);
 
   const history = useNavigate();
 
@@ -43,10 +44,11 @@ function App() {
       .catch((err) => {
         console.error(err);
       });
-
+    setLoading(true)
     apiMovie.MoviesApi()
       .then((result) => {
         setMovie(result)
+        setLoading(false)
       })
       .catch((err) => {
         console.error(err);
@@ -140,6 +142,7 @@ function App() {
             <ProtectedRoute loggedIn={loggedIn}>
               <Movies
                 movies={movies}
+                loading = {loading}
               />
             </ProtectedRoute>
           } />

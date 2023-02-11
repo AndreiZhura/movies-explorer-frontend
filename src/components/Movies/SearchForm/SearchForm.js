@@ -6,6 +6,7 @@ import lupa from '../../../images/lupa.svg'
 
 function SearchForm({ inputRef, onClick }) {
 
+
     return (
         <div className="search-form">
             <div className="search-form__container">
@@ -20,6 +21,7 @@ function SearchForm({ inputRef, onClick }) {
                         autoComplete="off"
                         ref={inputRef}
                     />
+                    
                     <button className="search-form__button"
                         onClick={onClick}
                     ></button>

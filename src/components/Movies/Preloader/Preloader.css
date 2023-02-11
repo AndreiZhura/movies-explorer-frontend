@@ -1,11 +1,11 @@
 .preloader{
-  position: absolute;
+  position: relative;
   margin: auto;
   width: 300px;
   height: 300px;
   left: 50%;
-  top: 50%;
-  margin-top: -150px;
+  top:50%;
+  margin-top: 0px;
   margin-left: -150px;
   display: flex;
   align-items: center;

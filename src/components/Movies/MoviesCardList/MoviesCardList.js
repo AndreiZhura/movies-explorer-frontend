@@ -18,6 +18,7 @@ function MoviesCardList({ movies }) {
             <MoviesCard
               key={movie.id}
               movie={movie}
+          
             />
           ))
         }

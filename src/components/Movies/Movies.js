@@ -4,30 +4,33 @@ import SearchForm from "./SearchForm/SearchForm";
 import MoviesCardList from "./MoviesCardList/MoviesCardList";
 import Footer from "../common/Footer/Footer";
 import HeaderProfile from '../common/Header/HeaderProfile.js'
+import Preloader from '../Movies/Preloader/Preloader'
 import "./Movies.css"
 
-function Movies({ isSavesMovies, movies }) {
+
+function Movies({ isSavesMovies, movies, loading }) {
 
 
 
     const [check, setCheck] = useState(false);
     const [search, setSearch] = useState('');
-    const [number , setNumber] = useState(false)
+    const [number, setNumber] = useState(false)
     const inputRef = useRef(null);
-    
-    
+
+
     const numberValidator = str => /^\d+$/.test(str);
-    
-    
+
+
     const filterMovies = movies.filter((movie) => {
-         return movie.nameRU.trim().toLowerCase().includes(search.toLowerCase())
+        return movie.nameRU.trim().toLowerCase().includes(search.toLowerCase())
     })
-    
-    console.log(filterMovies)
+
+
     useEffect(() => {
-        setSearch('/')
-       
+        setSearch('/');
+        setNumber(true);
     }, [])
+
     /*function handlecheckChange() {
         setCheck(!check);
     }
@@ -36,16 +39,15 @@ function Movies({ isSavesMovies, movies }) {
     function handleClick(e) {
         e.preventDefault();
 
-        if(numberValidator(inputRef.current.value)){
+        if (numberValidator(inputRef.current.value)) {
             setSearch('/');
             setNumber(true);
         }
-        else{
+        else {
             setSearch(inputRef.current.value);
             setNumber(false);
         }
     }
-    
 
 
     return (
@@ -53,25 +55,27 @@ function Movies({ isSavesMovies, movies }) {
             <HeaderProfile />
             <main className="main">
                 <SearchForm
-                  inputRef={inputRef}
-                  onClick={handleClick}
-                  
+                    inputRef={inputRef}
+                    onClick={handleClick}
+                    number = {number}
                 />
                 {
-                   number ? (
-                    <div className="movie__error">«Нужно ввести ключевое слово»</div>
-                   ) : (
-                       <MoviesCardList
-                           isSavesMovies={isSavesMovies}
-                           check={check}
-                           movies={filterMovies}
-                       />
-                   ) 
+                    number ? (
+                        <div className="movie__error">«Нужно ввести ключевое слово»</div>
+                    ) : ( loading ? <Preloader/> :
+                        <MoviesCardList
+                        isSavesMovies={isSavesMovies}
+                        check={check}
+                        movies={filterMovies}
+                    />
+                    
+                    )
                 }
             </main>
             <Footer isMovieFooter={true} />
         </>
     )
+
 };
 
 export default Movies;
