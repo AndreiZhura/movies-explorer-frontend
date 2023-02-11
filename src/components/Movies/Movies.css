@@ -6,6 +6,10 @@
     animation-duration: 1s;
 }
 
+.movie__error-server{
+    text-align: center;
+}
+
 @keyframes animation-error {
     0% {
         padding-left: 15px;

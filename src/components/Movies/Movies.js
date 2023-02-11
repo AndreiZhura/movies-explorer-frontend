@@ -8,7 +8,7 @@ import Preloader from '../Movies/Preloader/Preloader'
 import "./Movies.css"
 
 
-function Movies({ isSavesMovies, movies, loading }) {
+function Movies({ isSavesMovies, movies, loading, connectingError }) {
 
 
 
@@ -62,7 +62,7 @@ function Movies({ isSavesMovies, movies, loading }) {
                 {
                     number ? (
                         <div className="movie__error">«Нужно ввести ключевое слово»</div>
-                    ) : ( loading ? <Preloader/> :
+                    ) : ( loading ? <Preloader/> : connectingError ? <p className="movie__error-server">«Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз» </p> :
                         <MoviesCardList
                         isSavesMovies={isSavesMovies}
                         check={check}

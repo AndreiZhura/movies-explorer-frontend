@@ -30,6 +30,7 @@ function App() {
   // Фильмы 
   const [movies, setMovie] = useState([]);
   const [loading , setLoading] = useState(false);
+  const [connectingError, setConnectingError ] = useState(false);
 
   const history = useNavigate();
 
@@ -47,10 +48,13 @@ function App() {
     setLoading(true)
     apiMovie.MoviesApi()
       .then((result) => {
-        setMovie(result)
-        setLoading(false)
+        setMovie(result);
+        setConnectingError(false);
+        setLoading(false);
       })
       .catch((err) => {
+        setConnectingError(true);
+        setLoading(false);
         console.error(err);
       });
 
@@ -143,6 +147,7 @@ function App() {
               <Movies
                 movies={movies}
                 loading = {loading}
+                connectingError = {connectingError}
               />
             </ProtectedRoute>
           } />
