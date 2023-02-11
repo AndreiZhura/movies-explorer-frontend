@@ -10,13 +10,12 @@ import "./Movies.css"
 
 function Movies({ isSavesMovies, movies, loading, connectingError }) {
 
-
-
     const [check, setCheck] = useState(false);
     const [search, setSearch] = useState('');
     const [number, setNumber] = useState(false);
     const [shortMovie, setshortMovie] = useState(false);
     const inputRef = useRef(null);
+
 
     const numberValidator = str => /^\d+$/.test(str);
 
@@ -27,6 +26,8 @@ function Movies({ isSavesMovies, movies, loading, connectingError }) {
     const filterMoviesShort = movies.filter((movie) => {
         return movie.nameRU.trim().toLowerCase().includes(search.toLowerCase()) && movie.duration < 40
     })
+
+
 
     useEffect(() => {
         setSearch('/');
