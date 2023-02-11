@@ -1,7 +1,7 @@
 import React from "react";
 import './MoviesCard.css'
 import { useState } from "react";
-import Preloader from '../Preloader/Preloader'
+
 
 
 
@@ -9,8 +9,6 @@ import Preloader from '../Preloader/Preloader'
 function MoviesCard({movie}) {
 
   const [clickButton, setClickButton] = useState(false);
-
-
 
   function buttonClick() {
     setClickButton(!clickButton)

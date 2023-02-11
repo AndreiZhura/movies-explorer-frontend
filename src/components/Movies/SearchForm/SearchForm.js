@@ -4,7 +4,7 @@ import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 import lupa from '../../../images/lupa.svg'
 
 
-function SearchForm({ inputRef, onClick }) {
+function SearchForm({ inputRef, onClick, onChange }) {
 
 
     return (
@@ -21,12 +21,13 @@ function SearchForm({ inputRef, onClick }) {
                         autoComplete="off"
                         ref={inputRef}
                     />
-                    
+
                     <button className="search-form__button"
                         onClick={onClick}
                     ></button>
                 </form>
                 <FilterCheckbox
+                    onChange={onChange}
                 />
             </div>
         </div>

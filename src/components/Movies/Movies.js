@@ -14,27 +14,30 @@ function Movies({ isSavesMovies, movies, loading, connectingError }) {
 
     const [check, setCheck] = useState(false);
     const [search, setSearch] = useState('');
-    const [number, setNumber] = useState(false)
+    const [number, setNumber] = useState(false);
+    const [shortMovie, setshortMovie] = useState(false);
     const inputRef = useRef(null);
 
-
     const numberValidator = str => /^\d+$/.test(str);
-
 
     const filterMovies = movies.filter((movie) => {
         return movie.nameRU.trim().toLowerCase().includes(search.toLowerCase())
     })
 
+    const filterMoviesShort = movies.filter((movie) => {
+        return movie.nameRU.trim().toLowerCase().includes(search.toLowerCase()) && movie.duration < 40
+    })
 
     useEffect(() => {
         setSearch('/');
         setNumber(true);
     }, [])
 
-    /*function handlecheckChange() {
+    function handlecheckChange() {
         setCheck(!check);
+        setshortMovie(!shortMovie)
     }
-    */
+
 
     function handleClick(e) {
         e.preventDefault();
@@ -57,18 +60,26 @@ function Movies({ isSavesMovies, movies, loading, connectingError }) {
                 <SearchForm
                     inputRef={inputRef}
                     onClick={handleClick}
-                    number = {number}
+                    number={number}
+                    onChange={handlecheckChange}
                 />
                 {
                     number ? (
                         <div className="movie__error">«Нужно ввести ключевое слово»</div>
-                    ) : ( loading ? <Preloader/> : connectingError ? <p className="movie__error-server">«Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз» </p> :
-                        <MoviesCardList
-                        isSavesMovies={isSavesMovies}
-                        check={check}
-                        movies={filterMovies}
-                    />
-                    
+                    ) : (loading ? <Preloader /> : connectingError ? <p className="movie__error-server">«Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз» </p> :
+                        shortMovie ?
+                            <MoviesCardList
+                                isSavesMovies={isSavesMovies}
+                                check={check}
+                                movies={filterMoviesShort}
+                            />
+                            :
+                            <MoviesCardList
+                                isSavesMovies={isSavesMovies}
+                                check={check}
+                                movies={filterMovies}
+                            />
+
                     )
                 }
             </main>
