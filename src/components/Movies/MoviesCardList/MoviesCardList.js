@@ -8,6 +8,8 @@ function MoviesCardList({ movies }) {
 
 
 
+
+
   return (
     <>
       <div className="movie-card-list">

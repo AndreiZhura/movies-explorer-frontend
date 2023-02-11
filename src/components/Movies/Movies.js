@@ -21,6 +21,7 @@ function Movies({ isSavesMovies, movies }) {
          return movie.nameRU.trim().toLowerCase().includes(search.toLowerCase())
     })
     
+    console.log(filterMovies)
     useEffect(() => {
         setSearch('')
        
@@ -35,8 +36,7 @@ function Movies({ isSavesMovies, movies }) {
         setSearch(inputRef.current.value);
     }
     
-    console.log(search)
-    console.log(filterMovies)
+
 
     return (
         <>

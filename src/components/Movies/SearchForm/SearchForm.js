@@ -6,6 +6,9 @@ import lupa from '../../../images/lupa.svg'
 
 function SearchForm({ inputRef, onClick }) {
 
+    const numberValidator = str => /^\d+$/.test(str);
+
+    console.log(numberValidator('3324'))
 
     return (
         <div className="search-form">
@@ -16,7 +19,7 @@ function SearchForm({ inputRef, onClick }) {
                         className="search-form__input"
                         required
                         placeholder="Фильм"
-                        type="search"
+                        type="text"
                         name="search"
                         autoComplete="off"
                         ref={inputRef}
