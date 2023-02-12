@@ -8,7 +8,7 @@ function getResponse(res) {
 }
 
 
-//авторизоция
+
 export const MoviesApi = () => {
 
   return fetch(`${BASE_URL}`, {

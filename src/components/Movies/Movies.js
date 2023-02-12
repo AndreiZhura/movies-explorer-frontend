@@ -15,19 +15,66 @@ function Movies({ isSavesMovies, movies, loading, connectingError }) {
     const [number, setNumber] = useState(false);
     const [shortMovie, setshortMovie] = useState(false);
     const inputRef = useRef(null);
+    const [width, setWidth] = useState(window.innerWidth);
+    const [counter, setCounter] = useState(0);
+  
+    function count() {
+      if (width >= 1280) {
+        setCounter(counter + 3)
+      }
+      else if (width < 1280 && width > 480) {
+        setCounter(counter + 2)
+      }
+      else if (width <= 480 ) {
+        setCounter(counter + 1);
+      }
+    }
+      useEffect(()=>{
+        window.addEventListener('resize', checkWindowWidth)
+        setWidth(window.innerWidth)
+      },[window.innerWidth])
+      
+      function checkWindowWidth(){
+        if (width >= 1280) {
+          setCounter(12)
+          console.log(width)
+        }
+        else if (width < 1280 && width > 480) {
+          setCounter(8);
+          console.log(width)
+        }
+        else if (width <= 480 ) {
+          setCounter(5);
+          console.log(width)
+        }
+      }
 
+    useEffect(() => {
+      if (width >= 1280) {
+        setCounter(12)
+        console.log(width)
+      }
+      else if (width < 1280 && width > 480) {
+        setCounter(8);
+        console.log(width)
+      }
+      else if (width <= 480 ) {
+        setCounter(5);
+        console.log(width)
+      }
+    }, []);
+  
+    
     const numberValidator = str => /^\d+$/.test(str);
-
+    
     const filterMovies = movies.filter((movie) => {
         return movie.nameRU.trim().toLowerCase().includes(search.toLowerCase())
     })
-
+    
     const filterMoviesShort = movies.filter((movie) => {
         return movie.nameRU.trim().toLowerCase().includes(search.toLowerCase()) && movie.duration < 40
     })
-
-
-
+    
     useEffect(() => {
         setSearch('/');
         setNumber(true);
@@ -37,7 +84,6 @@ function Movies({ isSavesMovies, movies, loading, connectingError }) {
         setCheck(!check);
         setshortMovie(!shortMovie)
     }
-
 
     function handleClick(e) {
         e.preventDefault();
@@ -51,7 +97,6 @@ function Movies({ isSavesMovies, movies, loading, connectingError }) {
             setNumber(false);
         }
     }
-
 
     return (
         <>
@@ -72,12 +117,18 @@ function Movies({ isSavesMovies, movies, loading, connectingError }) {
                                 isSavesMovies={isSavesMovies}
                                 check={check}
                                 movies={filterMoviesShort}
+                                counter = {counter}
+                                count = {count}
+                            
                             />
                             :
                             <MoviesCardList
                                 isSavesMovies={isSavesMovies}
                                 check={check}
                                 movies={filterMovies}
+                                counter = {counter}
+                                count = {count}
+                            
                             />
 
                     )

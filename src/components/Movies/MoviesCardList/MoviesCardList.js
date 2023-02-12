@@ -1,51 +1,10 @@
-
-
-import React, { useEffect, useState } from "react";
+import React from "react";
 import './MoviesCardList.css'
 import MoviesCard from "../MoviesCard/MoviesCard";
 
-function MoviesCardList({ movies }) {
-
-
-  const [width, setWidth] = useState(window.innerWidth);
-  const [counter, setCounter] = useState(0);
-
-  console.log(width)
-
-function checkWindowWidth(){
-  console.log("привет")
-}
-
-  function count() {
-    if (width > 1279) {
-      setCounter(counter + 3)
-    }
-    else if (width > 767) {
-      setCounter(counter + 2)
-    }
-    else if (width > 319) {
-      setCounter(counter + 1);
-    }
-  }
-
-  useEffect(() => {
-    window.addEventListener('resize', checkWindowWidth)
-  }, [width])
-
-  useEffect(() => {
-    if (width > 1279) {
-      setCounter(12)
-    }
-    else if (width > 767) {
-      setCounter(9);
-    }
-    else if (width > 319) {
-      setCounter(6);
-    }
-  }, []);
+function MoviesCardList({ movies, counter, count}) {
 
   const filter = movies.slice(0, counter)
-
 
   return (
     <>
