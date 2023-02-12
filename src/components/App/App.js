@@ -6,7 +6,7 @@ import Profile from '../auth/Profile/Profile';
 import Main from '../Main/Main';
 import PageNotFound from '../PageNotFound/PageNotFound';
 import Movies from '../Movies/Movies';
-import SavedMovies from '../SavedMovies/SavedMovies';
+
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute.js'
 import { Routes, Route } from 'react-router-dom';
 //функционал
@@ -148,12 +148,18 @@ function App() {
                 movies={movies}
                 loading = {loading}
                 connectingError = {connectingError}
+                isSavesMovies={false} 
               />
             </ProtectedRoute>
           } />
           <Route path="/saved-movies" element={
             <ProtectedRoute loggedIn={loggedIn}>
-              <SavedMovies isSavesMovies={true} />
+               <Movies
+                movies={movies}
+                loading = {loading}
+                connectingError = {connectingError}
+                isSavesMovies={true} 
+              />
             </ProtectedRoute>
           } />
 

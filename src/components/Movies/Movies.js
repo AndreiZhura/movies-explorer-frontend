@@ -32,35 +32,36 @@ function Movies({ isSavesMovies, movies, loading, connectingError }) {
       useEffect(()=>{
         window.addEventListener('resize', checkWindowWidth)
         setWidth(window.innerWidth)
-      },[window.innerWidth])
+      },[])
       
       function checkWindowWidth(){
         if (width >= 1280) {
           setCounter(12)
-          console.log(width)
+          
         }
         else if (width < 1280 && width > 480) {
           setCounter(8);
           console.log(width)
+     
         }
         else if (width <= 480 ) {
           setCounter(5);
-          console.log(width)
+        
         }
       }
 
     useEffect(() => {
       if (width >= 1280) {
         setCounter(12)
-        console.log(width)
+
       }
       else if (width < 1280 && width > 480) {
         setCounter(8);
-        console.log(width)
+
       }
       else if (width <= 480 ) {
         setCounter(5);
-        console.log(width)
+
       }
     }, []);
   
