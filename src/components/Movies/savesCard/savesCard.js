@@ -4,14 +4,19 @@ import movie from '../../../images/movie.svg'
 
 
 
-function SavesCard(props) {
+function SavesCard({saves}) {
+
   return (
-    <article className="movies">
-      <h4 className="movies__title">33 слова о дизайне</h4>
-      <p className="movies__time">1ч 47м</p>
-      <img src={movie} alt="фильм" className="movies__img" />
-      <button className= "movies__button movies__button_visible"></button>
-    </article>
+    <>
+      <div className="movies" rel="noreferrer">
+        <a className="movies__link" href={saves.trailerLink} target="_blank">
+          <h4 className="movies__title">{saves.nameRU}</h4>
+          <p className="movies__time">{saves.duration} минут</p>
+          <img src={saves.image} alt="фильм" className="movies__img" />
+        </a>
+        <button className= "movies__button movies__button_visible"></button>
+      </div>
+    </>
   );
 }
 

@@ -36,6 +36,19 @@
     background-color: #2BE080;
 }
 
+.movies-buttons__button_hidden{
+    visibility: hidden;
+}
+
+.movie-card-list__error{
+    position: absolute;
+    text-align: center;
+    width: 300px;
+    left: 50%;
+    margin-left: -150px;
+    font-size: 32px;
+}
+
 @media screen and (max-width:1279px) {
     .movie-card-list {
         width: 92.5vw;
