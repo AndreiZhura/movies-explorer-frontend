@@ -126,8 +126,10 @@ function App() {
   }
 
   const handleSaveMovies = (save) => {
-    console.log(save)
-    
+    api.saveNewCard(save)
+    .then((result) =>{
+      console.log(result)
+    })
    
   }
 

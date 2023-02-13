@@ -87,6 +87,7 @@ export const updateUserInfo = ({ email, name }) => {
 }
 
 export const saveNewCard = (movie) => {
+  console.log(movie)
   return fetch(`${BASE_URL}/movies`, {
     method: 'POST',
     headers: {
@@ -94,18 +95,20 @@ export const saveNewCard = (movie) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      country: movie.country || 'Нет данных',
+      country: movie.country,
       director: movie.director,
       duration: movie.duration,
       year: movie.year,
       description: movie.description,
-      image: (`https://api.nomoreparties.co/${movie.image.url}`),
-      trailerLink: movie.trailerLink || 'https://www.youtube.com',
-      thumbnail: (`https://api.nomoreparties.co/${movie.image.formats.thumbnail.url}`),
-      movieId: movie.id,
-      nameRU: movie.nameRU || 'Нет данных',
-      nameEN: movie.nameEN || 'Нет данных'
+      image: `https://api.nomoreparties.co${movie.image.url}`,
+      trailerLink: movie.trailerLink,
+      thumbnail: `https://api.nomoreparties.co${movie.image.formats.thumbnail.url}`,
+      movieId: movie.id.toString(),
+      nameRU: movie.nameRU,
+      nameEN: movie.nameEN,
     })
   })
-    .then(this._getResponseData)
+  .then((res) => {
+    return getResponse(res)
+  })
 }
