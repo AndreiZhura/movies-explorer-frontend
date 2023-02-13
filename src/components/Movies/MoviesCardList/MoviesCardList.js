@@ -3,7 +3,7 @@ import './MoviesCardList.css'
 import MoviesCard from "../MoviesCard/MoviesCard";
 import SavesCard from "../savesCard/savesCard"
 
-function MoviesCardList({ movies, counter, count, isSavesMovies, onMovieLike, moviesUser }) {
+function MoviesCardList({ movies, counter, count, isSavesMovies, onMovieLike }) {
 
   const filter = movies.slice(0, counter)
 
@@ -11,20 +11,15 @@ function MoviesCardList({ movies, counter, count, isSavesMovies, onMovieLike, mo
     <>
       <div className="movie-card-list">
         {
-          isSavesMovies ? 
-          <SavesCard
-            key={moviesUser.data.id}
-            moviesUser={moviesUser.data}
-          /> :
-            movies.length === 0 ? <div className="movie-card-list__error">Ничего не найдено</div> :
-              filter.map((movie) => (
-                <MoviesCard
-                  key={movie.id}
-                  movie={movie}
-                  onMovieLike={onMovieLike}
+          movies.length === 0 ? <div className="movie-card-list__error">Ничего не найдено</div> :
+            filter.map((movie) => (
+              <MoviesCard
+                key={movie.id}
+                movie={movie}
+                onMovieLike={onMovieLike}
 
-                />
-              ))
+              />
+            ))
         }
       </div>
       {isSavesMovies ? <></> :

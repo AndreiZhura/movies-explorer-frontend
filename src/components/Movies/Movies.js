@@ -8,7 +8,7 @@ import Preloader from '../Movies/Preloader/Preloader'
 import "./Movies.css"
 
 
-function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, moviesUser }) {
+function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike }) {
 
     const [check, setCheck] = useState(false);
     const [search, setSearch] = useState('');
@@ -110,17 +110,7 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
                     onChange={handlecheckChange}
                 />
                 {
-                    number ? ( isSavesMovies ? 
-                      <MoviesCardList
-                      isSavesMovies={isSavesMovies}
-                      check={check}
-                      movies={filterMoviesShort}
-                      counter = {counter}
-                      count = {count}
-                      onMovieLike = {onMovieLike}
-                      moviesUser = {moviesUser}
-                  
-                  /> :
+                    number ? (
                         <div className="movie__error">«Нужно ввести ключевое слово»</div>
                     ) : (loading ? <Preloader /> : connectingError ? <p className="movie__error-server">«Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз» </p> :
                         shortMovie ?
@@ -131,7 +121,6 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
                                 counter = {counter}
                                 count = {count}
                                 onMovieLike = {onMovieLike}
-                               
                             
                             />
                             :
@@ -142,7 +131,7 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
                                 counter = {counter}
                                 count = {count}
                                 onMovieLike = {onMovieLike}
-                                moviesUser = {moviesUser}
+                            
                             />
 
                     )

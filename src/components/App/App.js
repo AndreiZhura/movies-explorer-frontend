@@ -60,7 +60,7 @@ function App() {
       });
      api.UsersMovies()
      .then((result)=>{
-      setMoviesUser(result)
+      setMoviesUser(result.data)
      })
      .catch((err) => {
       console.error(err);
