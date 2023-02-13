@@ -87,7 +87,6 @@ export const updateUserInfo = ({ email, name }) => {
 }
 
 export const saveNewCard = (movie) => {
-  console.log(movie)
   return fetch(`${BASE_URL}/movies`, {
     method: 'POST',
     headers: {
@@ -111,4 +110,19 @@ export const saveNewCard = (movie) => {
   .then((res) => {
     return getResponse(res)
   })
+}
+
+export const UsersMovies = () => {
+
+  return fetch(`${BASE_URL}/movies`, {
+    method: 'GET',
+    headers: {
+      authorization: `Bearer ${localStorage.getItem('token')}`,
+      'Content-Type': 'application/json'
+    },
+  })
+
+    .then((res) => {
+      return getResponse(res)
+    })
 }

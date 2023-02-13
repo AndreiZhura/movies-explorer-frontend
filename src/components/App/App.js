@@ -31,6 +31,7 @@ function App() {
   const [movies, setMovie] = useState([]);
   const [loading, setLoading] = useState(false);
   const [connectingError, setConnectingError] = useState(false);
+  const [moviesUser, setMoviesUser] = useState([]);
 
   const history = useNavigate();
 
@@ -57,6 +58,13 @@ function App() {
         setLoading(false);
         console.error(err);
       });
+     api.UsersMovies()
+     .then((result)=>{
+      setMoviesUser(result)
+     })
+     .catch((err) => {
+      console.error(err);
+    });
 
   }, [isLoggedIn])
 
@@ -117,7 +125,6 @@ function App() {
     api
       .updateUserInfo(User)
       .then((result) => {
-        console.log(result.data)
         setCurrentUser(result.data);
       })
       .catch((err) => {
@@ -167,6 +174,7 @@ function App() {
                 loading={loading}
                 connectingError={connectingError}
                 isSavesMovies={true}
+                moviesUser = {moviesUser}
               />
             </ProtectedRoute>
           } />
