@@ -15,7 +15,6 @@ function MoviesCardList({ movies, counter, count, isSavesMovies, onMovieLike, sa
           isSavesMovies ?
             savesMovies.map((saves) => {
               return <SavesCard
-                key={saves.id}
                 saves={saves}
               />
 

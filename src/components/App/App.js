@@ -13,9 +13,9 @@ import { Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import * as api from "../../components/utils/MainApi";
 import * as apiMovie from "../utils/MoviesApi"
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import CurrentUserContext from "../contexts/CurrentUserContext";
-import { useLocation } from 'react-router-dom';
+
 
 
 
@@ -33,8 +33,7 @@ function App() {
   const [savesMovies, setSavesMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [connectingError, setConnectingError] = useState(false);
-  const location = useLocation();
-console.log(location)
+  const location = useLocation()
   const history = useNavigate();
 
   useEffect(() => {
@@ -52,6 +51,7 @@ console.log(location)
     apiMovie.MoviesApi()
       .then((result) => {
         setMovie(result);
+        console.log(result.data)
         setConnectingError(false);
         setLoading(false);
       })
@@ -62,7 +62,7 @@ console.log(location)
       });
       api.UsersMovies()
       .then((result) => {
-        setSavesMovies(result.data);
+        setSavesMovies(result);
         setConnectingError(false);
         setLoading(false);
       })
@@ -74,6 +74,20 @@ console.log(location)
 
   }, [isLoggedIn])
 
+
+  useEffect(()=>{
+    api.UsersMovies()
+    .then((result) => {
+      setSavesMovies(result.data);
+      setConnectingError(false);
+      setLoading(false);
+    })
+    .catch((err) => {
+      setConnectingError(true);
+      setLoading(false);
+      console.error(err);
+    });
+  },[location])
 
 
 
@@ -134,7 +148,6 @@ console.log(location)
     api
       .updateUserInfo(User)
       .then((result) => {
-        console.log(result.data)
         setCurrentUser(result.data);
       })
       .catch((err) => {
@@ -143,11 +156,7 @@ console.log(location)
   }
 
   const handleSaveMovies = (save) => {
-    api.saveNewCard(save)
-    .then((result) =>{
-      console.log(result)
-    })
-   
+    console.log(save)
   }
 
 
