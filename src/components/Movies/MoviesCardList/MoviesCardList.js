@@ -3,23 +3,33 @@ import './MoviesCardList.css'
 import MoviesCard from "../MoviesCard/MoviesCard";
 import SavesCard from "../savesCard/savesCard"
 
-function MoviesCardList({ movies, counter, count, isSavesMovies, onMovieLike }) {
+function MoviesCardList({ movies, counter, count, isSavesMovies, onMovieLike, savesMovies }) {
 
   const filter = movies.slice(0, counter)
+
 
   return (
     <>
       <div className="movie-card-list">
         {
-          movies.length === 0 ? <div className="movie-card-list__error">Ничего не найдено</div> :
-            filter.map((movie) => (
-              <MoviesCard
-                key={movie.id}
-                movie={movie}
-                onMovieLike={onMovieLike}
-
+          isSavesMovies ?
+            savesMovies.map((saves) => {
+              return <SavesCard
+                key={saves.id}
+                saves={saves}
               />
-            ))
+
+            })
+            :
+            movies.length === 0 ? <div className="movie-card-list__error">Ничего не найдено</div> :
+              filter.map((movie) => (
+                <MoviesCard
+                  key={movie.id}
+                  movie={movie}
+                  onMovieLike={onMovieLike}
+
+                />
+              ))
         }
       </div>
       {isSavesMovies ? <></> :

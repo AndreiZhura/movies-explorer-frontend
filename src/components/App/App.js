@@ -15,6 +15,7 @@ import * as api from "../../components/utils/MainApi";
 import * as apiMovie from "../utils/MoviesApi"
 import { useNavigate } from "react-router-dom";
 import CurrentUserContext from "../contexts/CurrentUserContext";
+import { useLocation } from 'react-router-dom';
 
 
 
@@ -29,10 +30,11 @@ function App() {
   const [isLoggedIn, setisLoggedIn] = useState(false);
   // Фильмы 
   const [movies, setMovie] = useState([]);
+  const [savesMovies, setSavesMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [connectingError, setConnectingError] = useState(false);
-  const [moviesUser, setMoviesUser] = useState([]);
-
+  const location = useLocation();
+console.log(location)
   const history = useNavigate();
 
   useEffect(() => {
@@ -58,15 +60,22 @@ function App() {
         setLoading(false);
         console.error(err);
       });
-     api.UsersMovies()
-     .then((result)=>{
-      setMoviesUser(result.data)
-     })
-     .catch((err) => {
-      console.error(err);
-    });
+      api.UsersMovies()
+      .then((result) => {
+        setSavesMovies(result.data);
+        setConnectingError(false);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setConnectingError(true);
+        setLoading(false);
+        console.error(err);
+      });
 
   }, [isLoggedIn])
+
+
+
 
   const newAuth = (token) => {
     return api
@@ -125,6 +134,7 @@ function App() {
     api
       .updateUserInfo(User)
       .then((result) => {
+        console.log(result.data)
         setCurrentUser(result.data);
       })
       .catch((err) => {
@@ -174,7 +184,7 @@ function App() {
                 loading={loading}
                 connectingError={connectingError}
                 isSavesMovies={true}
-                moviesUser = {moviesUser}
+                savesMovies={savesMovies}
               />
             </ProtectedRoute>
           } />
