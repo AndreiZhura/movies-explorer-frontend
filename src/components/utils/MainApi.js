@@ -127,3 +127,16 @@ export const UsersMovies = () => {
       return getResponse(res)
     })
 }
+
+export const DeleteCard = (id) => {
+  return fetch(`${BASE_URL}/movies/${id}`, {
+    method: 'DELETE',
+    headers: {
+      authorization: `Bearer ${localStorage.getItem('token')}`,
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((res) => {
+      return getResponse(res)
+    })
+}

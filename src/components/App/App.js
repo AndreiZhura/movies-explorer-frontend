@@ -80,6 +80,7 @@ function App() {
           setisLoggedIn(true);
           setloggedIn(true);
           setCurrentUser(res.data);
+          setSavesMovies(res.data);
         }
       })
       .catch((err) => {
@@ -140,10 +141,20 @@ function App() {
   const handleSaveMovies = (save) => {
     api.saveNewCard(save)
     .then((result) =>{
+      setSavesMovies(result.data);
       console.log(result)
     })
-   
   }
+
+  const handleDeleteMovies = (dislike) => {
+    api.DeleteCard(dislike)
+    .then((result) =>{
+      setSavesMovies(result.data);
+      console.log(result)
+    })
+  }
+
+
 
 
 
@@ -180,6 +191,7 @@ function App() {
                 connectingError={connectingError}
                 isSavesMovies={true}
                 savesMovies={savesMovies}
+                onMovieDisLike = {handleDeleteMovies}
               />
             </ProtectedRoute>
           } />

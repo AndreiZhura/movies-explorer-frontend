@@ -1,10 +1,14 @@
 import React from "react";
 import '../MoviesCard/MoviesCard.css'
-import movie from '../../../images/movie.svg'
 
 
 
-function SavesCard({saves}) {
+
+function SavesCard({saves, onMovieDisLike}) {
+console.log(saves._id)
+  const handleDeleteMovies = () => {
+    onMovieDisLike(saves._id)
+  }
 
   return (
     <>
@@ -14,7 +18,7 @@ function SavesCard({saves}) {
           <p className="movies__time">{saves.duration} минут</p>
           <img src={saves.image} alt="фильм" className="movies__img" />
         </a>
-        <button className= "movies__button movies__button_visible"></button>
+        <button className= "movies__button movies__button_visible" onClick={handleDeleteMovies}></button>
       </div>
     </>
   );

@@ -8,7 +8,7 @@ import Preloader from '../Movies/Preloader/Preloader'
 import "./Movies.css"
 
 
-function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, savesMovies }) {
+function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, savesMovies, onMovieDisLike }) {
 
     const [check, setCheck] = useState(false);
     const [search, setSearch] = useState('');
@@ -119,6 +119,7 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
                                 count = {count}
                                 onMovieLike = {onMovieLike}
                                 savesMovies = {savesMovies}
+                                onMovieDisLike = {onMovieDisLike}
                             /> :
                         <div className="movie__error">«Нужно ввести ключевое слово»</div>
                     ) : (loading ? <Preloader /> : connectingError ? <p className="movie__error-server">«Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз» </p> :
