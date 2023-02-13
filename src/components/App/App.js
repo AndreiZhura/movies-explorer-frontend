@@ -29,8 +29,8 @@ function App() {
   const [isLoggedIn, setisLoggedIn] = useState(false);
   // Фильмы 
   const [movies, setMovie] = useState([]);
-  const [loading , setLoading] = useState(false);
-  const [connectingError, setConnectingError ] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [connectingError, setConnectingError] = useState(false);
 
   const history = useNavigate();
 
@@ -101,7 +101,6 @@ function App() {
     api
       .register(email, password, name)
       .then((res) => {
-
         setInfoError(true);
         history("/signin");
 
@@ -126,6 +125,12 @@ function App() {
       });
   }
 
+  const handleSaveMovies = (save) => {
+    console.log(save)
+    
+   
+  }
+
 
 
   function signOut() {
@@ -139,26 +144,27 @@ function App() {
       <CurrentUserContext.Provider value={currentUser}>
         <Routes>
           <Route path="/" element={
-          <Main
-          loggedIn={loggedIn}
-          />} />
+            <Main
+              loggedIn={loggedIn}
+            />} />
           <Route path="/movies" element={
             <ProtectedRoute loggedIn={loggedIn}>
               <Movies
                 movies={movies}
-                loading = {loading}
-                connectingError = {connectingError}
-                isSavesMovies={false} 
+                loading={loading}
+                connectingError={connectingError}
+                isSavesMovies={false}
+                onMovieLike={handleSaveMovies}
               />
             </ProtectedRoute>
           } />
           <Route path="/saved-movies" element={
             <ProtectedRoute loggedIn={loggedIn}>
-               <Movies
+              <Movies
                 movies={movies}
-                loading = {loading}
-                connectingError = {connectingError}
-                isSavesMovies={true} 
+                loading={loading}
+                connectingError={connectingError}
+                isSavesMovies={true}
               />
             </ProtectedRoute>
           } />
