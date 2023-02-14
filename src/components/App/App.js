@@ -23,6 +23,7 @@ import CurrentUserContext from "../contexts/CurrentUserContext";
 
 function App() {
 
+
   const [loggedIn, setloggedIn] = useState(false);
   const [infoError, setInfoError] = useState(true);
   // const [userData, setUserData] = useState({});
@@ -34,13 +35,13 @@ function App() {
   const [savesMovies, setSavesMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [connectingError, setConnectingError] = useState(false);
-  const location = useLocation()
+  //const location = useLocation()
   const history = useNavigate();
-
-
-  const locationSaves = location.pathname === '/saved-movies'
-  console.log(locationSaves)
-
+  
+  
+  //  const locationSaves = location.pathname === '/saved-movies'
+  
+  console.log(savesMovies)
 
 
   useEffect(() => {
@@ -200,7 +201,7 @@ function App() {
             <ProtectedRoute loggedIn={loggedIn}>
               <SavedMovies
                 savesMovies={savesMovies}
-                onMovieDisLike={handlrDeleteMovies}
+              
               />
             </ProtectedRoute>
           } />
