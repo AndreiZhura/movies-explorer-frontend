@@ -195,6 +195,7 @@ function App() {
                 connectingError={connectingError}
                 isSavesMovies={false}
                 onMovieLike={handleSaveMovies}
+                onMovieDisLike={handlrDeleteMovies}
                 savesMovies = {savesMovies}
               />
             </ProtectedRoute>

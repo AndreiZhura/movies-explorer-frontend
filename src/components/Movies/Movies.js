@@ -8,7 +8,7 @@ import Preloader from '../Movies/Preloader/Preloader'
 import "./Movies.css"
 
 
-function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, savesMovies }) {
+function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, onMovieDisLike, savesMovies }) {
 
   const [check, setCheck] = useState(false);
   const [search, setSearch] = useState('');
@@ -123,6 +123,7 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
                 counter={counter}
                 count={count}
                 onMovieLike={onMovieLike}
+                onMovieDisLike={onMovieDisLike}
               />
               :
               <MoviesCardList
@@ -133,7 +134,7 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
                 counter={counter}
                 count={count}
                 onMovieLike={onMovieLike}
-
+                onMovieDisLike={onMovieDisLike}
               />
 
           )

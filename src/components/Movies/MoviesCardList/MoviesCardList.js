@@ -3,7 +3,7 @@ import './MoviesCardList.css'
 import MoviesCard from "../MoviesCard/MoviesCard";
 
 
-function MoviesCardList({ movies, counter, count,  onMovieLike, savesMovies }) {
+function MoviesCardList({ movies, counter, count,  onMovieLike, savesMovies, onMovieDisLike }) {
 
   const filter = movies.slice(0, counter)
 
@@ -20,6 +20,7 @@ function MoviesCardList({ movies, counter, count,  onMovieLike, savesMovies }) {
                   movie={movie}
                   onMovieLike={onMovieLike}
                   savesMovies = {savesMovies}
+                  onMovieDisLike={onMovieDisLike}
                 />
               ))
         }

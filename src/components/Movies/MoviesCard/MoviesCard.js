@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 
 
-function MoviesCard({ movie, onMovieLike, savesMovies }) {
+function MoviesCard({ movie, onMovieLike, onMovieDisLike ,savesMovies }) {
 
   const [clickButton, setClickButton] = useState(false);
 
@@ -16,11 +16,17 @@ function MoviesCard({ movie, onMovieLike, savesMovies }) {
     }
   }, []);
 
+const handleChangeLike = () => {
+      if(clickButton){
+        onMovieDisLike(movie)
+        setClickButton(false);
+      }
+      else{
+        onMovieLike(movie)
+        setClickButton(true);
+      }
+}
 
-  const handleSaveMovies = () => {
-    setClickButton(!clickButton)
-    onMovieLike(movie)
-  }
   return (
     <>
       <div className="movies" rel="noreferrer">
@@ -29,7 +35,7 @@ function MoviesCard({ movie, onMovieLike, savesMovies }) {
           <p className="movies__time">{movie.duration}минут</p>
           <img src={`https://api.nomoreparties.co/${movie.image.formats.thumbnail.url}`} alt="фильм" className="movies__img" />
         </a>
-        <button className={clickButton ? "movies__button-stars movies__button-stars_green" : "movies__button-stars"} onClick={handleSaveMovies}></button>
+        <button className={clickButton ? "movies__button-stars movies__button-stars_green" : "movies__button-stars"} onClick={handleChangeLike}></button>
       </div>
     </>
   );
