@@ -152,7 +152,7 @@ function App() {
     api.saveNewCard(save)
       .then((result) => {
         console.log(result.data);
-        setSavesMovies([...savesMovies, result])
+        setSavesMovies([...savesMovies, result.data])
       })
       .catch((err) => {
         console.error(err);
