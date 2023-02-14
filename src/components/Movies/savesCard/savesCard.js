@@ -1,16 +1,16 @@
+
+
 import React from "react";
 import '../MoviesCard/MoviesCard.css'
 
 
 
 
-function SavesCard({saves , onCardDelete}) {
+function SavesCard({saves, onMovieDisLike}) {
 
-
-function handleDeleteCard(){
-  onCardDelete(saves.id);
-  console.log(saves.id)
-}
+  const handleDeleteMovies = () => {
+    onMovieDisLike(saves._id)
+  }
 
   return (
     <>
@@ -20,7 +20,7 @@ function handleDeleteCard(){
           <p className="movies__time">{saves.duration} минут</p>
           <img src={saves.image} alt="фильм" className="movies__img" />
         </a>
-        <button className= "movies__button movies__button_visible" onClick={handleDeleteCard}></button>
+        <button className= "movies__button movies__button_visible" onClick={handleDeleteMovies}></button>
       </div>
     </>
   );

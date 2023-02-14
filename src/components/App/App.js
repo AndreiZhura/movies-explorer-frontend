@@ -13,9 +13,9 @@ import { Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import * as api from "../../components/utils/MainApi";
 import * as apiMovie from "../utils/MoviesApi"
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import CurrentUserContext from "../contexts/CurrentUserContext";
-import { useLocation } from 'react-router-dom';
+
 
 
 
@@ -33,9 +33,7 @@ function App() {
   const [savesMovies, setSavesMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [connectingError, setConnectingError] = useState(false);
-  const location = useLocation();
-
-
+  const location = useLocation()
   const history = useNavigate();
 
   useEffect(() => {
@@ -53,6 +51,7 @@ function App() {
     apiMovie.MoviesApi()
       .then((result) => {
         setMovie(result);
+        console.log(result.data)
         setConnectingError(false);
         setLoading(false);
       })
@@ -61,9 +60,9 @@ function App() {
         setLoading(false);
         console.error(err);
       });
-    api.UsersMovies()
+      api.UsersMovies()
       .then((result) => {
-        setSavesMovies(result.data)
+        setSavesMovies(result);
         setConnectingError(false);
         setLoading(false);
       })
@@ -75,25 +74,20 @@ function App() {
 
   }, [isLoggedIn])
 
-  const locationSaves = location.pathname === '/'
 
-  useEffect(() => {
-    if (locationSaves) {
-      setloggedIn(true);
-      api.UsersMovies()
-        .then((result) => {
-          setSavesMovies(result.data)
-          console.log(savesMovies)
-          setConnectingError(false);
-          setLoading(false);
-        })
-        .catch((err) => {
-          setConnectingError(true);
-          setLoading(false);
-          console.error(err);
-        });
-    }
-  }, [locationSaves, savesMovies])
+  useEffect(()=>{
+    api.UsersMovies()
+    .then((result) => {
+      setSavesMovies(result.data);
+      setConnectingError(false);
+      setLoading(false);
+    })
+    .catch((err) => {
+      setConnectingError(true);
+      setLoading(false);
+      console.error(err);
+    });
+  },[location])
 
 
 
@@ -162,25 +156,10 @@ function App() {
   }
 
   const handleSaveMovies = (save) => {
-    api.saveNewCard(save)
-      .then((result) => {
-
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-
+    console.log(save)
   }
 
-  const handleDeleteMovies = (saves) => {
-    api.DeleteUsers(saves)
-      .then((result) => {
 
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }
 
   function signOut() {
     localStorage.removeItem('token');
@@ -204,8 +183,6 @@ function App() {
                 connectingError={connectingError}
                 isSavesMovies={false}
                 onMovieLike={handleSaveMovies}
-                savesMovies={savesMovies}
-                onCardDelete={handleDeleteMovies}
               />
             </ProtectedRoute>
           } />

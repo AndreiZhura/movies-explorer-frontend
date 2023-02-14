@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useState, useRef } from "react";
 import SearchForm from "./SearchForm/SearchForm";
 import MoviesCardList from "./MoviesCardList/MoviesCardList";
@@ -8,7 +8,7 @@ import Preloader from '../Movies/Preloader/Preloader'
 import "./Movies.css"
 
 
-function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, savesMovies, onCardDelete }) {
+function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, savesMovies }) {
 
     const [check, setCheck] = useState(false);
     const [search, setSearch] = useState('');
@@ -29,30 +29,26 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
         setCounter(counter + 1);
       }
     }
-
-    const checkWindowWidth = useCallback(() =>{
-      if (width >= 1280) {
-        setCounter(12)
-        
-      }
-      else if (width < 1280 && width > 480) {
-        setCounter(8);
-        console.log(width)
-   
-      }
-      else if (width <= 480 ) {
-        setCounter(5);
-      
-      }
-    
-    },[width])
-    
-
       useEffect(()=>{
         window.addEventListener('resize', checkWindowWidth)
         setWidth(window.innerWidth)
-      },[checkWindowWidth])
-
+      },[])
+      
+      function checkWindowWidth(){
+        if (width >= 1280) {
+          setCounter(12)
+          
+        }
+        else if (width < 1280 && width > 480) {
+          setCounter(8);
+          console.log(width)
+     
+        }
+        else if (width <= 480 ) {
+          setCounter(5);
+        
+        }
+      }
 
     useEffect(() => {
       if (width >= 1280) {
@@ -67,7 +63,7 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
         setCounter(5);
 
       }
-    }, [width]);
+    }, []);
   
     
     const numberValidator = str => /^\d+$/.test(str);
@@ -123,7 +119,6 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
                                 count = {count}
                                 onMovieLike = {onMovieLike}
                                 savesMovies = {savesMovies}
-                                onCardDelete = {onCardDelete}
                             /> :
                         <div className="movie__error">«Нужно ввести ключевое слово»</div>
                     ) : (loading ? <Preloader /> : connectingError ? <p className="movie__error-server">«Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз» </p> :
