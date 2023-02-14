@@ -6,6 +6,7 @@ import Profile from '../auth/Profile/Profile';
 import Main from '../Main/Main';
 import PageNotFound from '../PageNotFound/PageNotFound';
 import Movies from '../Movies/Movies';
+import SavedMovies from '../Movies/SavedMovies/SavedMovies';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute.js'
 import { Routes, Route } from 'react-router-dom';
@@ -197,11 +198,7 @@ function App() {
           } />
           <Route path="/saved-movies" element={
             <ProtectedRoute loggedIn={loggedIn}>
-              <Movies
-                movies={movies}
-                loading={loading}
-                connectingError={connectingError}
-                isSavesMovies={true}
+              <SavedMovies
                 savesMovies={savesMovies}
                 onMovieDisLike={handlrDeleteMovies}
               />
