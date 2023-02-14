@@ -37,10 +37,10 @@ function App() {
   const [connectingError, setConnectingError] = useState(false);
   //const location = useLocation()
   const history = useNavigate();
-  
-  
+
+  console.log(savesMovies)
   //  const locationSaves = location.pathname === '/saved-movies'
-  
+
 
 
   useEffect(() => {
@@ -151,7 +151,6 @@ function App() {
   const handleSaveMovies = (save) => {
     api.saveNewCard(save)
       .then((result) => {
-        console.log(result.data);
         setSavesMovies([...savesMovies, result.data])
       })
       .catch((err) => {
@@ -160,12 +159,10 @@ function App() {
   }
 
   const handlrDeleteMovies = (del) => {
-    
+
     api.DeleteMovies(del)
       .then((result) => {
-        console.log(result);
-        console.log(savesMovies)
-
+        setSavesMovies(savesMovies.filter((res) => { return res._id !== result._id }))
       })
       .catch((err) => {
         console.error(err);
@@ -202,7 +199,7 @@ function App() {
             <ProtectedRoute loggedIn={loggedIn}>
               <SavedMovies
                 savesMovies={savesMovies}
-                onMovieDisLike = {handlrDeleteMovies}
+                onMovieDisLike={handlrDeleteMovies}
               />
             </ProtectedRoute>
           } />
