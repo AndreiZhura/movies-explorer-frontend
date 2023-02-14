@@ -3,7 +3,7 @@ import '../MoviesCardList/MoviesCardList.css'
 import SavesCard from "../SavesCard/SavesCard";
 
 
-function SavedCardList({ savesMovies }) {
+function SavedCardList({ savesMovies, onMovieDisLike }) {
 
 
     console.log(savesMovies)
@@ -16,6 +16,7 @@ function SavedCardList({ savesMovies }) {
                     savesMovies.map((saves) => {
                         return <SavesCard
                             saves={saves}
+                            onMovieDisLike = {onMovieDisLike}
                         />
                     })
                 }

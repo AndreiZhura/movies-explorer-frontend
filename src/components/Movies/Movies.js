@@ -8,7 +8,7 @@ import Preloader from '../Movies/Preloader/Preloader'
 import "./Movies.css"
 
 
-function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, savesMovies, onMovieDisLike }) {
+function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike }) {
 
   const [check, setCheck] = useState(false);
   const [search, setSearch] = useState('');

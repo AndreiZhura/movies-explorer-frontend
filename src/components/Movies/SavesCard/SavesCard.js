@@ -6,12 +6,12 @@ import '../MoviesCard/MoviesCard.css'
 
 
 
-function SavesCard({saves}) {
+function SavesCard({saves, onMovieDisLike}) {
 
-  console.log(saves)
-
+  
   const handleDeleteMovies = () => {
-    console.log(saves._id);
+ 
+    onMovieDisLike(saves._id)
   }
 
   return (

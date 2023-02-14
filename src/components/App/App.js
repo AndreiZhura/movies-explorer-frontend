@@ -41,7 +41,6 @@ function App() {
   
   //  const locationSaves = location.pathname === '/saved-movies'
   
-  console.log(savesMovies)
 
 
   useEffect(() => {
@@ -59,7 +58,6 @@ function App() {
     apiMovie.MoviesApi()
       .then((result) => {
         setMovie(result);
-        console.log(result.data)
         setConnectingError(false);
         setLoading(false);
       })
@@ -153,7 +151,8 @@ function App() {
   const handleSaveMovies = (save) => {
     api.saveNewCard(save)
       .then((result) => {
-        console.log(result);
+        console.log(result.data);
+        setSavesMovies([...savesMovies, result])
       })
       .catch((err) => {
         console.error(err);
@@ -161,10 +160,12 @@ function App() {
   }
 
   const handlrDeleteMovies = (del) => {
-    console.log(del)
+    
     api.DeleteMovies(del)
       .then((result) => {
         console.log(result);
+        console.log(savesMovies)
+
       })
       .catch((err) => {
         console.error(err);
@@ -201,7 +202,7 @@ function App() {
             <ProtectedRoute loggedIn={loggedIn}>
               <SavedMovies
                 savesMovies={savesMovies}
-              
+                onMovieDisLike = {handlrDeleteMovies}
               />
             </ProtectedRoute>
           } />

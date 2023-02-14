@@ -8,7 +8,7 @@ import Preloader from '../../Movies/Preloader/Preloader'
 import "../Movies.css"
 
 
-function SavedMovies({ savesMovies }) {
+function SavedMovies({ savesMovies, onMovieDisLike }) {
 
 
 
@@ -23,6 +23,7 @@ function SavedMovies({ savesMovies }) {
                 {
                     <SavedCardList
                         savesMovies={savesMovies}
+                        onMovieDisLike = {onMovieDisLike}
 
                     />
                 }
