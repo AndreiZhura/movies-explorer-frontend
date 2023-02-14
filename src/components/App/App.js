@@ -36,11 +36,8 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [connectingError, setConnectingError] = useState(false);
   //const location = useLocation()
+  const [clickButton, setClickButton] = useState(false);
   const history = useNavigate();
-
-  console.log(savesMovies)
-  //  const locationSaves = location.pathname === '/saved-movies'
-
 
 
   useEffect(() => {
@@ -148,6 +145,10 @@ function App() {
       });
   }
 
+  const handleMovieLike  = (like) =>{
+ 
+  }
+
   const handleSaveMovies = (save) => {
     api.saveNewCard(save)
       .then((result) => {
@@ -192,6 +193,7 @@ function App() {
                 connectingError={connectingError}
                 isSavesMovies={false}
                 onMovieLike={handleSaveMovies}
+
               />
             </ProtectedRoute>
           } />

@@ -19,7 +19,6 @@ function MoviesCardList({ movies, counter, count,  onMovieLike }) {
                   key={movie.id}
                   movie={movie}
                   onMovieLike={onMovieLike}
-
                 />
               ))
         }
