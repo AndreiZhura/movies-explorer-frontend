@@ -9,7 +9,8 @@ import '../MoviesCard/MoviesCard.css'
 function SavesCard({saves, onMovieDisLike}) {
 
   const handleDeleteMovies = () => {
-    onMovieDisLike(saves._id)
+    console.log(saves._id);
+    onMovieDisLike(saves._id);
   }
 
   return (

@@ -36,6 +36,12 @@ function App() {
   const location = useLocation()
   const history = useNavigate();
 
+
+  const locationSaves = location.pathname === '/saved-movies'
+  console.log(locationSaves)
+
+
+
   useEffect(() => {
     if (!isLoggedIn) return;
     api.userInfo()
@@ -60,9 +66,9 @@ function App() {
         setLoading(false);
         console.error(err);
       });
-      api.UsersMovies()
+    api.UsersMovies()
       .then((result) => {
-        setSavesMovies(result);
+        setSavesMovies(result.data);
         setConnectingError(false);
         setLoading(false);
       })
@@ -75,19 +81,6 @@ function App() {
   }, [isLoggedIn])
 
 
-  useEffect(()=>{
-    api.UsersMovies()
-    .then((result) => {
-      setSavesMovies(result.data);
-      setConnectingError(false);
-      setLoading(false);
-    })
-    .catch((err) => {
-      setConnectingError(true);
-      setLoading(false);
-      console.error(err);
-    });
-  },[location])
 
 
 
@@ -156,9 +149,25 @@ function App() {
   }
 
   const handleSaveMovies = (save) => {
-    console.log(save)
+    api.saveNewCard(save)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }
 
+  const handlrDeleteMovies = (del) => {
+    console.log(del)
+    api.DeleteMovies(del)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
 
 
   function signOut() {
@@ -194,6 +203,7 @@ function App() {
                 connectingError={connectingError}
                 isSavesMovies={true}
                 savesMovies={savesMovies}
+                onMovieDisLike={handlrDeleteMovies}
               />
             </ProtectedRoute>
           } />
