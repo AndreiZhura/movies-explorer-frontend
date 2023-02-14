@@ -8,7 +8,7 @@ import Preloader from '../Movies/Preloader/Preloader'
 import "./Movies.css"
 
 
-function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike }) {
+function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, savesMovies }) {
 
   const [check, setCheck] = useState(false);
   const [search, setSearch] = useState('');
@@ -117,6 +117,7 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike }
             shortMovie ?
               <MoviesCardList
                 isSavesMovies={isSavesMovies}
+                savesMovies = {savesMovies}
                 check={check}
                 movies={filterMoviesShort}
                 counter={counter}
@@ -126,6 +127,7 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike }
               :
               <MoviesCardList
                 isSavesMovies={isSavesMovies}
+                savesMovies = {savesMovies}
                 check={check}
                 movies={filterMovies}
                 counter={counter}

@@ -36,8 +36,10 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [connectingError, setConnectingError] = useState(false);
   //const location = useLocation()
-  const [clickButton, setClickButton] = useState(false);
+
   const history = useNavigate();
+
+
 
 
   useEffect(() => {
@@ -193,7 +195,7 @@ function App() {
                 connectingError={connectingError}
                 isSavesMovies={false}
                 onMovieLike={handleSaveMovies}
-
+                savesMovies = {savesMovies}
               />
             </ProtectedRoute>
           } />
