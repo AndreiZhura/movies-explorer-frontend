@@ -16,17 +16,23 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
   const inputRef = useRef(null);
   const [width, setWidth] = useState(window.innerWidth);
   const [counter, setCounter] = useState(0);
-/// история
+  /// история
 
-const searchHistory = localStorage.getItem("search");
-const shortORlong = localStorage.getItem("shortORlong");
-const numberHistory = localStorage.getItem("number");
+  const searchHistory = localStorage.getItem("search");
+  const shortORlong = localStorage.getItem("shortORlong");
 
-useEffect(()=>{
-  setshortMovie(shortORlong);
-  setSearch(searchHistory);
-  setNumber(numberHistory);
-},[])
+  console.log(searchHistory)
+  console.log(shortORlong)
+
+
+  useEffect(() => {
+    setshortMovie(shortORlong);
+    setSearch(searchHistory);
+
+    console.log(searchHistory)
+    console.log(shortORlong)
+
+  }, [])
 
 
 
@@ -87,7 +93,7 @@ useEffect(()=>{
     return movie.nameRU.trim().toLowerCase().includes(search.toLowerCase()) && movie.duration < 40
   })
 
- 
+
 
 
 
@@ -102,14 +108,14 @@ useEffect(()=>{
     if (numberValidator(inputRef.current.value)) {
       setSearch('/');
       setNumber(true);
-      localStorage.setItem("search",inputRef.current.value);
-      localStorage.setItem("number",number);
+      localStorage.setItem("search", inputRef.current.value);
+      
     }
     else {
       setSearch(inputRef.current.value);
       setNumber(false);
-      localStorage.setItem("search",inputRef.current.value);
-      localStorage.setItem("number",number);
+      localStorage.setItem("search", inputRef.current.value);
+      
     }
   }
 
@@ -130,7 +136,7 @@ useEffect(()=>{
             shortMovie ?
               <MoviesCardList
                 isSavesMovies={isSavesMovies}
-                savesMovies = {savesMovies}
+                savesMovies={savesMovies}
                 movies={filterMoviesShort}
                 counter={counter}
                 count={count}
@@ -140,7 +146,7 @@ useEffect(()=>{
               :
               <MoviesCardList
                 isSavesMovies={isSavesMovies}
-                savesMovies = {savesMovies}
+                savesMovies={savesMovies}
                 movies={filterMovies}
                 counter={counter}
                 count={count}
