@@ -65,7 +65,6 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
     }
   }, []);
 
-
   const numberValidator = str => /^\d+$/.test(str);
 
   const filterMovies = movies.filter((movie) => {
@@ -111,7 +110,6 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
         />
         {
           number ? (
-
             <div className="movie__error">«Нужно ввести ключевое слово»</div>
           ) : (loading ? <Preloader /> : connectingError ? <p className="movie__error-server">«Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз» </p> :
             shortMovie ?
@@ -136,7 +134,6 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
                 onMovieLike={onMovieLike}
                 onMovieDisLike={onMovieDisLike}
               />
-
           )
         }
       </main>

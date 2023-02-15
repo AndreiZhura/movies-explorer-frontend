@@ -14,7 +14,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import * as api from "../../components/utils/MainApi";
 import * as apiMovie from "../utils/MoviesApi"
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 
 
@@ -53,34 +53,36 @@ function App() {
       .catch((err) => {
         console.error(err);
       });
-    setLoading(true)
     apiMovie.MoviesApi()
       .then((result) => {
         setMovie(result);
         setConnectingError(false);
-        setLoading(false);
+        setLoading(true);
       })
       .catch((err) => {
         setConnectingError(true);
         setLoading(false);
         console.error(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
     api.UsersMovies()
       .then((result) => {
         setSavesMovies(result.data);
         setConnectingError(false);
-        setLoading(false);
+        setLoading(true);
       })
       .catch((err) => {
         setConnectingError(true);
         setLoading(false);
         console.error(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
 
   }, [isLoggedIn])
-
-
-
 
 
   const newAuth = (token) => {
@@ -126,7 +128,6 @@ function App() {
       .then((res) => {
         setInfoError(true);
         history("/signin");
-
       })
       .catch((err) => {
         console.log(err);
@@ -168,6 +169,9 @@ function App() {
             .then((result) => {
               setSavesMovies(savesMovies.filter((res) => { return res._id !== result._id }))
             })
+            .catch((err) => {
+              console.error(err);
+            });
         }
       })
 
@@ -216,6 +220,8 @@ function App() {
               <SavedMovies
                 savesMovies={savesMovies}
                 onMovieDisLike={handlrDeleteMovies}
+                loading={loading}
+                connectingError={connectingError}
               />
             </ProtectedRoute>
           } />

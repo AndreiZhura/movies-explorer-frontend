@@ -5,10 +5,6 @@ import SavesCard from "../SavesCard/SavesCard";
 
 function SavedCardList({ savesMovies, onMovieDisLike }) {
 
-
-    console.log(savesMovies)
-
-
     return (
         <>
             <div className="movie-card-list">

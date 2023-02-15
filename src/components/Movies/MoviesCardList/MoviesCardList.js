@@ -7,8 +7,6 @@ function MoviesCardList({ movies, counter, count,  onMovieLike, savesMovies, onM
 
   const filter = movies.slice(0, counter)
 
-
-
   return (
     <>
       <div className="movie-card-list">
