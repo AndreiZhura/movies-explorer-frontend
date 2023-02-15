@@ -147,9 +147,6 @@ function App() {
       });
   }
 
-  const handleMovieLike  = (like) =>{
- 
-  }
 
   const handleSaveMovies = (save) => {
     api.saveNewCard(save)
@@ -162,14 +159,28 @@ function App() {
   }
 
   const handlrDeleteMovies = (del) => {
+    const numberValidator = str => /^\d+$/.test(str);
 
-    api.DeleteMovies(del)
-      .then((result) => {
-        setSavesMovies(savesMovies.filter((res) => { return res._id !== result._id }))
+    if (numberValidator(del.id)) {
+      savesMovies.filter((res) => {
+        if (res.movieId === del.id) {
+          return api.DeleteMovies(res._id)
+            .then((result) => {
+              setSavesMovies(savesMovies.filter((res) => { return res._id !== result._id }))
+            })
+        }
       })
-      .catch((err) => {
-        console.error(err);
-      });
+
+    }
+    else {
+      api.DeleteMovies(del)
+        .then((result) => {
+          setSavesMovies(savesMovies.filter((res) => { return res._id !== result._id }))
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
   }
 
 
@@ -196,7 +207,7 @@ function App() {
                 isSavesMovies={false}
                 onMovieLike={handleSaveMovies}
                 onMovieDisLike={handlrDeleteMovies}
-                savesMovies = {savesMovies}
+                savesMovies={savesMovies}
               />
             </ProtectedRoute>
           } />

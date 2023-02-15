@@ -10,10 +10,6 @@ import "../Movies.css"
 
 function SavedMovies({ savesMovies, onMovieDisLike }) {
 
-
-
-
-
     return (
         <>
             <HeaderProfile />
