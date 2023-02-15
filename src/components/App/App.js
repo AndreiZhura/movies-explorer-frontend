@@ -17,12 +17,7 @@ import * as apiMovie from "../utils/MoviesApi"
 import { useNavigate } from "react-router-dom";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 
-
-
-
-
 function App() {
-
 
   const [loggedIn, setloggedIn] = useState(false);
   const [infoError, setInfoError] = useState(true);
@@ -38,9 +33,6 @@ function App() {
   //const location = useLocation()
 
   const history = useNavigate();
-
-
-
 
   useEffect(() => {
     if (!isLoggedIn) return;
