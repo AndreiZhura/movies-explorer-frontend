@@ -10,13 +10,25 @@ import "./Movies.css"
 
 function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, onMovieDisLike, savesMovies }) {
 
-  const [check, setCheck] = useState(false);
   const [search, setSearch] = useState('');
   const [number, setNumber] = useState(false);
   const [shortMovie, setshortMovie] = useState(false);
   const inputRef = useRef(null);
   const [width, setWidth] = useState(window.innerWidth);
   const [counter, setCounter] = useState(0);
+/// история
+
+const searchHistory = localStorage.getItem("search");
+const shortORlong = localStorage.getItem("shortORlong");
+const numberHistory = localStorage.getItem("number");
+
+useEffect(()=>{
+  setshortMovie(shortORlong);
+  setSearch(searchHistory);
+  setNumber(numberHistory);
+},[])
+
+
 
   function count() {
     if (width >= 1280) {
@@ -75,14 +87,13 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
     return movie.nameRU.trim().toLowerCase().includes(search.toLowerCase()) && movie.duration < 40
   })
 
-  useEffect(() => {
-    setSearch('/');
-    setNumber(true);
-  }, [])
+ 
+
+
 
   function handlecheckChange() {
-    setCheck(!check);
-    setshortMovie(!shortMovie)
+    setshortMovie(!shortMovie);
+    localStorage.setItem("shortORlong", shortMovie)
   }
 
   function handleClick(e) {
@@ -91,10 +102,14 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
     if (numberValidator(inputRef.current.value)) {
       setSearch('/');
       setNumber(true);
+      localStorage.setItem("search",inputRef.current.value);
+      localStorage.setItem("number",number);
     }
     else {
       setSearch(inputRef.current.value);
       setNumber(false);
+      localStorage.setItem("search",inputRef.current.value);
+      localStorage.setItem("number",number);
     }
   }
 
@@ -116,7 +131,6 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
               <MoviesCardList
                 isSavesMovies={isSavesMovies}
                 savesMovies = {savesMovies}
-                check={check}
                 movies={filterMoviesShort}
                 counter={counter}
                 count={count}
@@ -127,7 +141,6 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
               <MoviesCardList
                 isSavesMovies={isSavesMovies}
                 savesMovies = {savesMovies}
-                check={check}
                 movies={filterMovies}
                 counter={counter}
                 count={count}
