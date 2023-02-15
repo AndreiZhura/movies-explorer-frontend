@@ -54,6 +54,7 @@ function SavedMovies({ savesMovies, onMovieDisLike, loading, connectingError }) 
                     onClick={handleClick}
                     number={number}
                     onChange={handlecheckChange}
+                    shortMovie ={shortMovie}
                 />
                 {loading ? <Preloader /> : connectingError ? <p className="movie__error-server">«Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз» </p> :
                     shortMovie ?
