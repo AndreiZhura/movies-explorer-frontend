@@ -102,6 +102,7 @@
 
 .auth-main__error_hidden{
     visibility: hidden;
+    display: none;
 }
 
 .auth-main__input_bottom{

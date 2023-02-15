@@ -37,7 +37,7 @@ function Register(props) {
       <div className="auth">
         <h1 className="auth__title">Добро пожаловать!</h1>
         <div className="auth-main">
-        <form className='auth-main__form'onSubmit={handleSubmit} >
+        <form className='auth-main__form'onSubmit={handleSubmit} noValidate >
           <span className="auth-main__title">Имя</span>
           <input
             className="auth-main__input"
@@ -51,6 +51,7 @@ function Register(props) {
             value={name}
             onChange={handleName}
           />
+          <span className={props.infoError ? 'auth-main__error_hidden': "auth-main__error"}>Что-то пошло не так...</span>
           <span className="auth-main__title">E-mail</span>
           <input
             className="auth-main__input auth-main__input_email"
@@ -64,6 +65,7 @@ function Register(props) {
             value={email}
             onChange={handleEmail}
           />
+           <span className={props.infoError ? 'auth-main__error_hidden': "auth-main__error"}>Что-то пошло не так...</span>
           <span className="auth-main__title">Пароль</span>
           <input
             className={props.infoError ? 'auth-main__input': "auth-main__input_bottom"}

@@ -22,8 +22,14 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
   const shortORlong = localStorage.getItem("shortORlong");
 
   useEffect(() => {
-    setshortMovie(shortORlong);
-    setSearch(searchHistory);
+    if(searchHistory === null){
+      setshortMovie(shortORlong);
+      setSearch('/');
+    }
+    else{
+      setshortMovie(shortORlong);
+      setSearch(searchHistory);
+    }
   }, [])
 
 

@@ -34,7 +34,36 @@ function App() {
 
   const history = useNavigate();
 
-
+function moviesInform(){
+  apiMovie.MoviesApi()
+  .then((result) => {
+    setMovie(result);
+    setConnectingError(false);
+    setLoading(true);
+  })
+  .catch((err) => {
+    setConnectingError(true);
+    setLoading(false);
+    console.error(err);
+  })
+  .finally(() => {
+    setLoading(false);
+  });
+api.UsersMovies()
+  .then((result) => {
+    setSavesMovies(result.data);
+    setConnectingError(false);
+    setLoading(true);
+  })
+  .catch((err) => {
+    setConnectingError(true);
+    setLoading(false);
+    console.error(err);
+  })
+  .finally(() => {
+    setLoading(false);
+  });
+}
 
   useEffect(() => {
     if (!isLoggedIn) return;
@@ -47,36 +76,12 @@ function App() {
       .catch((err) => {
         console.error(err);
       });
-    apiMovie.MoviesApi()
-      .then((result) => {
-        setMovie(result);
-        setConnectingError(false);
-        setLoading(true);
-      })
-      .catch((err) => {
-        setConnectingError(true);
-        setLoading(false);
-        console.error(err);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-    api.UsersMovies()
-      .then((result) => {
-        setSavesMovies(result.data);
-        setConnectingError(false);
-        setLoading(true);
-      })
-      .catch((err) => {
-        setConnectingError(true);
-        setLoading(false);
-        console.error(err);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    
+      moviesInform();
 
   }, [isLoggedIn])
+
+
 
 
   const newAuth = (token) => {
@@ -87,12 +92,13 @@ function App() {
           setisLoggedIn(true);
           setloggedIn(true);
           setCurrentUser(res.data);
+          moviesInform();
         }
       })
       .catch((err) => {
         console.error(err);
       });
-      
+     
   };
 
   useEffect(() => {
@@ -115,6 +121,7 @@ function App() {
         console.log(err);
         setInfoError(false);
       });
+      moviesInform();
   }
 
   function handleRegistration(email, password, name) {
@@ -185,6 +192,8 @@ function App() {
 
   function signOut() {
     localStorage.removeItem('token');
+    localStorage.removeItem('search');
+    localStorage.removeItem('shortORlong');
     history.push('/signup');
     setisLoggedIn(false);
   }
