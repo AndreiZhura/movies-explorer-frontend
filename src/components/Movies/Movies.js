@@ -21,17 +21,9 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
   const searchHistory = localStorage.getItem("search");
   const shortORlong = localStorage.getItem("shortORlong");
 
-  console.log(searchHistory)
-  console.log(shortORlong)
-
-
   useEffect(() => {
     setshortMovie(shortORlong);
     setSearch(searchHistory);
-
-    console.log(searchHistory)
-    console.log(shortORlong)
-
   }, [])
 
 
@@ -128,6 +120,7 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
           onClick={handleClick}
           number={number}
           onChange={handlecheckChange}
+          shortMovie = {shortMovie}
         />
         {
           number ? (

@@ -24,7 +24,7 @@
     font-size: 13px;
     line-height: 18px;
 }
-.checkbox__label::before {
+.checkbox__label_before {
     content: "";
     cursor: pointer;
     display: block;
@@ -33,13 +33,14 @@
     background-color: #2BE080;
     border-radius: 20px;
     position: absolute;
-    left: 0px;
+    top: -4px;
+    left: -4px;
     background-image: url(../../../images/tumb__COLOR_tumbler-on-2.svg);
     background-repeat: no-repeat;
     background-position: 150% 25%;
-    z-index: 0;
+    z-index: 0; 
 }
-.checkbox__label::after {
+.checkbox__label_after {
     content: "";
     cursor: pointer;
     display: block;
@@ -48,15 +49,12 @@
     background-color: #2BE080;
     border-radius: 20px;
     position: absolute;
-    top: 0px;
+    top: -3px;
     left: 0px;
     background-image: url(../../../images/tumb__COLOR_tumbler-on-2.svg);
     background-repeat: no-repeat;
     background-position: -50% 25%;
-    visibility: hidden;
-}
-.checkbox__input:checked+.checkbox__label::after {
-    visibility: visible;
+    
 }
 
 @media screen and (max-width:769px) {

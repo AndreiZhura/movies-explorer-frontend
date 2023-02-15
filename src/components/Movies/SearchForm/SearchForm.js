@@ -4,7 +4,7 @@ import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 import lupa from '../../../images/lupa.svg'
 
 
-function SearchForm({ inputRef, onClick, onChange }) {
+function SearchForm({ inputRef, onClick, onChange, shortMovie }) {
 
 
     return (
@@ -28,6 +28,7 @@ function SearchForm({ inputRef, onClick, onChange }) {
                 </form>
                 <FilterCheckbox
                     onChange={onChange}
+                    shortMovie = {shortMovie}
                 />
             </div>
         </div>

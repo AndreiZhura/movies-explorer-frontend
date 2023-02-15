@@ -92,6 +92,7 @@ function App() {
       .catch((err) => {
         console.error(err);
       });
+      
   };
 
   useEffect(() => {
