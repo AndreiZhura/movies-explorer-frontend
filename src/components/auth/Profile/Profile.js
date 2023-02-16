@@ -7,23 +7,65 @@ import { useState, useEffect } from "react";
 
 function Profile(props) {
   // Стейт, в котором содержится значение инпута
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
+  const [name, setName] = useState('');
+  const [nameDirty, setNameDirty] = useState(true);
+  const [nameError, setNameError] = useState('');
+  const [email, setUserEmail] = useState("");
+  const [emailDirty, setEmailDirty] = useState(true);
+  const [EmailError, setEmailError] = useState('');
   const currentUser = React.useContext(CurrentUserContext);
   // После загрузки текущего пользователя из API
   // его данные будут использованы в управляемых компонентах.
   useEffect(() => {
     setName(currentUser.name);
-    setEmail(currentUser.about);
+    setUserEmail(currentUser.about);
   }, [currentUser]);
 
+  const emailValid = str => /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(str);
+
   // Обработчик изменения инпута обновляет стейт
-  function handleChangeEmail(e) {
-    setEmail(e.target.value);
+  function handleEmail(evt) {
+    if (evt.target.value) {
+
+      if (emailValid(evt.target.value)) {
+        setUserEmail(evt.target.value)
+        setEmailDirty(true)
+      }
+      else {
+        setEmailDirty(false)
+        setEmailError('Email не корректный')
+      }
+    }
+    else {
+      setEmailDirty(false)
+      setEmailError('Email не может быть пустым')
+    }
+
   }
 
-  function handleChangeName(e) {
-    setName(e.target.value);
+  const nameValidationLat = str => /^[A-Za-z -]+$/.test(str)
+  const nameValidationKir= str => /^[А-Яа-я -]+$/.test(str)
+
+  function handleName(evt) {
+
+    if (evt.target.value) {
+       if(nameValidationLat(evt.target.value)){
+        setName(evt.target.value);
+        setNameDirty(true)
+       }
+       else if(nameValidationKir(evt.target.value)){
+        setName(evt.target.value);
+        setNameDirty(true)
+       }
+       else{
+        setNameDirty(false)
+        setNameError('Некорректное имя!')
+       }
+    }
+    else {
+      setNameDirty(false)
+      setNameError('Поле имя не должно быть пустым!')
+    }
   }
 
   function handleSubmit(e) {
@@ -53,14 +95,16 @@ function Profile(props) {
                 id="name-input"
                 placeholder={currentUser.name}
                 type="text"
-                name="name-link"
+                name="name"
                 required
                 minLength="2"
                 maxLength="40"
-                value={name || ""}
-                onChange={handleChangeName}
+                value={name}
+                onChange={handleName}
               />
+              
             </div>
+            <span className={nameDirty ? 'auth-main__error_hidden' : "auth-main__error"}>{nameError}</span>
             <div className="profile-main__container">
               <span className="profile-main__title">E-mail</span>
               <input
@@ -68,15 +112,16 @@ function Profile(props) {
                 id="email-input"
                 placeholder={currentUser.email}
                 type="email"
-                name="email-link"
+                name="email"
                 required
                 minLength="2"
                 maxLength="40"
-                value={email || ""}
-                onChange={handleChangeEmail}
+                value={email}
+                onChange={handleEmail}
               />
             </div>
-            <button className='profile-main__button profile-main__button_register ' onClick={handleSubmit}>Редактировать</button>
+            <span className={emailDirty ? 'auth-main__error_hidden' : "auth-main__error"}>{EmailError}</span>
+            <button className={nameDirty && emailDirty ? 'profile-main__button profile-main__button_register' : 'profile-main__button profile-main__button_register auth-main__button_error'} onClick={handleSubmit}>Редактировать</button>
             <Link to="/signin" className='profile-main__text-button' onClick={props.signOut}>Выйти из аккаунта
             </Link>
           </form>
