@@ -34,9 +34,6 @@ function App() {
   const [savesMovies, setSavesMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [connectingError, setConnectingError] = useState(false);
-
-  //const location = useLocation()
-
   const history = useNavigate();
 
   function moviesInform() {
@@ -82,16 +79,11 @@ function App() {
       });
   }
 
-
   useEffect(() => {
     if (!isLoggedIn) return;
-
     userInformation()
     moviesInform();
-
   }, [isLoggedIn])
-
-
 
 
   const newAuth = (token) => {
