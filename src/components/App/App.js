@@ -20,7 +20,11 @@ import CurrentUserContext from "../contexts/CurrentUserContext";
 function App() {
 
   const [loggedIn, setloggedIn] = useState(false);
-  const [infoError, setInfoError] = useState(true);
+
+  const [nameError, setNameError] = useState(true);
+  const [EmailError, setEmailError] = useState(true);
+  const [PasswordError, setPasswordError] = useState(true);
+  const [buttonError , setButtonError] = useState(true);
   // const [userData, setUserData] = useState({});
   const [currentUser, setCurrentUser] = useState({});
   // проверяем авторизован пользователь или нет
@@ -35,36 +39,36 @@ function App() {
 
   const history = useNavigate();
 
-function moviesInform(){
-  apiMovie.MoviesApi()
-  .then((result) => {
-    setMovie(result);
-    setConnectingError(false);
-    setLoading(true);
-  })
-  .catch((err) => {
-    setConnectingError(true);
-    setLoading(false);
-    console.error(err);
-  })
-  .finally(() => {
-    setLoading(false);
-  });
-api.UsersMovies()
-  .then((result) => {
-    setSavesMovies(result.data);
-    setConnectingError(false);
-    setLoading(true);
-  })
-  .catch((err) => {
-    setConnectingError(true);
-    setLoading(false);
-    console.error(err);
-  })
-  .finally(() => {
-    setLoading(false);
-  });
-}
+  function moviesInform() {
+    apiMovie.MoviesApi()
+      .then((result) => {
+        setMovie(result);
+        setConnectingError(false);
+        setLoading(true);
+      })
+      .catch((err) => {
+        setConnectingError(true);
+        setLoading(false);
+        console.error(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+    api.UsersMovies()
+      .then((result) => {
+        setSavesMovies(result.data);
+        setConnectingError(false);
+        setLoading(true);
+      })
+      .catch((err) => {
+        setConnectingError(true);
+        setLoading(false);
+        console.error(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }
 
   useEffect(() => {
     if (!isLoggedIn) return;
@@ -77,8 +81,8 @@ api.UsersMovies()
       .catch((err) => {
         console.error(err);
       });
-    
-      moviesInform();
+
+    moviesInform();
 
   }, [isLoggedIn])
 
@@ -99,7 +103,7 @@ api.UsersMovies()
       .catch((err) => {
         console.error(err);
       });
-     
+
   };
 
   useEffect(() => {
@@ -114,27 +118,35 @@ api.UsersMovies()
       .authorize(email, password)
       .then((res) => {
         setloggedIn(true);
-        setInfoError(true);
+        setEmailError(true);
+        setPasswordError(true);
+        setButtonError(true);
         history("/movies");
         localStorage.setItem("token", res.token);
       })
       .catch((err) => {
         console.log(err);
-        setInfoError(false);
+        setEmailError(false);
+        setPasswordError(false);
+        setButtonError(false);
       });
-      moviesInform();
+    moviesInform();
   }
 
   function handleRegistration(email, password, name) {
     api
       .register(email, password, name)
       .then((res) => {
-        setInfoError(true);
+        setNameError(true);
+        setEmailError(true);
+        setPasswordError(true);
         history("/signin");
       })
       .catch((err) => {
         console.log(err);
-        setInfoError(false);
+        setNameError(false);
+        setEmailError(false);
+        setPasswordError(false);
       });
   }
 
@@ -241,11 +253,15 @@ api.UsersMovies()
           } />
           <Route path="/signin" element={<Login
             handleLogin={handleLogin}
-            infoError={infoError}
+            EmailError={EmailError}
+            PasswordError={PasswordError}
+            buttonError = {buttonError}
           />} />
           <Route path="/signup" element={<Register
             handleRegistration={handleRegistration}
-            infoError={infoError}
+            nameError={nameError}
+            EmailError={EmailError}
+            PasswordError={PasswordError}
           />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
