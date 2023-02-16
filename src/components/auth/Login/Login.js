@@ -11,7 +11,7 @@ function Login(props) {
   const [password, setPassword] = useState("");
 
   const [passwordDirty, setPasswordDirty] = useState(true);
-  const [passwordError, setPasswordError] = useState('пароль не может быть пустым');
+  const [passwordError, setPasswordError] = useState('');
 
   const [emailDirty, setEmailDirty] = useState(true);
   const [EmailError, setEmailError] = useState('');

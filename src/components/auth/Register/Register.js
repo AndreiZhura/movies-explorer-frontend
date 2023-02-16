@@ -8,17 +8,20 @@ import { useState } from 'react';
 
 
 function Register(props) {
-  const [email, setEmail] = useState('');
-  const [emailDirty , setemailDirty] = useState(false);
-  const [EmailError, setEmailError] = useState('Email не может быть пустым');
 
-  const [password, setPassword] = useState('');
-  const [passwordDirty , setPasswordDirty] = useState(false);
-  const [PasswordError, setPasswordError] = useState('Пароль не может быть пустым');
-
+  const [email, setUserEmail] = useState("");
+  const [emailDirty, setEmailDirty] = useState(true);
+  const [EmailError, setEmailError] = useState('');
+  const [password, setPassword] = useState("");
+  const [passwordDirty, setPasswordDirty] = useState(true);
+  const [passwordError, setPasswordError] = useState('');
   const [name, setName] = useState('');
-  const [nameDirty, setNameDirty] = useState(false);
-  const [nameError, setNameError ] = useState('Имя не может быть пустым');
+  const [nameDirty, setNameDirty] = useState(true);
+  const [nameError, setNameError] = useState('');
+
+  const emailValid = str => /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(str);
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -26,15 +29,49 @@ function Register(props) {
   }
 
   function handleEmail(evt) {
-    setEmail(evt.target.value);
+    if (evt.target.value) {
+
+      if (emailValid(evt.target.value)) {
+        setUserEmail(evt.target.value)
+        setEmailDirty(true)
+      }
+      else {
+        setEmailDirty(false)
+        setEmailError('Email не корректный')
+      }
+    }
+    else {
+      setEmailDirty(false)
+      setEmailError('Email не может быть пустым')
+    }
+
   }
 
   function handlePassword(evt) {
-    setPassword(evt.target.value);
+    if (evt.target.value.length < 5) {
+      setPassword(evt.target.value);
+      setPasswordDirty(false)
+      setPasswordError('пароль не может быть пустым')
+
+    }
+    else if (evt.target.value.length > 5) {
+      setPassword(evt.target.value);
+      setPasswordDirty(true)
+      setPasswordError('')
+    }
   }
 
   function handleName(evt) {
-    setName(evt.target.value);
+
+   if(evt.target.value){
+     setName(evt.target.value);
+     setNameDirty(true)
+   }
+   else{
+    setNameDirty(false)
+    setNameError('Поле имя не должно быть пустым!')
+   }
+
   }
 
 
@@ -57,10 +94,9 @@ function Register(props) {
                 placeholder="Виталий"
                 type="name"
                 name="name-link"
-                value={name}
                 onChange={handleName}
               />
-              <span className={props.nameError ? 'auth-main__error_hidden' : "auth-main__error"}>Что-то пошло не так...</span>
+              <span className={nameDirty ? 'auth-main__error_hidden' : "auth-main__error"}>{nameError}</span>
               <span className="auth-main__title">E-mail</span>
               <input
                 className="auth-main__input auth-main__input_email"
@@ -71,13 +107,12 @@ function Register(props) {
                 placeholder="Email"
                 type="email"
                 name="email-link"
-                value={email}
                 onChange={handleEmail}
               />
-              <span className={props.EmailError ? 'auth-main__error_hidden' : "auth-main__error"}>Что-то пошло не так...</span>
+              <span className={emailDirty ? 'auth-main__error_hidden' : "auth-main__error"}>{EmailError}</span>
               <span className="auth-main__title">Пароль</span>
               <input
-                className={props.PasswordError ? 'auth-main__input' : "auth-main__input_bottom"}
+                className={passwordDirty ? 'auth-main__input' : "auth-main__input_bottom"}
                 id="password-input"
                 required
                 minLength="2"
@@ -85,11 +120,11 @@ function Register(props) {
                 placeholder="Пароль"
                 type="password"
                 name="password-link"
-                value={password}
                 onChange={handlePassword}
               />
-              <span className={props.PasswordError ? 'auth-main__error_hidden' : "auth-main__error"}>Что-то пошло не так...</span>
-              <button className='auth-main__button auth-main__button_register '>Зарегистрироваться</button>
+              <span className={passwordDirty ? 'auth-main__error_hidden' : "auth-main__error"}>{passwordError}</span>
+
+              <button className={emailDirty && passwordDirty && nameDirty ? 'auth-main__button auth-main__button_register' : 'auth-main__button auth-main__button_register auth-main__button_error'}>Зарегистрироваться</button>
               <p className='auth-main__text auth-main__text_register'>Уже зарегистрированы?
                 <Link to="/signin" className='auth-main__text-button auth-main__text-button_register'>Войти
                 </Link></p>
