@@ -34,6 +34,8 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
 
 
 
+
+
   function count() {
     if (width >= 1280) {
       setCounter(counter + 3)
@@ -48,17 +50,15 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
   useEffect(() => {
     window.addEventListener('resize', checkWindowWidth)
     setWidth(window.innerWidth)
-  }, [])
+    
+  }, [window.innerWidth])
 
   function checkWindowWidth() {
     if (width >= 1280) {
       setCounter(12)
-
     }
     else if (width < 1280 && width > 480) {
       setCounter(8);
-      console.log(width)
-
     }
     else if (width <= 480) {
       setCounter(5);
@@ -90,10 +90,6 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
   const filterMoviesShort = movies.filter((movie) => {
     return movie.nameRU.trim().toLowerCase().includes(search.toLowerCase()) && movie.duration < 40
   })
-
-
-
-
 
   function handlecheckChange() {
     setshortMovie(!shortMovie);
