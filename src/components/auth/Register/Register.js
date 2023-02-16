@@ -71,7 +71,6 @@ function Register(props) {
     setNameDirty(false)
     setNameError('Поле имя не должно быть пустым!')
    }
-
   }
 
 

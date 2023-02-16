@@ -24,7 +24,7 @@ function App() {
   const [nameError, setNameError] = useState(true);
   const [EmailError, setEmailError] = useState(true);
   const [PasswordError, setPasswordError] = useState(true);
-  const [buttonError , setButtonError] = useState(true);
+  const [buttonError, setButtonError] = useState(true);
   // const [userData, setUserData] = useState({});
   const [currentUser, setCurrentUser] = useState({});
   // проверяем авторизован пользователь или нет
@@ -70,8 +70,7 @@ function App() {
       });
   }
 
-  useEffect(() => {
-    if (!isLoggedIn) return;
+  function userInformation() {
     api.userInfo()
       .then((res) => {
         setloggedIn(true);
@@ -81,7 +80,13 @@ function App() {
       .catch((err) => {
         console.error(err);
       });
+  }
 
+
+  useEffect(() => {
+    if (!isLoggedIn) return;
+
+    userInformation()
     moviesInform();
 
   }, [isLoggedIn])
@@ -121,7 +126,6 @@ function App() {
         setEmailError(true);
         setPasswordError(true);
         setButtonError(true);
-        history("/movies");
         localStorage.setItem("token", res.token);
       })
       .catch((err) => {
@@ -130,6 +134,7 @@ function App() {
         setPasswordError(false);
         setButtonError(false);
       });
+    userInformation()
     moviesInform();
   }
 
@@ -255,7 +260,7 @@ function App() {
             handleLogin={handleLogin}
             EmailError={EmailError}
             PasswordError={PasswordError}
-            buttonError = {buttonError}
+            buttonError={buttonError}
           />} />
           <Route path="/signup" element={<Register
             handleRegistration={handleRegistration}
