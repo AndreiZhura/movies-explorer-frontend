@@ -47,6 +47,22 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
       setCounter(counter + 1);
     }
   }
+
+  useEffect(() => {
+    if (width >= 1280) {
+      setCounter(12)
+
+    }
+    else if (width < 1280 && width > 480) {
+      setCounter(8);
+
+    }
+    else if (width <= 480) {
+      setCounter(5);
+
+    }
+  }, []);
+
   useEffect(() => {
     window.addEventListener('resize', checkWindowWidth)
     setWidth(window.innerWidth)
@@ -66,20 +82,7 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
     }
   }
 
-  useEffect(() => {
-    if (width >= 1280) {
-      setCounter(12)
-
-    }
-    else if (width < 1280 && width > 480) {
-      setCounter(8);
-
-    }
-    else if (width <= 480) {
-      setCounter(5);
-
-    }
-  }, []);
+ 
 
   const numberValidator = str => /^\d+$/.test(str);
 
