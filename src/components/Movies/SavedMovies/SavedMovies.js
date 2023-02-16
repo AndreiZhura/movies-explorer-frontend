@@ -56,7 +56,8 @@ function SavedMovies({ savesMovies, onMovieDisLike, loading, connectingError }) 
                     onChange={handlecheckChange}
                     shortMovie ={shortMovie}
                 />
-                {loading ? <Preloader /> : connectingError ? <p className="movie__error-server">«Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз» </p> :
+                {number ? <div className="movie__error">«Нужно ввести ключевое слово»</div>:
+                  loading ? <Preloader /> : connectingError ? <p className="movie__error-server">«Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз» </p> :
                     shortMovie ?
                         <SavedCardList
                             savesMovies={filterSavesMoviesShort}

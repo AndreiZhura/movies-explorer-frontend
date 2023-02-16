@@ -34,14 +34,16 @@ function App() {
   const [savesMovies, setSavesMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [connectingError, setConnectingError] = useState(false);
+  const [registerError, setRegisterError] = useState(true)
+  const [redisterMessage, setRegisterMessage] = useState('')
   const history = useNavigate();
 
   function moviesInform() {
+    setLoading(true);
     apiMovie.MoviesApi()
       .then((result) => {
         setMovie(result);
         setConnectingError(false);
-        setLoading(true);
       })
       .catch((err) => {
         setConnectingError(true);
@@ -51,11 +53,11 @@ function App() {
       .finally(() => {
         setLoading(false);
       });
+      setLoading(true);
     api.UsersMovies()
       .then((result) => {
         setSavesMovies(result.data);
         setConnectingError(false);
-        setLoading(true);
       })
       .catch((err) => {
         setConnectingError(true);
@@ -144,6 +146,8 @@ function App() {
         setNameError(false);
         setEmailError(false);
         setPasswordError(false);
+        setRegisterError(false)
+        setRegisterMessage('Данный пользователь уже существует')
       });
   }
 
@@ -259,6 +263,8 @@ function App() {
             nameError={nameError}
             EmailError={EmailError}
             PasswordError={PasswordError}
+            registerError = {registerError}
+            redisterMessage = {redisterMessage}
           />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>

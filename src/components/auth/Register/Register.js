@@ -22,7 +22,6 @@ function Register(props) {
   const emailValid = str => /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(str);
 
 
-
   const handleSubmit = (e) => {
     e.preventDefault()
     props.handleRegistration(email, password, name)
@@ -61,16 +60,29 @@ function Register(props) {
     }
   }
 
+  const nameValidationLat = str => /^[A-Za-z -]+$/.test(str)
+  const nameValidationKir= str => /^[А-Яа-я -]+$/.test(str)
+
   function handleName(evt) {
 
-   if(evt.target.value){
-     setName(evt.target.value);
-     setNameDirty(true)
-   }
-   else{
-    setNameDirty(false)
-    setNameError('Поле имя не должно быть пустым!')
-   }
+    if (evt.target.value) {
+       if(nameValidationLat(evt.target.value)){
+        setName(evt.target.value);
+        setNameDirty(true)
+       }
+       else if(nameValidationKir(evt.target.value)){
+        setName(evt.target.value);
+        setNameDirty(true)
+       }
+       else{
+        setNameDirty(false)
+        setNameError('Некорректное имя!')
+       }
+    }
+    else {
+      setNameDirty(false)
+      setNameError('Поле имя не должно быть пустым!')
+    }
   }
 
 
@@ -122,7 +134,7 @@ function Register(props) {
                 onChange={handlePassword}
               />
               <span className={passwordDirty ? 'auth-main__error_hidden' : "auth-main__error"}>{passwordError}</span>
-
+              <span className={props.registerError ? 'auth-main__error_hidden' : "auth-main__error"}>{props.redisterMessage}</span>
               <button className={emailDirty && passwordDirty && nameDirty ? 'auth-main__button auth-main__button_register' : 'auth-main__button auth-main__button_register auth-main__button_error'}>Зарегистрироваться</button>
               <p className='auth-main__text auth-main__text_register'>Уже зарегистрированы?
                 <Link to="/signin" className='auth-main__text-button auth-main__text-button_register'>Войти
