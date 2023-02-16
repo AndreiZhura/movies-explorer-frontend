@@ -36,6 +36,8 @@ function App() {
   const [connectingError, setConnectingError] = useState(false);
   const [registerError, setRegisterError] = useState(true)
   const [redisterMessage, setRegisterMessage] = useState('')
+  const [loginError, setLoginError] = useState(true)
+  const [loginMessage, setLoginMessage] = useState('')
   const history = useNavigate();
 
   function moviesInform() {
@@ -127,6 +129,8 @@ function App() {
         setEmailError(false);
         setPasswordError(false);
         setButtonError(false);
+        setLoginError(false);
+        setLoginMessage('произошла ошибка: попробуйте еще раз')
       });
     userInformation()
     moviesInform();
@@ -257,6 +261,8 @@ function App() {
             EmailError={EmailError}
             PasswordError={PasswordError}
             buttonError={buttonError}
+            loginError ={loginError}
+            loginMessage = {loginMessage}
           />} />
           <Route path="/signup" element={<Register
             handleRegistration={handleRegistration}
