@@ -14,9 +14,25 @@ function SavedMovies({ savesMovies, onMovieDisLike, loading, connectingError }) 
     const [number, setNumber] = useState(false);
     const [shortMovie, setshortMovie] = useState(false);
     const inputRef = useRef(null);
-
-
     const numberValidator = str => /^\d+$/.test(str);
+
+
+  const searchHistory = localStorage.getItem("search");
+  const shortORlong = localStorage.getItem("shortORlong");
+
+  useEffect(() => {
+    if(searchHistory === null){
+      setshortMovie(shortORlong);
+      setSearch('/');
+      localStorage.getItem("search");
+    }
+    else{
+      setshortMovie(shortORlong);
+      setSearch(searchHistory);
+      localStorage.getItem("search");
+    }
+  }, [])
+
 
 
   const filterSavesMovies = savesMovies.filter((movie) => {
@@ -30,6 +46,8 @@ function SavedMovies({ savesMovies, onMovieDisLike, loading, connectingError }) 
     function handlecheckChange() {
         setCheck(!check);
         setshortMovie(!shortMovie)
+        localStorage.setItem("shortORlong", shortMovie)
+        localStorage.setItem("search", inputRef.current.value);
     }
 
     function handleClick(e) {
@@ -38,10 +56,12 @@ function SavedMovies({ savesMovies, onMovieDisLike, loading, connectingError }) 
         if (numberValidator(inputRef.current.value)) {
             setSearch('/');
             setNumber(true);
+            localStorage.setItem("search", inputRef.current.value);
         }
         else {
             setSearch(inputRef.current.value);
             setNumber(false);
+            localStorage.setItem("search", inputRef.current.value);
         }
     }
 
@@ -55,6 +75,7 @@ function SavedMovies({ savesMovies, onMovieDisLike, loading, connectingError }) 
                     number={number}
                     onChange={handlecheckChange}
                     shortMovie ={shortMovie}
+                    searchHistory = {searchHistory}
                 />
                 {number ? <div className="movie__error">«Нужно ввести ключевое слово»</div>:
                   loading ? <Preloader /> : connectingError ? <p className="movie__error-server">«Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз» </p> :

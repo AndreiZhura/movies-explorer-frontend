@@ -17,6 +17,7 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
   const [width, setWidth] = useState(window.innerWidth);
   const [counter, setCounter] = useState(0);
   /// история
+  
 
   const searchHistory = localStorage.getItem("search");
   const shortORlong = localStorage.getItem("shortORlong");
@@ -25,10 +26,12 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
     if(searchHistory === null){
       setshortMovie(shortORlong);
       setSearch('/');
+      localStorage.getItem("search");
     }
     else{
       setshortMovie(shortORlong);
       setSearch(searchHistory);
+      localStorage.getItem("search");
     }
   }, [])
 
@@ -94,9 +97,13 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
     return movie.nameRU.trim().toLowerCase().includes(search.toLowerCase()) && movie.duration < 40
   })
 
+
+
   function handlecheckChange() {
     setshortMovie(!shortMovie);
     localStorage.setItem("shortORlong", shortMovie)
+    localStorage.setItem("search", inputRef.current.value);
+ 
   }
 
   function handleClick(e) {
@@ -106,13 +113,13 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
       setSearch('/');
       setNumber(true);
       localStorage.setItem("search", inputRef.current.value);
+
       
     }
     else {
       setSearch(inputRef.current.value);
       setNumber(false);
       localStorage.setItem("search", inputRef.current.value);
-      
     }
   }
 
@@ -126,7 +133,8 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
           number={number}
           onChange={handlecheckChange}
           shortMovie = {shortMovie}
-        />
+          searchHistory = {searchHistory}
+         />
         {
           number ? (
             <div className="movie__error">«Нужно ввести ключевое слово»</div>

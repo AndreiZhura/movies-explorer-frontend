@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./SearchForm.css"
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 import lupa from '../../../images/lupa.svg'
 
 
-function SearchForm({ inputRef, onClick, onChange, shortMovie }) {
 
+function SearchForm({ inputRef, onClick, onChange, shortMovie,searchHistory }) {
+
+const [search,setSearch] = useState('')
+
+useEffect(()=>{
+    setSearch(searchHistory)
+},[])
+
+function handleChange(e){
+    setSearch(e.target.value)
+}
 
     return (
         <div className="search-form">
@@ -16,9 +26,11 @@ function SearchForm({ inputRef, onClick, onChange, shortMovie }) {
                         className="search-form__input"
                         required
                         placeholder="Фильм"
-                        type="text"
+                        type="search"
                         name="search"
                         autoComplete="off"
+                        value={search}
+                        onChange={handleChange}
                         ref={inputRef}
                     />
 

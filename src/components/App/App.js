@@ -143,7 +143,7 @@ function App() {
         setNameError(true);
         setEmailError(true);
         setPasswordError(true);
-        history("/signin");
+        history("/movies");
       })
       .catch((err) => {
         console.log(err);
@@ -212,8 +212,8 @@ function App() {
     localStorage.removeItem('token');
     localStorage.removeItem('search');
     localStorage.removeItem('shortORlong');
-    history.push('/');
     setisLoggedIn(false);
+    history('/');
   }
 
   return (
