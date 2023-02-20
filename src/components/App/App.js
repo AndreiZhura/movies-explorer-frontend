@@ -212,7 +212,7 @@ function App() {
     localStorage.removeItem('token');
     localStorage.removeItem('search');
     localStorage.removeItem('shortORlong');
-    history.push('/signup');
+    history.push('/');
     setisLoggedIn(false);
   }
 
