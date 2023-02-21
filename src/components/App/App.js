@@ -169,7 +169,6 @@ function App() {
         setCurrentUser(result.data);
         setErrorEmailUpdate(true);
         setSuccessfulUpdateProfile(false)
-        console.log('данные успешно обновленны')
         setSuccessfulUpdateProfileText('Данные пользователя успешно изменены!')
       })
       .catch((err) => {
