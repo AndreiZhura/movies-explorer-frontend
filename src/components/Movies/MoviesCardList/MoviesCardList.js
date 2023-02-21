@@ -19,10 +19,6 @@ useEffect(()=>{
   }
 },[value])
 
-
-
-
-
   return (
     <>
       <div className="movie-card-list">

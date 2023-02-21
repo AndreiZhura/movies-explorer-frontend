@@ -226,7 +226,7 @@ function App() {
     localStorage.removeItem('search');
     localStorage.removeItem('shortORlong');
     setisLoggedIn(false);
-    history('/');
+    history('/signin');
   }
 
   return (
