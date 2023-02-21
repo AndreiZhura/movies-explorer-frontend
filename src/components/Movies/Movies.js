@@ -98,7 +98,6 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
     setshortMovie(!shortMovie);
     localStorage.setItem("shortORlong", shortMovie)
     localStorage.setItem("search", inputRef.current.value);
- 
   }
 
   function handleClick(e) {

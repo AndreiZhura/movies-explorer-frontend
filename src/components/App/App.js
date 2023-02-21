@@ -80,7 +80,6 @@ function App() {
     api.userInfo()
       .then((res) => {
         setloggedIn(true);
-        history("/movies");
         setCurrentUser(res.data);
       })
       .catch((err) => {
@@ -207,7 +206,6 @@ function App() {
             });
         }
       })
-
     }
     else {
       api.DeleteMovies(del)
