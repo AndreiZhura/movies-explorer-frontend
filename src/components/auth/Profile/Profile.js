@@ -7,13 +7,13 @@ import { useState, useEffect } from "react";
 
 function Profile(props) {
   // Стейт, в котором содержится значение инпута
-  const [name, setName] = useState('');
+  const currentUser = React.useContext(CurrentUserContext);
+  const [name, setName] = useState(currentUser.name);
   const [nameDirty, setNameDirty] = useState(true);
   const [nameError, setNameError] = useState('');
-  const [email, setUserEmail] = useState("");
+  const [email, setUserEmail] = useState(currentUser.email);
   const [emailDirty, setEmailDirty] = useState(true);
   const [EmailError, setEmailError] = useState('');
-  const currentUser = React.useContext(CurrentUserContext);
   // После загрузки текущего пользователя из API
   // его данные будут использованы в управляемых компонентах.
   useEffect(() => {
@@ -93,7 +93,6 @@ function Profile(props) {
               <input
                 className="profile-main__input"
                 id="name-input"
-                placeholder={currentUser.name}
                 type="text"
                 name="name"
                 required
@@ -110,7 +109,6 @@ function Profile(props) {
               <input
                 className="profile-main__input"
                 id="email-input"
-                placeholder={currentUser.email}
                 type="email"
                 name="email"
                 required
