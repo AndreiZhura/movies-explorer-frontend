@@ -37,7 +37,12 @@ function App() {
   const [registerError, setRegisterError] = useState(true)
   const [redisterMessage, setRegisterMessage] = useState('')
   const [loginError, setLoginError] = useState(true)
-  const [loginMessage, setLoginMessage] = useState('')
+  const [loginMessage, setLoginMessage] = useState('');
+  const [errorEmailUpdate, setErrorEmailUpdate ] = useState(true)
+  const [errorUpdateUser, setErrorUpdateUser] = useState('');
+  const [successfulUpdateProfile ,setSuccessfulUpdateProfile ] = useState(false);
+  const [successfulUpdateProfileText ,setSuccessfulUpdateProfileText ] = useState('');
+
   const history = useNavigate();
 
   function moviesInform() {
@@ -80,6 +85,7 @@ function App() {
       })
       .catch((err) => {
         console.error(err);
+        
       });
   }
 
@@ -162,9 +168,16 @@ function App() {
       .updateUserInfo(User)
       .then((result) => {
         setCurrentUser(result.data);
+        setErrorEmailUpdate(true);
+        setSuccessfulUpdateProfile(false)
+        console.log('данные успешно обновленны')
+        setSuccessfulUpdateProfileText('Данные пользователя успешно изменены!')
       })
       .catch((err) => {
         console.error(err);
+        setErrorEmailUpdate(false)
+        setSuccessfulUpdateProfile(true)
+        setErrorUpdateUser('Данный Email уже занят!')
       });
   }
 
@@ -253,6 +266,10 @@ function App() {
               <Profile
                 signOut={signOut}
                 handleUpdateUser={handleUpdateUser}
+                errorEmailUpdate = {errorEmailUpdate}
+                errorUpdateUser = {errorUpdateUser}
+                successfulUpdateProfile = {successfulUpdateProfile}
+                successfulUpdateProfileText = {successfulUpdateProfileText}
               />
             </ProtectedRoute>
           } />

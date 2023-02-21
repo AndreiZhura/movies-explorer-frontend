@@ -5,6 +5,6 @@
 Cсылка на пул реквест level-3  [Pull Request](https://github.com/AndreiZhura/movies-explorer-frontend/pull/2).
 Ссылка на сайт [Сайт](https://andreizhura-diplom.no.nomoredomains.work/).
 
-ccылка на репозиторий [https://github.com/AndreiZhura/movies-explorer-api/tree/level-1]
-ссылка на домен сервера [https://api.andreizhura-diplom.nomoredomains.club]
+ccылка на репозиторий [Сервера](https://github.com/AndreiZhura/movies-explorer-api/tree/level-1)
+ссылка на домен [Сервера] (https://api.andreizhura-diplom.nomoredomains.club)
 

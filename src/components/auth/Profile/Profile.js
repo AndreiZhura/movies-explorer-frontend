@@ -14,11 +14,16 @@ function Profile(props) {
   const [email, setUserEmail] = useState(currentUser.email);
   const [emailDirty, setEmailDirty] = useState(true);
   const [EmailError, setEmailError] = useState('');
+  const [corresponds, setCorresponds] = useState(true)
   // После загрузки текущего пользователя из API
   // его данные будут использованы в управляемых компонентах.
   useEffect(() => {
     setName(currentUser.name);
-    setUserEmail(currentUser.about);
+    setUserEmail(currentUser.email);
+    if(name === currentUser.name && email === currentUser.email){
+      setCorresponds(false);
+    }
+    
   }, [currentUser]);
 
   const emailValid = str => /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(str);
@@ -26,6 +31,9 @@ function Profile(props) {
   // Обработчик изменения инпута обновляет стейт
   function handleEmail(evt) {
     if (evt.target.value) {
+      if(email !== currentUser.email){
+        setCorresponds(true);
+      }
 
       if (emailValid(evt.target.value)) {
         setUserEmail(evt.target.value)
@@ -49,6 +57,9 @@ function Profile(props) {
   function handleName(evt) {
 
     if (evt.target.value) {
+      if(name !== currentUser.name){
+        setCorresponds(true);
+      }
        if(nameValidationLat(evt.target.value)){
         setName(evt.target.value);
         setNameDirty(true)
@@ -118,8 +129,10 @@ function Profile(props) {
                 onChange={handleEmail}
               />
             </div>
+            <span className={props.successfulUpdateProfile ? 'auth-main__error_hidden' : "auth-main__success"}>{props.successfulUpdateProfileText}</span>
+            <span className={props.errorEmailUpdate ? 'auth-main__error_hidden' : "auth-main__error"}>{props.errorUpdateUser}</span>
             <span className={emailDirty ? 'auth-main__error_hidden' : "auth-main__error"}>{EmailError}</span>
-            <button className={nameDirty && emailDirty ? 'profile-main__button profile-main__button_register' : 'profile-main__button profile-main__button_register auth-main__button_error'} onClick={handleSubmit}>Редактировать</button>
+            <button className={nameDirty && emailDirty && corresponds ? 'profile-main__button profile-main__button_register' : 'profile-main__button profile-main__button_register auth-main__button_error'} onClick={handleSubmit}>Редактировать</button>
             <Link to="/signin" className='profile-main__text-button' onClick={props.signOut}>Выйти из аккаунта
             </Link>
           </form>

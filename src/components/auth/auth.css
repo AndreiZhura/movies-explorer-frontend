@@ -116,6 +116,12 @@
     font-weight: 12.1px;
 }
 
+.auth-main__success{
+    color: green;
+    font-size: 10px;
+    font-weight: 12.1px;
+}
+
 .auth-main__button_error{
     opacity: .3;
     cursor: not-allowed;
