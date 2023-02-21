@@ -123,6 +123,7 @@ function App() {
         setPasswordError(true);
         setButtonError(true);
         localStorage.setItem("token", res.token);
+        history("/movies");
       })
       .catch((err) => {
         console.log(err);

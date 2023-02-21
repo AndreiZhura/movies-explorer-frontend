@@ -7,6 +7,17 @@ import HeaderProfile from '../common/Header/HeaderProfile.js'
 import Preloader from '../Movies/Preloader/Preloader'
 import "./Movies.css"
 
+const {
+  SCREEN_SIZE_1280,
+  SCREEN_SIZE_480,
+  COUNTER_1,
+  COUNTER_2,
+  COUNTER_3,
+  COUNTER_5,
+  COUNTER_8,
+  COUNTER_12,
+} = require('../constants/constants')
+
 
 function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, onMovieDisLike, savesMovies }) {
 
@@ -40,28 +51,28 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
 
 
   function count() {
-    if (width >= 1280) {
-      setCounter(counter + 3)
+    if (width >= SCREEN_SIZE_1280) {
+      setCounter(counter + COUNTER_3)
     }
-    else if (width < 1280 && width > 480) {
-      setCounter(counter + 2)
+    else if (width < SCREEN_SIZE_1280 && width > SCREEN_SIZE_480) {
+      setCounter(counter + COUNTER_2)
     }
     else if (width <= 480) {
-      setCounter(counter + 1);
+      setCounter(counter + COUNTER_1);
     }
   }
 
   useEffect(() => {
-    if (width >= 1280) {
-      setCounter(12)
+    if (width >= SCREEN_SIZE_1280) {
+      setCounter(COUNTER_12)
 
     }
-    else if (width < 1280 && width > 480) {
-      setCounter(8);
+    else if (width < SCREEN_SIZE_1280 && width > SCREEN_SIZE_480) {
+      setCounter(COUNTER_8);
 
     }
-    else if (width <= 480) {
-      setCounter(5);
+    else if (width <= SCREEN_SIZE_480) {
+      setCounter(COUNTER_5);
 
     }
   }, []);
@@ -73,14 +84,14 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
   }, [window.innerWidth])
 
   function checkWindowWidth() {
-    if (width >= 1280) {
-      setCounter(12)
+    if (width >= SCREEN_SIZE_1280) {
+      setCounter(COUNTER_12)
     }
-    else if (width < 1280 && width > 480) {
-      setCounter(8);
+    else if (width < SCREEN_SIZE_1280 && width > SCREEN_SIZE_480) {
+      setCounter(COUNTER_8);
     }
     else if (width <= 480) {
-      setCounter(5);
+      setCounter(COUNTER_5);
 
     }
   }
