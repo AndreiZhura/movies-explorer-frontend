@@ -1,26 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './MoviesCardList.css'
 import MoviesCard from "../MoviesCard/MoviesCard";
 
 
-function MoviesCardList({ movies, counter, count,  onMovieLike, savesMovies, onMovieDisLike }) {
+function MoviesCardList({ movies, counter, count, onMovieLike, savesMovies, onMovieDisLike, value }) {
 
-  const filter = movies.slice(0, counter)
+  console.log(value)
+
+  const filter = movies.slice(0, counter);
+  const [first, setFirst] = useState('');
+
+
+useEffect(()=>{
+  if(value.length === 0){
+    setFirst('Начните поиск');
+  }else{
+    setFirst('Ничего не найдено');
+  }
+},[value])
+
+
+
+
 
   return (
     <>
       <div className="movie-card-list">
-     {
-            movies.length === 0 ? <div className="movie-card-list__error">Ничего не найдено</div> :
-              filter.map((movie) => (
-                <MoviesCard
-                  key={movie.id}
-                  movie={movie}
-                  onMovieLike={onMovieLike}
-                  savesMovies = {savesMovies}
-                  onMovieDisLike={onMovieDisLike}
-                />
-              ))
+        {
+          movies.length === 0 ? <div className="movie-card-list__error">{first}</div> :
+            filter.map((movie) => (
+              <MoviesCard
+                key={movie.id}
+                movie={movie}
+                onMovieLike={onMovieLike}
+                savesMovies={savesMovies}
+                onMovieDisLike={onMovieDisLike}
+              />
+            ))
         }
       </div>
       {

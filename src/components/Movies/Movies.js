@@ -17,7 +17,6 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
   const [width, setWidth] = useState(window.innerWidth);
   const [counter, setCounter] = useState(0);
   /// история
-  
 
   const searchHistory = localStorage.getItem("search");
   const shortORlong = localStorage.getItem("shortORlong");
@@ -34,9 +33,6 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
       localStorage.getItem("search");
     }
   }, [])
-
-
-
 
 
   function count() {
@@ -85,8 +81,6 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
     }
   }
 
- 
-
   const numberValidator = str => /^\d+$/.test(str);
 
   const filterMovies = movies.filter((movie) => {
@@ -123,6 +117,7 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
     }
   }
 
+  
   return (
     <>
       <HeaderProfile />
@@ -148,6 +143,7 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
                 count={count}
                 onMovieLike={onMovieLike}
                 onMovieDisLike={onMovieDisLike}
+                value = {inputRef.current.value}
               />
               :
               <MoviesCardList
@@ -158,6 +154,7 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
                 count={count}
                 onMovieLike={onMovieLike}
                 onMovieDisLike={onMovieDisLike}
+                value = {inputRef.current.value}
               />
           )
         }
