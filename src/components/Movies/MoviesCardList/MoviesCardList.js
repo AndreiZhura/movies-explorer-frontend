@@ -1,6 +1,6 @@
+import React from "react";
 import './MoviesCardList.css'
 import MoviesCard from "../MoviesCard/MoviesCard";
-
 
 
 function MoviesCardList({ movies, counter, count,  onMovieLike, savesMovies, onMovieDisLike }) {
@@ -11,7 +11,7 @@ function MoviesCardList({ movies, counter, count,  onMovieLike, savesMovies, onM
     <>
       <div className="movie-card-list">
      {
-            movies.length === 0 ? <div className="movie-card-list__error"> Ничего не найдено</div> :
+            movies.length === 0 ? <div className="movie-card-list__error">Ничего не найдено</div> :
               filter.map((movie) => (
                 <MoviesCard
                   key={movie.id}

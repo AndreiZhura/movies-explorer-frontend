@@ -1,3 +1,4 @@
+
 const SCREEN_SIZE_1280 = 1280;
 const SCREEN_SIZE_480 = 480;
 const COUNTER_1 = 1;
@@ -17,4 +18,3 @@ module.export = {
     COUNTER_8,
     COUNTER_12,
 }
-
