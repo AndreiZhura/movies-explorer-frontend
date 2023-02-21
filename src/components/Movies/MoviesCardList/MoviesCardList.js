@@ -5,9 +5,6 @@ import MoviesCard from "../MoviesCard/MoviesCard";
 
 function MoviesCardList({ movies, counter, count, onMovieLike, savesMovies, onMovieDisLike, data }) {
 
-  console.log(data)
-  console.log(movies)
-
   const filter = movies.slice(0, counter);
   const [first, setFirst] = useState('');
 

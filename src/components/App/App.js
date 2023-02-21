@@ -38,10 +38,10 @@ function App() {
   const [redisterMessage, setRegisterMessage] = useState('')
   const [loginError, setLoginError] = useState(true)
   const [loginMessage, setLoginMessage] = useState('');
-  const [errorEmailUpdate, setErrorEmailUpdate ] = useState(true)
+  const [errorEmailUpdate, setErrorEmailUpdate] = useState(true)
   const [errorUpdateUser, setErrorUpdateUser] = useState('');
-  const [successfulUpdateProfile ,setSuccessfulUpdateProfile ] = useState(false);
-  const [successfulUpdateProfileText ,setSuccessfulUpdateProfileText ] = useState('');
+  const [successfulUpdateProfile, setSuccessfulUpdateProfile] = useState(false);
+  const [successfulUpdateProfileText, setSuccessfulUpdateProfileText] = useState('');
 
   const history = useNavigate();
 
@@ -60,7 +60,7 @@ function App() {
       .finally(() => {
         setLoading(false);
       });
-      setLoading(true);
+    setLoading(true);
     api.UsersMovies()
       .then((result) => {
         setSavesMovies(result.data);
@@ -84,7 +84,7 @@ function App() {
       })
       .catch((err) => {
         console.error(err);
-        
+
       });
   }
 
@@ -120,14 +120,19 @@ function App() {
   }, []);
 
   function handleLogin(email, password) {
+
     api
       .authorize(email, password)
       .then((res) => {
+        console.log(res)
         setloggedIn(true);
         setEmailError(true);
         setPasswordError(true);
         setButtonError(true);
+        history("/movies");
         localStorage.setItem("token", res.token);
+        userInformation()
+        moviesInform();
       })
       .catch((err) => {
         console.log(err);
@@ -137,8 +142,7 @@ function App() {
         setLoginError(false);
         setLoginMessage('произошла ошибка: попробуйте еще раз')
       });
-    userInformation()
-    moviesInform();
+ 
   }
 
   function handleRegistration(email, password, name) {
@@ -223,7 +227,6 @@ function App() {
     localStorage.removeItem('search');
     localStorage.removeItem('shortORlong');
     setisLoggedIn(false);
-    history('/');
   }
 
   return (
@@ -263,10 +266,10 @@ function App() {
               <Profile
                 signOut={signOut}
                 handleUpdateUser={handleUpdateUser}
-                errorEmailUpdate = {errorEmailUpdate}
-                errorUpdateUser = {errorUpdateUser}
-                successfulUpdateProfile = {successfulUpdateProfile}
-                successfulUpdateProfileText = {successfulUpdateProfileText}
+                errorEmailUpdate={errorEmailUpdate}
+                errorUpdateUser={errorUpdateUser}
+                successfulUpdateProfile={successfulUpdateProfile}
+                successfulUpdateProfileText={successfulUpdateProfileText}
               />
             </ProtectedRoute>
           } />
@@ -275,19 +278,19 @@ function App() {
             EmailError={EmailError}
             PasswordError={PasswordError}
             buttonError={buttonError}
-            loginError ={loginError}
-            loginMessage = {loginMessage}
+            loginError={loginError}
+            loginMessage={loginMessage}
           />} />
           <Route path="/signup" element={<Register
             handleRegistration={handleRegistration}
             nameError={nameError}
             EmailError={EmailError}
             PasswordError={PasswordError}
-            registerError = {registerError}
-            redisterMessage = {redisterMessage}
+            registerError={registerError}
+            redisterMessage={redisterMessage}
           />} />
           <Route path="*" element={
-          <PageNotFound />} />
+            <PageNotFound />} />
         </Routes>
       </CurrentUserContext.Provider>
     </>

@@ -19,7 +19,6 @@ function Login(props) {
   const emailValid = str => /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(str);
 
 
-
   const handleSubmit = (e) => {
     e.preventDefault()
     props.handleLogin(email, password)

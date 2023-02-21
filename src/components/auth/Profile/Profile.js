@@ -133,8 +133,8 @@ function Profile(props) {
             <span className={props.errorEmailUpdate ? 'auth-main__error_hidden' : "auth-main__error"}>{props.errorUpdateUser}</span>
             <span className={emailDirty ? 'auth-main__error_hidden' : "auth-main__error"}>{EmailError}</span>
             <button className={nameDirty && emailDirty && corresponds ? 'profile-main__button profile-main__button_register' : 'profile-main__button profile-main__button_register auth-main__button_error'} onClick={handleSubmit}>Редактировать</button>
-            <Link to="/signin" className='profile-main__text-button' onClick={props.signOut}>Выйти из аккаунта
-            </Link>
+            <button  className='profile-main__text-button' onClick={props.signOut}>Выйти из аккаунта
+            </button>
           </form>
         </div>
       </section>
