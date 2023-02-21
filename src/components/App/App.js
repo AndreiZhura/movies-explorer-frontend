@@ -289,7 +289,8 @@ function App() {
             registerError = {registerError}
             redisterMessage = {redisterMessage}
           />} />
-          <Route path="*" element={<PageNotFound />} />
+          <Route path="*" element={
+          <PageNotFound />} />
         </Routes>
       </CurrentUserContext.Provider>
     </>

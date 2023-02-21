@@ -3,21 +3,22 @@ import './MoviesCardList.css'
 import MoviesCard from "../MoviesCard/MoviesCard";
 
 
-function MoviesCardList({ movies, counter, count, onMovieLike, savesMovies, onMovieDisLike, value }) {
+function MoviesCardList({ movies, counter, count, onMovieLike, savesMovies, onMovieDisLike, data }) {
 
-  console.log(value)
+  console.log(data)
+  console.log(movies)
 
   const filter = movies.slice(0, counter);
   const [first, setFirst] = useState('');
 
 
 useEffect(()=>{
-  if(value.length === 0){
+  if(data.length === 0){
     setFirst('Начните поиск');
-  }else{
+  }else if(movies.length === 0){
     setFirst('Ничего не найдено');
   }
-},[value])
+},[data])
 
   return (
     <>
