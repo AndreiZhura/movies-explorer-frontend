@@ -155,6 +155,8 @@ function App() {
         setSuccessfulRegistrationText(`Пользователь: ${dataEmail}, зарегестрирован успешно `)
         if(successfulRegistration){
           handleLogin(dataEmail,dataPassword)
+          console.log(dataEmail);
+          console.log(dataPassword);
         }
         setNameError(true);
         setEmailError(true);
