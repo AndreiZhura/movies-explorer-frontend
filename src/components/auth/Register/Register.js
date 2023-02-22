@@ -85,8 +85,6 @@ function Register(props) {
     }
   }
 
-  console.log(props.successfulRegistration)
-  console.log(props.successfulRegistrationText)
 
   return (
 

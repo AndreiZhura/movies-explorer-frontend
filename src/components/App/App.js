@@ -159,7 +159,7 @@ function App() {
         setNameError(true);
         setEmailError(true);
         setPasswordError(true);
-        console.log('успешная регистрация')
+        setSuccessfulRegistration(false);
       })
       .catch((err) => {
         console.log(err);
