@@ -142,7 +142,7 @@ function App() {
         setLoginError(false);
         setLoginMessage(err)
       });
- 
+
   }
 
   function handleRegistration(email, password, name) {
@@ -153,11 +153,7 @@ function App() {
       .then((email, password, name) => {
         setSuccessfulRegistration(true);
         setSuccessfulRegistrationText(`Пользователь: ${dataEmail}, зарегестрирован успешно `)
-        if(successfulRegistration){
-          handleLogin(dataEmail,dataPassword)
-          console.log(dataEmail);
-          console.log(dataPassword);
-        }
+        handleLogin(dataEmail, dataPassword);
         setNameError(true);
         setEmailError(true);
         setPasswordError(true);
@@ -292,8 +288,8 @@ function App() {
           />} />
           <Route path="/signup" element={<Register
             handleRegistration={handleRegistration}
-            successfulRegistration = {successfulRegistration}
-            successfulRegistrationText = {successfulRegistrationText}
+            successfulRegistration={successfulRegistration}
+            successfulRegistrationText={successfulRegistrationText}
             nameError={nameError}
             EmailError={EmailError}
             PasswordError={PasswordError}
