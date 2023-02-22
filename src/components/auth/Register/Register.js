@@ -85,6 +85,8 @@ function Register(props) {
     }
   }
 
+  console.log(props.successfulRegistration)
+  console.log(props.successfulRegistrationText)
 
   return (
 
@@ -133,6 +135,7 @@ function Register(props) {
                 name="password-link"
                 onChange={handlePassword}
               />
+              <span className={props.successfulRegistration ? "auth-main__success" :'auth-main__error_hidden'}>{props.successfulRegistrationText}</span>
               <span className={passwordDirty ? 'auth-main__error_hidden' : "auth-main__error"}>{passwordError}</span>
               <span className={props.registerError ? 'auth-main__error_hidden' : "auth-main__error"}>{props.redisterMessage}</span>
               <button className={emailDirty && passwordDirty && nameDirty ? 'auth-main__button auth-main__button_register' : 'auth-main__button auth-main__button_register auth-main__button_error'}>Зарегистрироваться</button>

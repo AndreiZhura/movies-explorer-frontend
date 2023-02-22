@@ -42,6 +42,8 @@ function App() {
   const [errorUpdateUser, setErrorUpdateUser] = useState('');
   const [successfulUpdateProfile, setSuccessfulUpdateProfile] = useState(false);
   const [successfulUpdateProfileText, setSuccessfulUpdateProfileText] = useState('');
+  const [successfulRegistration, setSuccessfulRegistration] = useState(false);
+  const [successfulRegistrationText, setSuccessfulRegistrationText] = useState('');
 
   const history = useNavigate();
 
@@ -120,11 +122,9 @@ function App() {
   }, []);
 
   function handleLogin(email, password) {
-
     api
       .authorize(email, password)
       .then((res) => {
-        console.log(res)
         setloggedIn(true);
         setEmailError(true);
         setPasswordError(true);
@@ -140,19 +140,26 @@ function App() {
         setPasswordError(false);
         setButtonError(false);
         setLoginError(false);
-        setLoginMessage('произошла ошибка: попробуйте еще раз')
+        setLoginMessage(err)
       });
  
   }
 
   function handleRegistration(email, password, name) {
+    const dataEmail = email;
+    const dataPassword = password;
     api
       .register(email, password, name)
-      .then((res) => {
+      .then((email, password, name) => {
+        setSuccessfulRegistration(true);
+        setSuccessfulRegistrationText(`Пользователь: ${dataEmail}, зарегестрирован успешно `)
+        if(successfulRegistration){
+          handleLogin(dataEmail,dataPassword)
+        }
         setNameError(true);
         setEmailError(true);
         setPasswordError(true);
-        history("/movies");
+        console.log('успешная регистрация')
       })
       .catch((err) => {
         console.log(err);
@@ -160,7 +167,7 @@ function App() {
         setEmailError(false);
         setPasswordError(false);
         setRegisterError(false)
-        setRegisterMessage('Данный пользователь уже существует')
+        setRegisterMessage(err)
       });
   }
 
@@ -283,6 +290,8 @@ function App() {
           />} />
           <Route path="/signup" element={<Register
             handleRegistration={handleRegistration}
+            successfulRegistration = {successfulRegistration}
+            successfulRegistrationText = {successfulRegistrationText}
             nameError={nameError}
             EmailError={EmailError}
             PasswordError={PasswordError}
