@@ -136,7 +136,7 @@ function Register(props) {
               <span className={props.successfulRegistration ? "auth-main__success" :'auth-main__error_hidden'}>{props.successfulRegistrationText}</span>
               <span className={passwordDirty ? 'auth-main__error_hidden' : "auth-main__error"}>{passwordError}</span>
               <span className={props.registerError ? 'auth-main__error_hidden' : "auth-main__error"}>{props.redisterMessage}</span>
-              <button className={emailDirty && passwordDirty && nameDirty ? 'auth-main__button auth-main__button_register' : 'auth-main__button auth-main__button_register auth-main__button_error'}>Зарегистрироваться</button>
+              <button className={emailDirty && passwordDirty && nameDirty && props.blockButton ? 'auth-main__button auth-main__button_register' : 'auth-main__button auth-main__button_register auth-main__button_error'}>Зарегистрироваться</button>
               <p className='auth-main__text auth-main__text_register'>Уже зарегистрированы?
                 <Link to="/signin" className='auth-main__text-button auth-main__text-button_register'>Войти
                 </Link></p>

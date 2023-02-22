@@ -44,6 +44,7 @@ function App() {
   const [successfulUpdateProfileText, setSuccessfulUpdateProfileText] = useState('');
   const [successfulRegistration, setSuccessfulRegistration] = useState(false);
   const [successfulRegistrationText, setSuccessfulRegistrationText] = useState('');
+  const [blockButton,setBlockButton] = useState(true);
 
   const history = useNavigate();
 
@@ -129,6 +130,7 @@ function App() {
         setEmailError(true);
         setPasswordError(true);
         setButtonError(true);
+        setBlockButton(false);
         history("/movies");
         localStorage.setItem("token", res.token);
         userInformation()
@@ -140,6 +142,7 @@ function App() {
         setPasswordError(false);
         setButtonError(false);
         setLoginError(false);
+        setBlockButton(true);
         setLoginMessage(err)
       });
 
@@ -157,6 +160,7 @@ function App() {
         setNameError(true);
         setEmailError(true);
         setPasswordError(true);
+        setBlockButton(false);
       })
       .catch((err) => {
         console.log(err);
@@ -164,7 +168,8 @@ function App() {
         setNameError(false);
         setEmailError(false);
         setPasswordError(false);
-        setRegisterError(false)
+        setRegisterError(false);
+        setBlockButton(true);
         setRegisterMessage(err)
       });
   }
@@ -285,6 +290,7 @@ function App() {
             buttonError={buttonError}
             loginError={loginError}
             loginMessage={loginMessage}
+            blockButton = {blockButton}
           />} />
           <Route path="/signup" element={<Register
             handleRegistration={handleRegistration}
@@ -295,6 +301,7 @@ function App() {
             PasswordError={PasswordError}
             registerError={registerError}
             redisterMessage={redisterMessage}
+            blockButton = {blockButton}
           />} />
           <Route path="*" element={
             <PageNotFound />} />
