@@ -159,10 +159,10 @@ function App() {
         setNameError(true);
         setEmailError(true);
         setPasswordError(true);
-        setSuccessfulRegistration(false);
       })
       .catch((err) => {
         console.log(err);
+        setSuccessfulRegistration(false);
         setNameError(false);
         setEmailError(false);
         setPasswordError(false);
