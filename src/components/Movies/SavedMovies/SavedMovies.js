@@ -21,16 +21,8 @@ function SavedMovies({ savesMovies, onMovieDisLike, loading, connectingError }) 
   const shortORlong = localStorage.getItem("shortORlong");
 
   useEffect(() => {
-    if(searchHistory === null){
       setshortMovie(shortORlong);
-      setSearch('/');
-      localStorage.getItem("search");
-    }
-    else{
-      setshortMovie(shortORlong);
-      setSearch(searchHistory);
-      localStorage.getItem("search");
-    }
+      setSearch('');
   }, [])
 
 
@@ -47,7 +39,6 @@ function SavedMovies({ savesMovies, onMovieDisLike, loading, connectingError }) 
         setCheck(!check);
         setshortMovie(!shortMovie)
         localStorage.setItem("shortORlong", shortMovie)
-        localStorage.setItem("search", inputRef.current.value);
     }
 
     function handleClick(e) {
@@ -56,12 +47,10 @@ function SavedMovies({ savesMovies, onMovieDisLike, loading, connectingError }) 
         if (numberValidator(inputRef.current.value)) {
             setSearch('/');
             setNumber(true);
-            localStorage.setItem("search", inputRef.current.value);
         }
         else {
             setSearch(inputRef.current.value);
-            setNumber(false);
-            localStorage.setItem("search", inputRef.current.value);
+            setNumber(false)
         }
     }
 
