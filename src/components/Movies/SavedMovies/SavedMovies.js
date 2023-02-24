@@ -17,12 +17,8 @@ function SavedMovies({ savesMovies, onMovieDisLike, loading, connectingError }) 
     const numberValidator = str => /^\d+$/.test(str);
 
 
-  const searchHistory = localStorage.getItem("search");
-  const shortORlong = localStorage.getItem("shortORlong");
-  console.log(shortORlong)
-
+ 
   useEffect(() => {
-      setshortMovie(shortORlong);
       setSearch('');
   }, [])
 
@@ -36,11 +32,16 @@ function SavedMovies({ savesMovies, onMovieDisLike, loading, connectingError }) 
     return movie.nameRU.trim().toLowerCase().includes(search.toLowerCase()) && movie.duration < 40
   })
 
-    function handlecheckChange() {
-        setCheck(!check);
-        setshortMovie(!shortMovie)
-        localStorage.setItem("shortORlong", shortMovie)
+  function handlecheckChange() {
+    if (shortMovie) {
+      setshortMovie(false);
+      localStorage.setItem("shortORlong", shortMovie)
     }
+    else {
+      setshortMovie(true);
+      localStorage.setItem("shortORlong", shortMovie)
+    }
+  }
 
     function handleClick(e) {
         e.preventDefault();
@@ -65,7 +66,6 @@ function SavedMovies({ savesMovies, onMovieDisLike, loading, connectingError }) 
                     number={number}
                     onChange={handlecheckChange}
                     shortMovie ={shortMovie}
-                    searchHistory = {searchHistory}
                 />
                 {number ? <div className="movie__error">«Нужно ввести ключевое слово»</div>:
                   loading ? <Preloader /> : connectingError ? <p className="movie__error-server">«Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз» </p> :
