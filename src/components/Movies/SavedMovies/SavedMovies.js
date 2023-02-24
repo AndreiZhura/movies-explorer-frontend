@@ -19,6 +19,7 @@ function SavedMovies({ savesMovies, onMovieDisLike, loading, connectingError }) 
 
   const searchHistory = localStorage.getItem("search");
   const shortORlong = localStorage.getItem("shortORlong");
+  console.log(shortORlong)
 
   useEffect(() => {
       setshortMovie(shortORlong);

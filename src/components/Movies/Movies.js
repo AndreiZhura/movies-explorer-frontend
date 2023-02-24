@@ -16,20 +16,41 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
   const inputRef = useRef(null);
   const [width, setWidth] = useState(window.innerWidth);
   const [counter, setCounter] = useState(0);
-  const [data, setData] = useState('')
+  const [data, setData] = useState('');
+
   /// история
 
   const searchHistory = localStorage.getItem("search");
   const shortORlong = localStorage.getItem("shortORlong");
+  console.log(shortORlong)
 
   useEffect(() => {
-    if(searchHistory === null){
-      setshortMovie(shortORlong);
+    if (shortORlong) {
+      setshortMovie(true);
+    }
+    else {
+      setshortMovie(false);
+    }
+  }, [])
+
+  function handlecheckChange() {
+    if (shortMovie) {
+      setshortMovie(false);
+      localStorage.setItem("shortORlong", shortMovie)
+    }
+    else {
+      setshortMovie(true);
+      localStorage.setItem("shortORlong", shortMovie)
+    }
+  }
+
+
+  useEffect(() => {
+    if (searchHistory === null) {
       setSearch('/');
       localStorage.getItem("search");
     }
-    else{
-      setshortMovie(shortORlong);
+    else {
       setSearch(searchHistory);
       localStorage.getItem("search");
     }
@@ -66,7 +87,7 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
   useEffect(() => {
     window.addEventListener('resize', checkWindowWidth)
     setWidth(window.innerWidth)
-    
+
   }, [window.innerWidth])
 
   function checkWindowWidth() {
@@ -93,13 +114,6 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
   })
 
 
-
-  function handlecheckChange() {
-    setshortMovie(!shortMovie);
-    localStorage.setItem("shortORlong", shortMovie)
-    localStorage.setItem("search", inputRef.current.value);
-  }
-
   function handleClick(e) {
     e.preventDefault();
 
@@ -109,7 +123,6 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
       setNumber(true);
       localStorage.setItem("search", inputRef.current.value);
 
-      
     }
     else {
       setSearch(inputRef.current.value);
@@ -119,7 +132,7 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
     }
   }
 
-  
+
   return (
     <>
       <HeaderProfile />
@@ -129,9 +142,9 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
           onClick={handleClick}
           number={number}
           onChange={handlecheckChange}
-          shortMovie = {shortMovie}
-          searchHistory = {searchHistory}
-         />
+          shortMovie={shortMovie}
+          searchHistory={searchHistory}
+        />
         {
           number ? (
             <div className="movie__error">«Нужно ввести ключевое слово»</div>
@@ -145,7 +158,7 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
                 count={count}
                 onMovieLike={onMovieLike}
                 onMovieDisLike={onMovieDisLike}
-                data = {data}
+                data={data}
               />
               :
               <MoviesCardList
@@ -156,7 +169,7 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
                 count={count}
                 onMovieLike={onMovieLike}
                 onMovieDisLike={onMovieDisLike}
-                data = {data}
+                data={data}
               />
           )
         }
