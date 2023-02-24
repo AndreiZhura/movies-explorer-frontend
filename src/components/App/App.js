@@ -231,11 +231,11 @@ function App() {
     }
   }
 
-
+console.log(window.localStorage)
   function signOut() {
     localStorage.removeItem('token');
     localStorage.removeItem('search');
-    localStorage.removeItem('shortORlong');
+    localStorage.removeItem('shortMovie');
     setisLoggedIn(false);
   }
 

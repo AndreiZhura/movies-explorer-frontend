@@ -9,7 +9,6 @@ import "../Movies.css"
 
 
 function SavedMovies({ savesMovies, onMovieDisLike, loading, connectingError }) {
-    const [check, setCheck] = useState(false);
     const [search, setSearch] = useState('');
     const [number, setNumber] = useState(false);
     const [shortMovie, setshortMovie] = useState(false);

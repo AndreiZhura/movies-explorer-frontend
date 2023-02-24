@@ -19,28 +19,28 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
   const [data, setData] = useState('');
 
   /// история
-
   const searchHistory = localStorage.getItem("search");
-  const shortORlong = localStorage.getItem("shortORlong");
-  console.log(shortORlong)
+  const historyCheck = localStorage.getItem('shortMovie')
+ 
+
 
   useEffect(() => {
-    if (shortORlong) {
-      setshortMovie(true);
+    if (historyCheck === "true") {
+      setshortMovie(true)
     }
-    else {
-      setshortMovie(false);
+    else if (historyCheck === "false") {
+      setshortMovie(false)
     }
   }, [])
 
   function handlecheckChange() {
     if (shortMovie) {
-      setshortMovie(false);
-      localStorage.setItem("shortORlong", shortMovie)
+      setshortMovie(!shortMovie);
+      localStorage.setItem('shortMovie', false);
     }
     else {
-      setshortMovie(true);
-      localStorage.setItem("shortORlong", shortMovie)
+      setshortMovie(!shortMovie);
+      localStorage.setItem('shortMovie', true);
     }
   }
 
