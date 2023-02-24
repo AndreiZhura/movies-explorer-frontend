@@ -26,6 +26,25 @@ function Profile(props) {
     
   }, [currentUser]);
 
+  useEffect(()=>{
+    if(props.name === name){
+      setCorresponds(false);
+    }
+  },[name]);
+
+  useEffect(()=>{
+    if(props.email === email){
+      setCorresponds(false);
+    }
+  },[email]);
+
+
+  console.log(name)
+  console.log(email)
+
+  console.log(props.name)
+  console.log(props.email)
+
   const emailValid = str => /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(str);
 
   // Обработчик изменения инпута обновляет стейт

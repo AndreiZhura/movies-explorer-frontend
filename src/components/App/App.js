@@ -44,7 +44,9 @@ function App() {
   const [successfulUpdateProfileText, setSuccessfulUpdateProfileText] = useState('');
   const [successfulRegistration, setSuccessfulRegistration] = useState(false);
   const [successfulRegistrationText, setSuccessfulRegistrationText] = useState('');
-  const [blockButton,setBlockButton] = useState(true);
+  const [blockButton, setBlockButton] = useState(true);
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('')
 
   const history = useNavigate();
 
@@ -84,6 +86,11 @@ function App() {
       .then((res) => {
         setloggedIn(true);
         setCurrentUser(res.data);
+        setEmail(res.data.email);
+        setName(res.data.name);
+        console.log(res.data.email)
+        console.log(res.data.name)
+
       })
       .catch((err) => {
         console.error(err);
@@ -231,7 +238,6 @@ function App() {
     }
   }
 
-console.log(window.localStorage)
   function signOut() {
     localStorage.removeItem('token');
     localStorage.removeItem('search');
@@ -274,6 +280,8 @@ console.log(window.localStorage)
           <Route path="/profile" element={
             <ProtectedRoute loggedIn={loggedIn}>
               <Profile
+                email={email}
+                name = {name}
                 signOut={signOut}
                 handleUpdateUser={handleUpdateUser}
                 errorEmailUpdate={errorEmailUpdate}
@@ -290,7 +298,7 @@ console.log(window.localStorage)
             buttonError={buttonError}
             loginError={loginError}
             loginMessage={loginMessage}
-            blockButton = {blockButton}
+            blockButton={blockButton}
           />} />
           <Route path="/signup" element={<Register
             handleRegistration={handleRegistration}
@@ -301,7 +309,7 @@ console.log(window.localStorage)
             PasswordError={PasswordError}
             registerError={registerError}
             redisterMessage={redisterMessage}
-            blockButton = {blockButton}
+            blockButton={blockButton}
           />} />
           <Route path="*" element={
             <PageNotFound />} />
