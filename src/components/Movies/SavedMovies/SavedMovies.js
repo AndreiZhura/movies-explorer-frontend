@@ -6,6 +6,7 @@ import Footer from "../../common/Footer/Footer";
 import HeaderProfile from '../../common/Header/HeaderProfile.js'
 import Preloader from '../../Movies/Preloader/Preloader'
 import "../Movies.css"
+import {SHORTMOVIE} from '../../../constants/constants'
 
 
 function SavedMovies({ savesMovies, onMovieDisLike, loading, connectingError }) {
@@ -28,7 +29,7 @@ function SavedMovies({ savesMovies, onMovieDisLike, loading, connectingError }) 
   })
 
   const filterSavesMoviesShort = savesMovies.filter((movie) => {
-    return movie.nameRU.trim().toLowerCase().includes(search.toLowerCase()) && movie.duration < 40
+    return movie.nameRU.trim().toLowerCase().includes(search.toLowerCase()) && movie.duration < SHORTMOVIE
   })
 
   function handlecheckChange() {

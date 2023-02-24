@@ -88,9 +88,6 @@ function App() {
         setCurrentUser(res.data);
         setEmail(res.data.email);
         setName(res.data.name);
-        console.log(res.data.email)
-        console.log(res.data.name)
-
       })
       .catch((err) => {
         console.error(err);
