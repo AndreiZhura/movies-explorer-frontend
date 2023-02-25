@@ -3,11 +3,7 @@ import './Profile.css'
 import HeaderProfile from '../../../components/common/Header/HeaderProfile';
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import { useState, useEffect } from "react";
-import {
-  emailValid,
-  nameValidationLat,
-  nameValidationKir,
-} from '../../../constants/constants'
+
 
 function Profile(props) {
   // Стейт, в котором содержится значение инпута
@@ -19,6 +15,10 @@ function Profile(props) {
   const [emailDirty, setEmailDirty] = useState(true);
   const [EmailError, setEmailError] = useState('');
   const [corresponds, setCorresponds] = useState(true)
+  // регулярки
+const emailValid = str => /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(str);
+const nameValidationLat = str => /^[A-Za-z -]+$/.test(str)
+const nameValidationKir= str => /^[А-Яа-я -]+$/.test(str)
   // После загрузки текущего пользователя из API
   // его данные будут использованы в управляемых компонентах.
   useEffect(() => {
@@ -51,7 +51,6 @@ function Profile(props) {
       if(email !== currentUser.email || evt.target.value === ""){
         setCorresponds(true);
       }
-
       if (emailValid(evt.target.value)|| evt.target.value === "") {
         setUserEmail(evt.target.value)
         setEmailDirty(true)
