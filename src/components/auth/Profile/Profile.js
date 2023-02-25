@@ -1,7 +1,6 @@
 import React from "react";
 import './Profile.css'
 import HeaderProfile from '../../../components/common/Header/HeaderProfile';
-import { Link } from 'react-router-dom';
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import { useState, useEffect } from "react";
 

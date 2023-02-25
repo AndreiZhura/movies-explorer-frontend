@@ -64,29 +64,27 @@ function App() {
       .then((result) => {
         setMovie(result);
         setConnectingError(false);
+        setLoading(false);
       })
       .catch((err) => {
         setConnectingError(true);
         setLoading(false);
         console.error(err);
       })
-      .finally(() => {
-        setLoading(false);
-      });
+      
     setLoading(true);
     api.UsersMovies()
       .then((result) => {
         setSavesMovies(result.data);
         setConnectingError(false);
+        setLoading(false);
       })
       .catch((err) => {
         setConnectingError(true);
         setLoading(false);
         console.error(err);
       })
-      .finally(() => {
-        setLoading(false);
-      });
+    
   }
 
   function userInformation() {
