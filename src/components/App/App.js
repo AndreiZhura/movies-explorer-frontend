@@ -1,4 +1,3 @@
-
 import './App.css';
 import Login from '../auth/Login/Login';
 import Register from '../auth/Register/Register';
@@ -7,7 +6,7 @@ import Main from '../Main/Main';
 import PageNotFound from '../PageNotFound/PageNotFound';
 import Movies from '../Movies/Movies';
 import SavedMovies from '../Movies/SavedMovies/SavedMovies';
-
+import { Navigate } from 'react-router-dom';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute.js'
 import { Routes, Route } from 'react-router-dom';
 //функционал
@@ -19,7 +18,10 @@ import CurrentUserContext from "../contexts/CurrentUserContext";
 
 function App() {
 
-  const [loggedIn, setloggedIn] = useState(false);
+  const historyLoggedIn = Boolean(localStorage.getItem('loggedIn'));
+  const historyIsLoggedIn = Boolean(localStorage.getItem('isLoggedIn'));
+  const [loggedIn, setloggedIn] = useState(historyLoggedIn);
+  const [isLoggedIn, setisLoggedIn] = useState(historyIsLoggedIn);
 
   const [nameError, setNameError] = useState(true);
   const [EmailError, setEmailError] = useState(true);
@@ -28,7 +30,6 @@ function App() {
   // const [userData, setUserData] = useState({});
   const [currentUser, setCurrentUser] = useState({});
   // проверяем авторизован пользователь или нет
-  const [isLoggedIn, setisLoggedIn] = useState(false);
   // Фильмы 
   const [movies, setMovie] = useState([]);
   const [savesMovies, setSavesMovies] = useState([]);
@@ -49,6 +50,13 @@ function App() {
   const [name, setName] = useState('')
 
   const history = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      newAuth(token);
+    }
+  }, []);
 
   function moviesInform() {
     setLoading(true);
@@ -109,6 +117,8 @@ function App() {
         if (res) {
           setisLoggedIn(true);
           setloggedIn(true);
+          localStorage.setItem("loggedIn", true);
+          localStorage.setItem("isLoggedIn", true);
           setCurrentUser(res.data);
           moviesInform();
         }
@@ -119,12 +129,7 @@ function App() {
 
   };
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      newAuth(token);
-    }
-  }, []);
+
 
   function handleLogin(email, password) {
     api
@@ -239,6 +244,8 @@ function App() {
     localStorage.removeItem('token');
     localStorage.removeItem('search');
     localStorage.removeItem('shortMovie');
+    localStorage.removeItem('loggedIn');
+    localStorage.removeItem('isLoggedIn');
     setisLoggedIn(false);
   }
 
@@ -278,7 +285,7 @@ function App() {
             <ProtectedRoute loggedIn={loggedIn}>
               <Profile
                 email={email}
-                name = {name}
+                name={name}
                 signOut={signOut}
                 handleUpdateUser={handleUpdateUser}
                 errorEmailUpdate={errorEmailUpdate}
@@ -288,26 +295,32 @@ function App() {
               />
             </ProtectedRoute>
           } />
-          <Route path="/signin" element={<Login
-            handleLogin={handleLogin}
-            EmailError={EmailError}
-            PasswordError={PasswordError}
-            buttonError={buttonError}
-            loginError={loginError}
-            loginMessage={loginMessage}
-            blockButton={blockButton}
-          />} />
-          <Route path="/signup" element={<Register
-            handleRegistration={handleRegistration}
-            successfulRegistration={successfulRegistration}
-            successfulRegistrationText={successfulRegistrationText}
-            nameError={nameError}
-            EmailError={EmailError}
-            PasswordError={PasswordError}
-            registerError={registerError}
-            redisterMessage={redisterMessage}
-            blockButton={blockButton}
-          />} />
+          <Route path="/signin" element=
+            {
+              isLoggedIn ? <Navigate to='/movies' /> :
+                <Login
+                  handleLogin={handleLogin}
+                  EmailError={EmailError}
+                  PasswordError={PasswordError}
+                  buttonError={buttonError}
+                  loginError={loginError}
+                  loginMessage={loginMessage}
+                  blockButton={blockButton} />
+            } />
+
+          <Route path="/signup" element={
+            isLoggedIn ? <Navigate to='/movies' /> :
+              <Register
+                handleRegistration={handleRegistration}
+                successfulRegistration={successfulRegistration}
+                successfulRegistrationText={successfulRegistrationText}
+                nameError={nameError}
+                EmailError={EmailError}
+                PasswordError={PasswordError}
+                registerError={registerError}
+                redisterMessage={redisterMessage}
+                blockButton={blockButton} />
+          } />
           <Route path="*" element={
             <PageNotFound />} />
         </Routes>

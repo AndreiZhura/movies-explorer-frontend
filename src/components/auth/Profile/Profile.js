@@ -38,13 +38,6 @@ function Profile(props) {
     }
   },[email]);
 
-
-  console.log(name)
-  console.log(email)
-
-  console.log(props.name)
-  console.log(props.email)
-
   const emailValid = str => /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(str);
 
   // Обработчик изменения инпута обновляет стейт
