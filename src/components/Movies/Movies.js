@@ -188,7 +188,7 @@ function Movies({ isSavesMovies, movies, loading, connectingError, onMovieLike, 
             )
           }
         </main>
-        <Footer isMovieFooter={true} />
+        <Footer isMovieFooter />
       </>
     )
 

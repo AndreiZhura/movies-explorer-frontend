@@ -3,6 +3,11 @@ import './Profile.css'
 import HeaderProfile from '../../../components/common/Header/HeaderProfile';
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import { useState, useEffect } from "react";
+import {
+  emailValid,
+  nameValidationLat,
+  nameValidationKir,
+} from '../../../constants/constants'
 
 function Profile(props) {
   // Стейт, в котором содержится значение инпута
@@ -37,45 +42,47 @@ function Profile(props) {
     }
   },[email]);
 
-  const emailValid = str => /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(str);
 
   // Обработчик изменения инпута обновляет стейт
   function handleEmail(evt) {
-    if (evt.target.value) {
-      if(email !== currentUser.email){
+
+    if (evt.target.value || evt.target.value === "") {
+      
+      if(email !== currentUser.email || evt.target.value === ""){
         setCorresponds(true);
       }
 
-      if (emailValid(evt.target.value)) {
+      if (emailValid(evt.target.value)|| evt.target.value === "") {
         setUserEmail(evt.target.value)
         setEmailDirty(true)
+        if(evt.target.value === ""){
+          setEmailDirty(false)
+          setEmailError('Email не может быть пустым')
+        }
       }
-      else {
+      else if(evt.target.value === "") {
         setEmailDirty(false)
         setEmailError('Email не корректный')
       }
     }
-    else {
-      setEmailDirty(false)
-      setEmailError('Email не может быть пустым')
-    }
 
   }
 
-  const nameValidationLat = str => /^[A-Za-z -]+$/.test(str)
-  const nameValidationKir= str => /^[А-Яа-я -]+$/.test(str)
-
   function handleName(evt) {
 
-    if (evt.target.value) {
+    if (evt.target.value || evt.target.value === "" ) {
       if(name !== currentUser.name){
         setCorresponds(true);
       }
-       if(nameValidationLat(evt.target.value)){
+       if(nameValidationLat(evt.target.value) || evt.target.value === ""){
         setName(evt.target.value);
         setNameDirty(true)
+        if( evt.target.value === ""){
+          setNameDirty(false)
+          setNameError('Поле имя не должно быть пустым!')
+        }
        }
-       else if(nameValidationKir(evt.target.value)){
+       else if(nameValidationKir(evt.target.value) || evt.target.value === "" ){
         setName(evt.target.value);
         setNameDirty(true)
        }
@@ -83,10 +90,6 @@ function Profile(props) {
         setNameDirty(false)
         setNameError('Некорректное имя!')
        }
-    }
-    else {
-      setNameDirty(false)
-      setNameError('Поле имя не должно быть пустым!')
     }
   }
 
