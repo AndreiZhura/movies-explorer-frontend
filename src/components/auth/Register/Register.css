@@ -1,0 +1,52 @@
+.register{
+    width: 1280px;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-main__button_register{
+    margin-top: 126px;
+    cursor: pointer;
+}
+
+.redister-main{
+    margin-top: 56px;
+    width: 396px;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-main__input_email{
+    border-bottom: 1px solid #2BE080;
+}
+
+.auth-main__button_error{
+    opacity: .3;
+    cursor: not-allowed;
+}
+
+@media screen and (max-width:1280px) {
+    .register {
+        width: 100vw;
+    }
+}
+
+
+@media screen and (max-width:600px) {
+    .redister-main{
+        width: 260px;
+        height: 1000px;
+    }
+}
+
+
+@media screen and (max-width:320px) {
+
+ 
+    .redister-main{
+        width: 100vw;
+    }
+   
+}

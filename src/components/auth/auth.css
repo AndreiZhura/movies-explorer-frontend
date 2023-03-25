@@ -1,0 +1,252 @@
+.logo {
+    background-image: url(../../images/logo.svg);
+    width: 38px;
+    height: 38px;
+    transition: opacity 0.5s ease;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.logo:hover {
+    opacity: 0.7;
+}
+
+.auth__title {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+
+}
+
+.auth-main__form {
+    display: flex;
+    flex-direction: column;
+    width: 99%;
+}
+
+.auth-main__title {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12.1px;
+    color: #A0A0A0;
+    margin-bottom: 6px;
+}
+
+.auth-main__input {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 25px;
+    padding-bottom: 8px;
+    height: 27px;
+    width: 100%;
+}
+
+.auth-main__button {
+    cursor: pointer;
+    width: 100%;
+    height: 45px;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16.94px;
+    letter-spacing: 0.8px;
+    background-color: #2BE080;
+    transition: opacity 0.5s ease;
+}
+
+.auth-main__button:hover {
+    opacity: 0.7;
+}
+
+.auth-main__button_register {
+    width: 101%;
+    margin-top: 134px;
+}
+
+.auth-main__button_login {
+    margin-top: 203px;
+}
+
+.auth-main__text {
+    margin-top: 17px;
+    padding-left: 4px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.94px;
+    letter-spacing: 0px;
+    color: #A0A0A0;
+}
+
+
+
+.auth-main__text-button {
+    margin-left: 8px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.94px;
+    text-decoration: none;
+    color: #2BE080;
+    transition: opacity 0.5s ease;
+}
+
+.auth-main__text-button:hover {
+    opacity: 0.7;
+}
+
+.auth-main__error_hidden{
+    visibility: hidden;
+    display: none;
+}
+
+.auth-main__input_bottom{
+    margin-bottom: 5px;
+    color: red;
+}
+
+.auth-main__error{
+    color: red;
+    font-size: 10px;
+    font-weight: 12.1px;
+}
+
+.auth-main__success{
+    color: green;
+    font-size: 10px;
+    font-weight: 12.1px;
+}
+
+.auth-main__button_error{
+    opacity: .3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+
+@media screen and (max-width:1279px) {
+
+    .auth-main__form {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width:600px) {
+
+    .auth-main__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .auth__logo {
+        align-self: center;
+    }
+
+    .auth__title {
+        align-self: center;
+    }
+
+   
+
+    .auth-main__text-login {
+        font-size: 12px;
+        line-height: 14.52px;
+    }
+
+    .auth-main__text {
+      
+        font-size: 12px;
+        line-height: 14.52px;
+        text-align: start;
+    }
+    .auth-main__text_register{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:320px) {
+
+    .auth-main__button {
+        height: 45px;
+    }
+
+    .auth-main__button_register {
+        margin-top: 222px;
+        font-size: 12px;
+        line-height: 13.52px;
+    }
+
+    .auth-main__button_login {
+        margin-top: 285px;
+        font-size: 12px;
+        line-height: 14.52px;
+    }
+
+    .auth-main__text {
+        width: 100%;
+        font-size: 12px;
+        line-height: 14.52px;
+        margin-top: 13px;
+        padding-left: 9px;
+        height: 22px;
+
+    }
+
+
+    .auth-main__form {
+        gap: 0px;
+        width: 90%;
+    }
+
+    .auth__title {
+        margin-top: 48px;
+        margin-bottom: 80px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+
+    .auth-main__input {
+        font-size: 14px;
+        line-height: 16.94px;
+    }
+
+    .auth-main__text-button {
+        margin-left: 13px;
+        font-size: 12px;
+        line-height: 14.52px;
+    }
+
+    .auth-main__text-login {
+        margin-left: 7px;
+    }
+
+    .logo {
+        margin-left: 129px;
+
+    }
+    .auth-main__button_register{
+        margin-top: 215px;
+        width: 91%;
+    }
+
+    .auth-main__text_register{
+        margin-top: 15px;
+        text-align: start;
+        padding-left: 37px;
+    }
+    .auth-main__text-button_register{
+        margin-left: 7px;
+    }
+    .auth-main__button_login {
+        width: 91%;
+    }
+
+    
+}
