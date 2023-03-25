@@ -1,0 +1,198 @@
+.about-me {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-me__info {
+    position: relative;
+    width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.about-me__title {
+    margin-top: 67px;
+    margin-bottom: 18px;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 58px;
+    letter-spacing: -0.04em;
+
+}
+
+.about-me__subtitle {
+    margin-top: 0px;
+    margin-bottom: 25px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.about-me__text {
+    margin-top: 0px;
+    height: 88px;
+    width: 590px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22.6px;
+}
+
+.about-me__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 270px;
+    height: 327px;
+    border-radius: 10px;
+}
+
+.about-me__techno {
+    margin-top: 100px;
+    margin-bottom: 0px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16.94px;
+}
+
+@media screen and (max-width:1279px) {
+    .about-me {
+        width: 92.5vw;
+    }
+    
+
+    .about-me__info {
+        width: 92.5vw;
+    }
+}
+
+@media screen and (max-width:960px) {
+
+    .about-me__text {
+        width: 60vw;
+
+    }
+}
+
+@media screen and (max-width:870px) {
+    .about-me__text {
+        width: 50vw;
+    }
+}
+
+@media screen and (max-width:769px) {
+
+    .about-me {
+        width: 768px;
+    }
+
+    .about-me__title {
+        margin-top: 67px;
+        margin-bottom: 14px;
+        font-size: 40px;
+        line-height: 40px;
+        letter-spacing: -0.04em;
+    }
+
+    .about-me__subtitle {
+        font-size: 12px;
+        line-height: 18px;
+        margin-bottom: 20px;
+    }
+
+
+    .about-me__text {
+        font-size: 12px;
+        line-height: 18px;
+        width: 364px;
+        height: 108px;
+    }
+
+    .about-me__info {
+        width: 668px;
+    }
+
+    .about-me__techno {
+        margin-top: 88px;
+    }
+
+    .about-me__image {
+        width: 255px;
+        height: 307px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .about-me {
+        width: 92.5vw;
+    }
+
+
+    .about-me__info {
+        width: calc(100vw - 20vw);
+    }
+
+    .about-me__text {
+        width: 35%;
+        height: 40%;
+    }
+
+    .about-me__image {
+        width: 220px;
+    }
+}
+
+
+@media screen and (max-width:580px) {
+
+    .about-me__info {
+        width: 320px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about-me__title {
+        margin-top: 40px;
+        margin-bottom: 0px;
+        font-size: 30px;
+        line-height: 36.21px;
+    }
+
+    .about-me__subtitle {
+        font-size: 11px;
+        line-height: 16px;
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+
+    .about-me__text {
+        margin-top: 20px;
+        font-size: 11px;
+        line-height: 16px;
+        width: 292px;
+    }
+
+    .about-me__image {
+        position: static;
+        order: -1;
+        margin-top: 60px;
+        width: 292px;
+        height: 352px;
+    }
+
+    .about-me__techno {
+        margin-top: 30px;
+        font-size: 14px;
+        line-height: 16.94px;
+    }
+}
+
+@media screen and (max-width:330px) {
+
+    .about-me__info{
+        width: 99%;
+    }
+}
+
+
