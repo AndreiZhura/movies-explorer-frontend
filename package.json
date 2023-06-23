@@ -18,7 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && scp -r ./build/* diplom@51.250.51.19:/home/diplom/yandexDiplom"
+    "deploy": "npm run build && scp -r ./build/* diplom@51.250.51.19:/home/diplom/diplom/movies-explorer-frontend"
   },
   "eslintConfig": {
     "extends": [
